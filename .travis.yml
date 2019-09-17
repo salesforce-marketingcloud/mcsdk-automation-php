@@ -1,0 +1,30 @@
+language: php
+dist: bionic
+
+addons:
+  apt:
+    update: true
+
+branches:
+  except:
+    - master
+
+php:
+  - "7.3"
+
+stages:
+  - test
+
+before_install:
+  - wget https://getcomposer.org/download/1.9.0/composer.phar
+  - sudo mv ${PWD}/composer.phar /usr/local/bin/composer
+  - sudo chmod +x /usr/local/bin/composer
+
+install:
+  - /usr/local/bin/composer install
+
+jobs:
+  include:
+    - stage: test
+      name: "Integration tests"
+      script: ${TRAVIS_BUILD_DIR}/vendor/bin/phpunit --testsuite=php-sdk-auth,php-sdk-api

@@ -106,6 +106,7 @@ venv.bak/
 
 # IDE
 .idea
+*.iml
 
 # Docker stuff
 container-config/fpm/www.conf
