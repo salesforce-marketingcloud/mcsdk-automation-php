@@ -50,6 +50,6 @@ class SystemInformationProvider
      */
     public static function getOsDescription(): string
     {
-        return static::getOsFamily() . "_" . static::getOsVersion();
+        return static::getOsFamily() . "/" . static::getOsVersion();
     }
 }
