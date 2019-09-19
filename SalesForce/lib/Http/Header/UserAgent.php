@@ -20,9 +20,11 @@ class UserAgent
     public static function fromSysInfo(): string
     {
         $data = [
-            "sdk.version=" . Client::API_VERSION,
-            "sdk.lang=php_" . SystemInformationProvider::getPhpVersion(),
-            "os=" . SystemInformationProvider::getOsDescription()
+            "MCSDK",
+            "PHP",
+            Client::API_VERSION,
+            SystemInformationProvider::getPhpVersion(),
+            SystemInformationProvider::getOsDescription()
         ];
 
         return implode("/", $data);
