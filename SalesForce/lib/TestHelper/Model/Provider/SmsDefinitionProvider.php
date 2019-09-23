@@ -2,7 +2,7 @@
 
 namespace SalesForce\MarketingCloud\TestHelper\Model\Provider;
 
-use SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest;
+use SalesForce\MarketingCloud\Env;
 use SalesForce\MarketingCloud\Model\CreateSmsDefinitionContent;
 use SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest;
 use SalesForce\MarketingCloud\Model\CreateSmsDefinitionSubscriptions;
@@ -25,9 +25,9 @@ class SmsDefinitionProvider extends AbstractModelProvider
     {
         $content = new CreateSmsDefinitionContent(["message" => "Content message"]);
         $subscriptions = new CreateSmsDefinitionSubscriptions([
-            "shortCode" => getenv("SHORT_CODE"),
-            "keyword" => getenv("KEYWORD"),
-            "countryCode" => "US"
+            "shortCode" => getenv(Env::SHORT_CODE),
+            "keyword" => getenv(Env::KEYWORD),
+            "countryCode" => getenv(Env::COUNTRY_CODE)
         ]);
 
 

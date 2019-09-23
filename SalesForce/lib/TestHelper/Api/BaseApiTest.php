@@ -7,6 +7,7 @@ use PHPUnit\Framework\TestCase;
 use SalesForce\MarketingCloud\Api\AbstractApi;
 use SalesForce\MarketingCloud\Api\Client as ApiFactory;
 use SalesForce\MarketingCloud\ApiException;
+use SalesForce\MarketingCloud\Env;
 use SalesForce\MarketingCloud\Model\ModelInterface;
 use SalesForce\MarketingCloud\TestHelper\Decorator\NullDecorator;
 use SalesForce\MarketingCloud\TestHelper\Model\Provisioner\AbstractModelProvisioner;
@@ -98,7 +99,7 @@ abstract class BaseApiTest extends TestCase
     {
         // HTTP client config
         $clientConfig = ['verify' => false];
-        if ((int) getenv("FIDDLER_ENABLE") == 1) {
+        if ((int) getenv(Env::FIDDLER_ENABLED) == 1) {
             $clientConfig["proxy"] = '127.0.0.1:8888';
         }
 

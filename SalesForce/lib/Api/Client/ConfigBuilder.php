@@ -2,6 +2,7 @@
 
 namespace SalesForce\MarketingCloud\Api\Client;
 
+use SalesForce\MarketingCloud\Env;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 /**
@@ -50,11 +51,11 @@ class ConfigBuilder
         // Set default config
         if (!$this->container->hasParameter("auth.client.options")) {
             $this->container->setParameter("auth.client.options", [
-                'accountId' => getenv('ACCOUNT_ID'),
-                'clientId' => getenv('CLIENT_ID'),
-                'clientSecret' => getenv('CLIENT_SECRET'),
-                'urlAuthorize' => getenv('URL_AUTHORIZE'),
-                'urlAccessToken' => getenv('URL_ACCESS_TOKEN'),
+                'accountId' => getenv(Env::ACCOUNT_ID),
+                'clientId' => getenv(Env::CLIENT_ID),
+                'clientSecret' => getenv(Env::CLIENT_SECRET),
+                'urlAuthorize' => getenv(Env::URL_AUTHORIZE),
+                'urlAccessToken' => getenv(Env::URL_ACCESS_TOKEN),
                 'urlResourceOwnerDetails' => ''
             ]);
         }
