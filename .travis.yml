@@ -2,31 +2,39 @@ language: php
 dist: bionic
 
 addons:
-    apt:
-        update: true
+  apt:
+    update: true
 
 branches:
-    only:
-        - master
-        - develop
-        - /^ci\/*.0$/
+  only:
+    - master
+    - develop
+    - /^feature\/.*$/
+    - /^release\/.*$/
+    - /^hotfix\/.*$/
+    - /^*.0$/
+    - /^ci\/*.0$/
 
 php:
-    - "7.3"
+  - "7.3"
 
 stages:
-    - test
+  - unit-test
+  - integration-test
 
 before_install:
-    - wget https://getcomposer.org/download/1.9.0/composer.phar
-    - sudo mv ${PWD}/composer.phar /usr/local/bin/composer
-    - sudo chmod +x /usr/local/bin/composer
+  - wget https://getcomposer.org/download/1.9.0/composer.phar
+  - sudo mv ${PWD}/composer.phar /usr/local/bin/composer
+  - sudo chmod +x /usr/local/bin/composer
 
 install:
-    - /usr/local/bin/composer install
+  - /usr/local/bin/composer install
 
 jobs:
-    include:
-        - stage: test
-          name: "Integration tests"
-          script: vendor/bin/phpunit --testsuite=php-sdk-auth,php-sdk-api
+  include:
+    - stage: unit-test
+      name: "Unit tests"
+      script: vendor/bin/phpunit --testsuite=php-sdk-auth
+    - stage: integration-test
+      name: "Integration tests"
+      script: vendor/bin/phpunit --testsuite=php-sdk-api
