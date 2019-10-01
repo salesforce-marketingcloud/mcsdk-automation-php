@@ -31,6 +31,7 @@ namespace SalesForce\MarketingCloud\Api;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
+use SalesForce\MarketingCloud\Api\Exception\ExceptionFactory;
 use SalesForce\MarketingCloud\Api\Exception\InvalidRequestException;
 use SalesForce\MarketingCloud\ApiException;
 use SalesForce\MarketingCloud\ObjectSerializer;
@@ -88,27 +89,17 @@ class AssetApi extends AbstractApi
                 /** @var \GuzzleHttp\Psr7\Response $response */
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
+                throw ExceptionFactory::create($e);
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
+                throw ExceptionFactory::create(new RequestException(sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $response->getStatusCode(),
+                    $request->getUri()
+                ), $request, $response));
             }
 
             $responseBody = $response->getBody();
@@ -378,27 +369,17 @@ class AssetApi extends AbstractApi
                 /** @var \GuzzleHttp\Psr7\Response $response */
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
+                throw ExceptionFactory::create($e);
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
+                throw ExceptionFactory::create(new RequestException(sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $response->getStatusCode(),
+                    $request->getUri()
+                ), $request, $response));
             }
 
             return [null, $statusCode, $response->getHeaders()];
@@ -638,27 +619,17 @@ class AssetApi extends AbstractApi
                 /** @var \GuzzleHttp\Psr7\Response $response */
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
+                throw ExceptionFactory::create($e);
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
+                throw ExceptionFactory::create(new RequestException(sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $response->getStatusCode(),
+                    $request->getUri()
+                ), $request, $response));
             }
 
             $responseBody = $response->getBody();
@@ -936,27 +907,17 @@ class AssetApi extends AbstractApi
                 /** @var \GuzzleHttp\Psr7\Response $response */
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
+                throw ExceptionFactory::create($e);
             }
 
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
+                throw ExceptionFactory::create(new RequestException(sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $response->getStatusCode(),
+                    $request->getUri()
+                ), $request, $response));
             }
 
             $responseBody = $response->getBody();
