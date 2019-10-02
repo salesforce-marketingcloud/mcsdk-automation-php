@@ -14,7 +14,6 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
  * @method self setAccountId(string $accountId)
  * @method self setClientId(string $clientId)
  * @method self setClientSecret(string $clientSecret)
- * @method self setAccessTokenUrl(string $accessTokenUrl)
  */
 class ConfigBuilder
 {
@@ -35,19 +34,29 @@ class ConfigBuilder
         'clientId' => GenericClient::OPT_CLIENT_ID,
         'clientSecret' => GenericClient::OPT_CLIENT_SECRET,
         'authBaseUrl' => GenericClient::OPT_AUTH_URL,
-        'accessTokenUrl' => GenericClient::OPT_ACCESS_TOKEN_URL,
         'resourceOwnerDetailsUrl' => GenericClient::OPT_RESOURCE_OWNER_DETAILS
     ];
 
     /**
-     * Converts the authorization base URL to a authorization full URL
+     * Creates the authorization URL
      *
      * @param string $baseUrl
      * @return string
      */
-    private static function convertToFullAuthUrl(string $baseUrl): string
+    private static function createAuthUrl(string $baseUrl): string
     {
-        return rtrim($baseUrl, '/') . '/authorize';
+        return rtrim($baseUrl, '/') . GenericClient::PATH_AUTH;
+    }
+
+    /**
+     * Creates the access token URL
+     *
+     * @param string $baseUrl
+     * @return string
+     */
+    private static function createAccessTokenUrl(string $baseUrl): string
+    {
+        return rtrim($baseUrl, '/') . GenericClient::PATH_TOKEN;
     }
 
     /**
@@ -84,8 +93,8 @@ class ConfigBuilder
             GenericClient::OPT_ACCOUNT_ID => getenv(Env::ACCOUNT_ID),
             GenericClient::OPT_CLIENT_ID => getenv(Env::CLIENT_ID),
             GenericClient::OPT_CLIENT_SECRET => getenv(Env::CLIENT_SECRET),
-            GenericClient::OPT_AUTH_URL => static::convertToFullAuthUrl(getenv(Env::AUTHORIZATION_BASE_URL)),
-            GenericClient::OPT_ACCESS_TOKEN_URL => getenv(Env::ACCESS_TOKEN_URL)
+            GenericClient::OPT_AUTH_URL => static::createAuthUrl(getenv(Env::AUTHORIZATION_BASE_URL)),
+            GenericClient::OPT_ACCESS_TOKEN_URL => static::createAccessTokenUrl(getenv(Env::AUTHORIZATION_BASE_URL))
         ];
 
         foreach ($options as $name => $value) {
@@ -98,12 +107,23 @@ class ConfigBuilder
     /**
      * Sets the authorization base URL
      *
-     * @param string $baseUrl
+     * @param string $authBaseUrl
      * @return $this
      */
-    public function setAuthBaseUrl(string $baseUrl): self
+    public function setAuthBaseUrl(string $authBaseUrl): self
     {
-        return $this->__call(__FUNCTION__, [static::convertToFullAuthUrl($baseUrl)]);
+        return $this->__call(__FUNCTION__, [static::createAuthUrl($authBaseUrl)]);
+    }
+
+    /**
+     * Sets the access token URL USING the authentication base URL
+     *
+     * @param string $authBaseUrl
+     * @return $this
+     */
+    public function setAccessTokenUrl(string $authBaseUrl): self
+    {
+        return $this->__call(__FUNCTION__, [static::createAccessTokenUrl($authBaseUrl)]);
     }
 
     /**

@@ -20,7 +20,6 @@ final class Env
     const CLIENT_ID = "SFMC_CLIENT_ID";
     const CLIENT_SECRET = "SFMC_CLIENT_SECRET";
     const AUTHORIZATION_BASE_URL = "SFMC_AUTH_BASE_URL";
-    const ACCESS_TOKEN_URL = "SFMC_ACCESS_TOKEN_URL";
 
     # Endpoint specific variables
     const SHORT_CODE = "SFMC_SHORT_CODE";
