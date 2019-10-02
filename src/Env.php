@@ -19,8 +19,8 @@ final class Env
     const ACCOUNT_ID = "SFMC_ACCOUNT_ID";
     const CLIENT_ID = "SFMC_CLIENT_ID";
     const CLIENT_SECRET = "SFMC_CLIENT_SECRET";
-    const URL_AUTHORIZE = "SFMC_AUTH_BASE_URL";
-    const URL_ACCESS_TOKEN = self::URL_AUTHORIZE;
+    const AUTHORIZATION_BASE_URL = "SFMC_AUTH_BASE_URL";
+    const ACCESS_TOKEN_URL = self::AUTHORIZATION_BASE_URL;
 
     # Endpoint specific variables
     const SHORT_CODE = "SFMC_SHORT_CODE";

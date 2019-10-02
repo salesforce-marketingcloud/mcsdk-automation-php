@@ -54,8 +54,8 @@ class ConfigBuilder
                 'accountId' => getenv(Env::ACCOUNT_ID),
                 'clientId' => getenv(Env::CLIENT_ID),
                 'clientSecret' => getenv(Env::CLIENT_SECRET),
-                'urlAuthorize' => getenv(Env::URL_AUTHORIZE),
-                'urlAccessToken' => getenv(Env::URL_ACCESS_TOKEN),
+                'urlAuthorize' => getenv(Env::AUTHORIZATION_BASE_URL),
+                'urlAccessToken' => getenv(Env::ACCESS_TOKEN_URL),
                 'urlResourceOwnerDetails' => ''
             ]);
         }
