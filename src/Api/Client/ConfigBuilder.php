@@ -13,8 +13,8 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
  * @method self setAccountId(string $accountId)
  * @method self setClientId(string $clientId)
  * @method self setClientSecret(string $clientSecret)
- * @method self setAuthBaseUrl(string $authBaseUrl)
- * @method self setAccessTokenUrl(string $accessTokenUrl)
+ * @method self setUrlAuthorize(string $urlAuthorize)
+ * @method self setUrlAccessToken(string $urlAccessToken)
  * @method self setUrlResourceOwnerDetails(string $urlResourceOwnerDetails)
  */
 class ConfigBuilder
@@ -54,8 +54,8 @@ class ConfigBuilder
                 'accountId' => getenv(Env::ACCOUNT_ID),
                 'clientId' => getenv(Env::CLIENT_ID),
                 'clientSecret' => getenv(Env::CLIENT_SECRET),
-                'authBaseUrl' => getenv(Env::URL_AUTHORIZE),
-                'accessTokenUrl' => getenv(Env::URL_ACCESS_TOKEN),
+                'urlAuthorize' => getenv(Env::URL_AUTHORIZE),
+                'urlAccessToken' => getenv(Env::URL_ACCESS_TOKEN),
                 'urlResourceOwnerDetails' => ''
             ]);
         }
