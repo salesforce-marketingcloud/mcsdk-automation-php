@@ -36,8 +36,19 @@ class ConfigBuilder
         'clientSecret' => GenericClient::OPT_CLIENT_SECRET,
         'authBaseUrl' => GenericClient::OPT_AUTH_URL,
         'accessTokenUrl' => GenericClient::OPT_ACCESS_TOKEN_URL,
-        'resourceOwnerDetailsUrl' => GenericClient::OPT_RESOURCE_OWNER_DETAILS,
+        'resourceOwnerDetailsUrl' => GenericClient::OPT_RESOURCE_OWNER_DETAILS
     ];
+
+    /**
+     * Converts the authorization base URL to a authorization full URL
+     *
+     * @param string $baseUrl
+     * @return string
+     */
+    private static function convertToFullAuthUrl(string $baseUrl): string
+    {
+        return rtrim($baseUrl, '/') . '/authorize';
+    }
 
     /**
      * ConfigBuilder constructor.
@@ -48,6 +59,13 @@ class ConfigBuilder
     public function __construct(ContainerBuilder $container = null, bool $useDefaults = false)
     {
         $this->container = $container ?? new ContainerBuilder();
+
+        // Sets some defaults
+        if (!$this->container->hasParameter("auth.client.options")) {
+            $this->container->setParameter("auth.client.options", [
+                GenericClient::OPT_RESOURCE_OWNER_DETAILS => ''
+            ]);
+        }
 
         if ($useDefaults) {
             $this->setFromEnv();
@@ -62,35 +80,19 @@ class ConfigBuilder
     public function setFromEnv(): self
     {
         // Set default config
-        if (!$this->container->hasParameter("auth.client.options")) {
-            $this->container->setParameter("auth.client.options", []);
+        $options = [
+            GenericClient::OPT_ACCOUNT_ID => getenv(Env::ACCOUNT_ID),
+            GenericClient::OPT_CLIENT_ID => getenv(Env::CLIENT_ID),
+            GenericClient::OPT_CLIENT_SECRET => getenv(Env::CLIENT_SECRET),
+            GenericClient::OPT_AUTH_URL => static::convertToFullAuthUrl(getenv(Env::AUTHORIZATION_BASE_URL)),
+            GenericClient::OPT_ACCESS_TOKEN_URL => getenv(Env::ACCESS_TOKEN_URL)
+        ];
 
-            $options = [
-                GenericClient::OPT_ACCOUNT_ID => getenv(Env::ACCOUNT_ID),
-                GenericClient::OPT_CLIENT_ID => getenv(Env::CLIENT_ID),
-                GenericClient::OPT_CLIENT_SECRET => getenv(Env::CLIENT_SECRET),
-                'authBaseUrl' => getenv(Env::AUTHORIZATION_BASE_URL),
-                GenericClient::OPT_ACCESS_TOKEN_URL => getenv(Env::ACCESS_TOKEN_URL),
-                GenericClient::OPT_RESOURCE_OWNER_DETAILS => ''
-            ];
-
-            foreach ($options as $option => $value) {
-                $this->{'set' . ucfirst($option)}($value);
-            }
+        foreach ($options as $name => $value) {
+            $this->{"set" . ucfirst($name)}($value);
         }
 
         return $this;
-    }
-
-    /**
-     * Converts the authorization base URL to a authorization full URL
-     *
-     * @param string $baseUrl
-     * @return string
-     */
-    private static function convertToFullAuthUrl(string $baseUrl): string
-    {
-        return rtrim($baseUrl, '/') . '/authorize';
     }
 
     /**
