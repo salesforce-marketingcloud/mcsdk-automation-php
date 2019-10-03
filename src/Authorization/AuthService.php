@@ -19,8 +19,6 @@ use Symfony\Component\EventDispatcher\EventDispatcher;
  */
 class AuthService implements CacheAwareInterface, AuthServiceInterface
 {
-    const CONTAINER_ID = "auth.service";
-
     /**
      * @var CacheItemPoolInterface
      */

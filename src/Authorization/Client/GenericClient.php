@@ -2,12 +2,9 @@
 
 namespace SalesForce\MarketingCloud\Authorization\Client;
 
-use GuzzleHttp\Exception\BadResponseException;
 use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
 use League\OAuth2\Client\Provider\GenericProvider;
 use League\OAuth2\Client\Token\AccessTokenInterface;
-use Psr\Http\Message\RequestInterface;
-use Psr\Http\Message\ResponseInterface;
 use SalesForce\MarketingCloud\Authorization\Client\Tool\RequestFactory;
 use UnexpectedValueException;
 
@@ -18,6 +15,17 @@ use UnexpectedValueException;
  */
 class GenericClient extends GenericProvider
 {
+    const PATH_AUTH = '/authorize';
+    const PATH_TOKEN = '/v2/token';
+
+    // List of configuration options
+    const OPT_ACCOUNT_ID = 'accountId';
+    const OPT_CLIENT_ID = 'clientId';
+    const OPT_CLIENT_SECRET = 'clientSecret';
+    const OPT_AUTH_URL = 'urlAuthorize';
+    const OPT_ACCESS_TOKEN_URL = 'urlAccessToken';
+    const OPT_RESOURCE_OWNER_DETAILS = 'urlResourceOwnerDetails';
+
     /**
      * GenericClient constructor.
      *
@@ -64,7 +72,7 @@ class GenericClient extends GenericProvider
 
         if (false === is_array($response)) {
             throw new UnexpectedValueException(
-                'Invalid response received from Authorization Server. Expected JSON.'
+                'Invalid response received from Authorization Server. Expected JSON. Response: ' . $response
             );
         }
 
