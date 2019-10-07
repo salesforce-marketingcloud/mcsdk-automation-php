@@ -54,33 +54,14 @@ try {
 
 Please *note* that the configuration in this scenario is taken from the environment variables.
 
-#### Setting the configuration from code using the service container
-```php
-use Symfony\Component\DependencyInjection\ContainerBuilder;
-
-$container = new ContainerBuilder();
-$container->setParameter("auth.client.options", [
-    'accountId' => 'accountId',
-    'clientId' => 'clientId',
-    'clientSecret' => 'clientSecret',
-    'urlAuthorize' => 'authorizationUrl',
-    'urlAccessToken' => 'This can be the same as the urlAuthorize parameter',
-    'urlResourceOwnerDetails' => ''
-]);
-
-
-$client = new \Api\Client($container, null, false);
-$assetApi = $client->getAssetApi();
-
-$asset = new SalesForce\MarketingCloud\Model\Asset();
-
-try {
-    $result = $assetApi->createAsset($asset);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling AssetApi->createAsset: ', $e->getMessage(), PHP_EOL;
-}
-```
+*Environment variables:*
+SFMC_ACCOUNT_ID
+SFMC_AUTH_BASE_URL  (this is the urlAuthorize below)
+SFMC_CLIENT_ID
+SFMC_CLIENT_SECRET
+SFMC_COUNTRY_CODE   (eg: US)
+SFMC_KEYWORD        (SMS keyword)
+SFMC_SHORT_CODE     (SMS short code)
 
 #### Setting the configuration from code using the configuration builder
 ```php
@@ -92,9 +73,9 @@ $config = $client->getConfig();
 $config->setAccountId('accountId')
     ->setClientId('clientId')
     ->setClientSecret('clientSecret')
-    ->setUrlAuthorize('urlAuthorize')
-    ->setUrlAccessToken('This can be the same as the urlAuthorize parameter')
-    ->setUrlResourceOwnerDetails('');
+    ->setAuthBaseUrl('Set it the same as urlAccessToken')
+    ->setAccessTokenUrl('Authorization URL')
+    ->setResourceOwnerDetailsUrl('');
 
 $assetApi = $client->getAssetApi();
 $asset = new SalesForce\MarketingCloud\Model\Asset();
