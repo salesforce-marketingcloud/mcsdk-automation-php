@@ -55,13 +55,13 @@ try {
 Please *note* that the configuration in this scenario is taken from the environment variables.
 
 *Environment variables:*
-*SFMC_ACCOUNT_ID
-*SFMC_AUTH_BASE_URL  (this is the urlAuthorize below)
-*SFMC_CLIENT_ID
-*SFMC_CLIENT_SECRET
-*SFMC_COUNTRY_CODE   (eg: US)
-*SFMC_KEYWORD        (SMS keyword)
-*SFMC_SHORT_CODE     (SMS short code)
+* SFMC_ACCOUNT_ID
+* SFMC_AUTH_BASE_URL  (this is the urlAuthorize below)
+* SFMC_CLIENT_ID
+* SFMC_CLIENT_SECRET
+* SFMC_COUNTRY_CODE   (eg: US)
+* SFMC_KEYWORD        (SMS keyword)
+* SFMC_SHORT_CODE     (SMS short code)
 
 #### Setting the configuration from code using the configuration builder
 ```php
