@@ -39,7 +39,7 @@ Please follow the [installation procedure](#installation--usage) and then run th
 #### Basic usage
 ```php
 
-$client = new \Api\Client();
+$client = new SalesForce\MarketingCloud\Api\Client();
 $assetApi = $client->getAssetApi();
 
 $asset = new SalesForce\MarketingCloud\Model\Asset();
@@ -67,7 +67,7 @@ Please *note* that the configuration in this scenario is taken from the environm
 ```php
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-$client = new \Api\Client(null, null, false);
+$client = new SalesForce\MarketingCloud\Api\Client(null, null, false);
 
 $config = $client->getConfig();
 $config->setAccountId('accountId')
