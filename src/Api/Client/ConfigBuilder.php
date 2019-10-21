@@ -112,7 +112,7 @@ class ConfigBuilder
      */
     public function setAuthBaseUrl(string $authBaseUrl): self
     {
-        return $this->__call(__FUNCTION__, [static::createAuthUrl($authBaseUrl)]);
+        return $this->__call(GenericClient::OPT_AUTH_URL, [static::createAuthUrl($authBaseUrl)]);
     }
 
     /**
@@ -123,7 +123,7 @@ class ConfigBuilder
      */
     public function setAccessTokenUrl(string $authBaseUrl): self
     {
-        return $this->__call(__FUNCTION__, [static::createAccessTokenUrl($authBaseUrl)]);
+        return $this->__call(GenericClient::OPT_ACCESS_TOKEN_URL, [static::createAccessTokenUrl($authBaseUrl)]);
     }
 
     /**
