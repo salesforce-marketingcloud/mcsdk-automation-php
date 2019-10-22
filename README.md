@@ -26,7 +26,7 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
     }
   ],
   "require": {
-    "sfadincescu/mcsdk-automation-php": 1.0.0"
+    "sfadincescu/mcsdk-automation-php": "1.0.0"
   }
 }
 ```

@@ -917,7 +917,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **definitionKey** | **string**| Unique identifier of the definition. |
- **body** | [**\SalesForce\MarketingCloud\Model\UpdateSmsDefinitionRequest**](../Model/UpdateSmsDefinitionRequest.md)| JSON Parameters | [optional]
+ **body** | [**\SalesForce\MarketingCloud\Model\UpdateSmsDefinitionRequest**](../Model/UpdateSmsDefinitionRequest.md)| JSON Parameters |
 
 ### Return type
 

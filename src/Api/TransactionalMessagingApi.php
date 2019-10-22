@@ -5134,14 +5134,14 @@ class TransactionalMessagingApi extends AbstractApi
      * partiallyUpdateSmsDefinition
      *
      * @param  string $definitionKey Unique identifier of the definition. (required)
-     * @param  \SalesForce\MarketingCloud\Model\UpdateSmsDefinitionRequest $body JSON Parameters (optional)
+     * @param  \SalesForce\MarketingCloud\Model\UpdateSmsDefinitionRequest $body JSON Parameters (required)
      *
      * @throws \InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \SalesForce\MarketingCloud\ApiException on non-2xx response
      * @return \SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest
      */
-    public function partiallyUpdateSmsDefinition(string $definitionKey, \SalesForce\MarketingCloud\Model\UpdateSmsDefinitionRequest $body = null)
+    public function partiallyUpdateSmsDefinition(string $definitionKey, \SalesForce\MarketingCloud\Model\UpdateSmsDefinitionRequest $body)
     {
         list($response) = $this->partiallyUpdateSmsDefinitionWithHttpInfo($definitionKey, $body);
         return $response;
@@ -5153,14 +5153,14 @@ class TransactionalMessagingApi extends AbstractApi
      * partiallyUpdateSmsDefinition
      *
      * @param  string $definitionKey Unique identifier of the definition. (required)
-     * @param  \SalesForce\MarketingCloud\Model\UpdateSmsDefinitionRequest $body JSON Parameters (optional)
+     * @param  \SalesForce\MarketingCloud\Model\UpdateSmsDefinitionRequest $body JSON Parameters (required)
      *
      * @return array of \SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest, HTTP status code, HTTP response headers (array of strings)
      * @throws \InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \SalesForce\MarketingCloud\ApiException on non-2xx response
      */
-    public function partiallyUpdateSmsDefinitionWithHttpInfo(string $definitionKey, \SalesForce\MarketingCloud\Model\UpdateSmsDefinitionRequest $body = null)
+    public function partiallyUpdateSmsDefinitionWithHttpInfo(string $definitionKey, \SalesForce\MarketingCloud\Model\UpdateSmsDefinitionRequest $body)
     {
         $returnType = '\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest';
         $request = $this->partiallyUpdateSmsDefinitionRequest($definitionKey, $body);
@@ -5245,13 +5245,13 @@ class TransactionalMessagingApi extends AbstractApi
      * partiallyUpdateSmsDefinition
      *
      * @param  string $definitionKey Unique identifier of the definition. (required)
-     * @param  \SalesForce\MarketingCloud\Model\UpdateSmsDefinitionRequest $body JSON Parameters (optional)
+     * @param  \SalesForce\MarketingCloud\Model\UpdateSmsDefinitionRequest $body JSON Parameters (required)
      *
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
      * @throws Exception\ClientUnauthorizedException
      */
-    public function partiallyUpdateSmsDefinitionAsync(string $definitionKey, \SalesForce\MarketingCloud\Model\UpdateSmsDefinitionRequest $body = null)
+    public function partiallyUpdateSmsDefinitionAsync(string $definitionKey, \SalesForce\MarketingCloud\Model\UpdateSmsDefinitionRequest $body)
     {
         return $this->partiallyUpdateSmsDefinitionAsyncWithHttpInfo($definitionKey, $body)
             ->then(
@@ -5267,13 +5267,13 @@ class TransactionalMessagingApi extends AbstractApi
      * partiallyUpdateSmsDefinition
      *
      * @param  string $definitionKey Unique identifier of the definition. (required)
-     * @param  \SalesForce\MarketingCloud\Model\UpdateSmsDefinitionRequest $body JSON Parameters (optional)
+     * @param  \SalesForce\MarketingCloud\Model\UpdateSmsDefinitionRequest $body JSON Parameters (required)
      *
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws Exception\ClientUnauthorizedException
      * @throws \InvalidArgumentException
      */
-    public function partiallyUpdateSmsDefinitionAsyncWithHttpInfo(string $definitionKey, \SalesForce\MarketingCloud\Model\UpdateSmsDefinitionRequest $body = null)
+    public function partiallyUpdateSmsDefinitionAsyncWithHttpInfo(string $definitionKey, \SalesForce\MarketingCloud\Model\UpdateSmsDefinitionRequest $body)
     {
         $returnType = '\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest';
         $request = $this->partiallyUpdateSmsDefinitionRequest($definitionKey, $body);
@@ -5322,13 +5322,13 @@ class TransactionalMessagingApi extends AbstractApi
      * Create request for operation 'partiallyUpdateSmsDefinition'
      *
      * @param  string $definitionKey Unique identifier of the definition. (required)
-     * @param  \SalesForce\MarketingCloud\Model\UpdateSmsDefinitionRequest $body JSON Parameters (optional)
+     * @param  \SalesForce\MarketingCloud\Model\UpdateSmsDefinitionRequest $body JSON Parameters (required)
      *
      * @throws \InvalidArgumentException
      * @throws Exception\ClientUnauthorizedException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function partiallyUpdateSmsDefinitionRequest(string $definitionKey, \SalesForce\MarketingCloud\Model\UpdateSmsDefinitionRequest $body = null)
+    protected function partiallyUpdateSmsDefinitionRequest(string $definitionKey, \SalesForce\MarketingCloud\Model\UpdateSmsDefinitionRequest $body)
     {
         if (isset($body) && !$body->valid()) {
             throw new InvalidRequestException($body, "The request data is invalid");
@@ -5340,6 +5340,12 @@ class TransactionalMessagingApi extends AbstractApi
         if ($definitionKey === null || (is_array($definitionKey) && count($definitionKey) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $definitionKey when calling partiallyUpdateSmsDefinition'
+            );
+        }
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling partiallyUpdateSmsDefinition'
             );
         }
 
