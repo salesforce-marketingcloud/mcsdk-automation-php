@@ -372,7 +372,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getEmailDefinitions**
-> \SalesForce\MarketingCloud\Model\GetEmailDefinitionsResponse getEmailDefinitions($status, $pageSize, $page, $orderBy)
+> \SalesForce\MarketingCloud\Model\GetEmailDefinitionsResponse getEmailDefinitions($filter, $pageSize, $page, $orderBy)
 
 getEmailDefinitions
 
@@ -388,13 +388,13 @@ $apiInstance = new SalesForce\MarketingCloud\Api\TransactionalMessagingApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$status = "status_example"; // string | Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq.
+$filter = "filter_example"; // string | Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq.
 $pageSize = 8.14; // float | Number of definitions, which are array elements, to return per paged response.
 $page = 8.14; // float | Page number to return.
 $orderBy = "orderBy_example"; // string | Sort by a dimension. You can sort by only one dimension. Accepted values are definitionKey, name, createdDate, modifiedDate, and status.
 
 try {
-    $result = $apiInstance->getEmailDefinitions($status, $pageSize, $page, $orderBy);
+    $result = $apiInstance->getEmailDefinitions($filter, $pageSize, $page, $orderBy);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionalMessagingApi->getEmailDefinitions: ', $e->getMessage(), PHP_EOL;
@@ -406,7 +406,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **status** | **string**| Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq. | [optional]
+ **filter** | **string**| Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq. | [optional]
  **pageSize** | **float**| Number of definitions, which are array elements, to return per paged response. | [optional]
  **page** | **float**| Page number to return. | [optional]
  **orderBy** | **string**| Sort by a dimension. You can sort by only one dimension. Accepted values are definitionKey, name, createdDate, modifiedDate, and status. | [optional]
@@ -729,7 +729,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSmsDefinitions**
-> \SalesForce\MarketingCloud\Model\GetSmsDefinitionsResponse getSmsDefinitions($status, $pageSize, $page, $orderBy)
+> \SalesForce\MarketingCloud\Model\GetSmsDefinitionsResponse getSmsDefinitions($filter, $pageSize, $page, $orderBy)
 
 getSmsDefinitions
 
@@ -745,13 +745,13 @@ $apiInstance = new SalesForce\MarketingCloud\Api\TransactionalMessagingApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$status = "status_example"; // string | Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq.
+$filter = "filter_example"; // string | Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq.
 $pageSize = 8.14; // float | Number of definitions, which are array elements, to return per paged response.
 $page = 8.14; // float | Page number to return.
 $orderBy = "orderBy_example"; // string | Sort by a dimension. You can sort by only one dimension. Accepted values are definitionKey, name, createdDate, modifiedDate, and status.
 
 try {
-    $result = $apiInstance->getSmsDefinitions($status, $pageSize, $page, $orderBy);
+    $result = $apiInstance->getSmsDefinitions($filter, $pageSize, $page, $orderBy);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionalMessagingApi->getSmsDefinitions: ', $e->getMessage(), PHP_EOL;
@@ -763,7 +763,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **status** | **string**| Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq. | [optional]
+ **filter** | **string**| Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq. | [optional]
  **pageSize** | **float**| Number of definitions, which are array elements, to return per paged response. | [optional]
  **page** | **float**| Page number to return. | [optional]
  **orderBy** | **string**| Sort by a dimension. You can sort by only one dimension. Accepted values are definitionKey, name, createdDate, modifiedDate, and status. | [optional]

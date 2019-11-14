@@ -22,11 +22,11 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
   "repositories": [
     {
       "type": "git",
-      "url": "https://github.com/sfadincescu/mcsdk-automation-php.git"
+      "url": "https://github.com/salesforce-marketingcloud/mcsdk-automation-php.git"
     }
   ],
   "require": {
-    "sfadincescu/mcsdk-automation-php": "1.0.0"
+    "salesforce-marketingcloud/mcsdk-automation-php": "1.0.0"
   }
 }
 ```
