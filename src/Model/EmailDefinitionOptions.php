@@ -1,6 +1,6 @@
 <?php
 /**
- * GetEmailDefinitionsResponse
+ * EmailDefinitionOptions
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SalesForce\MarketingCloud\ObjectSerializer;
 
 /**
- * GetEmailDefinitionsResponse Class Doc Comment
+ * EmailDefinitionOptions Class Doc Comment
  *
  * @category Class
  * @package  SalesForce\MarketingCloud
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetEmailDefinitionsResponse implements ModelInterface, ArrayAccess
+class EmailDefinitionOptions implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class GetEmailDefinitionsResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetEmailDefinitionsResponse';
+    protected static $swaggerModelName = 'EmailDefinitionOptions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,11 +57,7 @@ class GetEmailDefinitionsResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'requestId' => 'string',
-        'definitions' => '\SalesForce\MarketingCloud\Model\EmailDefinition[]',
-        'count' => 'int',
-        'page' => 'int',
-        'pageSize' => 'int'
+        'trackLinks' => 'bool'
     ];
 
     /**
@@ -70,11 +66,7 @@ class GetEmailDefinitionsResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'requestId' => null,
-        'definitions' => null,
-        'count' => null,
-        'page' => null,
-        'pageSize' => null
+        'trackLinks' => null
     ];
 
     /**
@@ -104,11 +96,7 @@ class GetEmailDefinitionsResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'requestId' => 'requestId',
-        'definitions' => 'definitions',
-        'count' => 'count',
-        'page' => 'page',
-        'pageSize' => 'pageSize'
+        'trackLinks' => 'trackLinks'
     ];
 
     /**
@@ -117,11 +105,7 @@ class GetEmailDefinitionsResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'requestId' => 'setRequestId',
-        'definitions' => 'setDefinitions',
-        'count' => 'setCount',
-        'page' => 'setPage',
-        'pageSize' => 'setPageSize'
+        'trackLinks' => 'setTrackLinks'
     ];
 
     /**
@@ -130,11 +114,7 @@ class GetEmailDefinitionsResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'requestId' => 'getRequestId',
-        'definitions' => 'getDefinitions',
-        'count' => 'getCount',
-        'page' => 'getPage',
-        'pageSize' => 'getPageSize'
+        'trackLinks' => 'getTrackLinks'
     ];
 
     /**
@@ -197,11 +177,7 @@ class GetEmailDefinitionsResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['requestId'] = isset($data['requestId']) ? $data['requestId'] : null;
-        $this->container['definitions'] = isset($data['definitions']) ? $data['definitions'] : null;
-        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
-        $this->container['page'] = isset($data['page']) ? $data['page'] : null;
-        $this->container['pageSize'] = isset($data['pageSize']) ? $data['pageSize'] : null;
+        $this->container['trackLinks'] = isset($data['trackLinks']) ? $data['trackLinks'] : null;
     }
 
     /**
@@ -229,121 +205,25 @@ class GetEmailDefinitionsResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets requestId
+     * Gets trackLinks
      *
-     * @return string
+     * @return bool
      */
-    public function getRequestId()
+    public function getTrackLinks()
     {
-        return $this->container['requestId'];
+        return $this->container['trackLinks'];
     }
 
     /**
-     * Sets requestId
+     * Sets trackLinks
      *
-     * @param string $requestId The ID of the request
+     * @param bool $trackLinks Wraps links for tracking and reporting. Default is true.
      *
      * @return $this
      */
-    public function setRequestId($requestId)
+    public function setTrackLinks($trackLinks)
     {
-        $this->container['requestId'] = $requestId;
-
-        return $this;
-    }
-
-    /**
-     * Gets definitions
-     *
-     * @return \SalesForce\MarketingCloud\Model\EmailDefinition[]
-     */
-    public function getDefinitions()
-    {
-        return $this->container['definitions'];
-    }
-
-    /**
-     * Sets definitions
-     *
-     * @param \SalesForce\MarketingCloud\Model\EmailDefinition[] $definitions definitions
-     *
-     * @return $this
-     */
-    public function setDefinitions($definitions)
-    {
-        $this->container['definitions'] = $definitions;
-
-        return $this;
-    }
-
-    /**
-     * Gets count
-     *
-     * @return int
-     */
-    public function getCount()
-    {
-        return $this->container['count'];
-    }
-
-    /**
-     * Sets count
-     *
-     * @param int $count Number of pages
-     *
-     * @return $this
-     */
-    public function setCount($count)
-    {
-        $this->container['count'] = $count;
-
-        return $this;
-    }
-
-    /**
-     * Gets page
-     *
-     * @return int
-     */
-    public function getPage()
-    {
-        return $this->container['page'];
-    }
-
-    /**
-     * Sets page
-     *
-     * @param int $page Page number to return.
-     *
-     * @return $this
-     */
-    public function setPage($page)
-    {
-        $this->container['page'] = $page;
-
-        return $this;
-    }
-
-    /**
-     * Gets pageSize
-     *
-     * @return int
-     */
-    public function getPageSize()
-    {
-        return $this->container['pageSize'];
-    }
-
-    /**
-     * Sets pageSize
-     *
-     * @param int $pageSize Number of definitions, which are array elements, to return per paged response.
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->container['pageSize'] = $pageSize;
+        $this->container['trackLinks'] = $trackLinks;
 
         return $this;
     }

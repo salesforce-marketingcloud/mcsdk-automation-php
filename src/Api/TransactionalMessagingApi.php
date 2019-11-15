@@ -53,14 +53,14 @@ class TransactionalMessagingApi extends AbstractApi
      *
      * createEmailDefinition
      *
-     * @param  \SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest $body JSON Parameters (required)
+     * @param  \SalesForce\MarketingCloud\Model\EmailDefinition $body JSON Parameters (required)
      *
      * @throws \InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \SalesForce\MarketingCloud\ApiException on non-2xx response
-     * @return \SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest
+     * @return \SalesForce\MarketingCloud\Model\EmailDefinition
      */
-    public function createEmailDefinition(\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest $body)
+    public function createEmailDefinition(\SalesForce\MarketingCloud\Model\EmailDefinition $body)
     {
         list($response) = $this->createEmailDefinitionWithHttpInfo($body);
         return $response;
@@ -71,16 +71,16 @@ class TransactionalMessagingApi extends AbstractApi
      *
      * createEmailDefinition
      *
-     * @param  \SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest $body JSON Parameters (required)
+     * @param  \SalesForce\MarketingCloud\Model\EmailDefinition $body JSON Parameters (required)
      *
-     * @return array of \SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SalesForce\MarketingCloud\Model\EmailDefinition, HTTP status code, HTTP response headers (array of strings)
      * @throws \InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \SalesForce\MarketingCloud\ApiException on non-2xx response
      */
-    public function createEmailDefinitionWithHttpInfo(\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest $body)
+    public function createEmailDefinitionWithHttpInfo(\SalesForce\MarketingCloud\Model\EmailDefinition $body)
     {
-        $returnType = '\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest';
+        $returnType = '\SalesForce\MarketingCloud\Model\EmailDefinition';
         $request = $this->createEmailDefinitionRequest($body);
 
         try {
@@ -123,7 +123,7 @@ class TransactionalMessagingApi extends AbstractApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest',
+                        '\SalesForce\MarketingCloud\Model\EmailDefinition',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -170,13 +170,13 @@ class TransactionalMessagingApi extends AbstractApi
      *
      * createEmailDefinition
      *
-     * @param  \SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest $body JSON Parameters (required)
+     * @param  \SalesForce\MarketingCloud\Model\EmailDefinition $body JSON Parameters (required)
      *
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
      * @throws Exception\ClientUnauthorizedException
      */
-    public function createEmailDefinitionAsync(\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest $body)
+    public function createEmailDefinitionAsync(\SalesForce\MarketingCloud\Model\EmailDefinition $body)
     {
         return $this->createEmailDefinitionAsyncWithHttpInfo($body)
             ->then(
@@ -191,15 +191,15 @@ class TransactionalMessagingApi extends AbstractApi
      *
      * createEmailDefinition
      *
-     * @param  \SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest $body JSON Parameters (required)
+     * @param  \SalesForce\MarketingCloud\Model\EmailDefinition $body JSON Parameters (required)
      *
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws Exception\ClientUnauthorizedException
      * @throws \InvalidArgumentException
      */
-    public function createEmailDefinitionAsyncWithHttpInfo(\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest $body)
+    public function createEmailDefinitionAsyncWithHttpInfo(\SalesForce\MarketingCloud\Model\EmailDefinition $body)
     {
-        $returnType = '\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest';
+        $returnType = '\SalesForce\MarketingCloud\Model\EmailDefinition';
         $request = $this->createEmailDefinitionRequest($body);
 
         return $this->client
@@ -245,13 +245,13 @@ class TransactionalMessagingApi extends AbstractApi
     /**
      * Create request for operation 'createEmailDefinition'
      *
-     * @param  \SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest $body JSON Parameters (required)
+     * @param  \SalesForce\MarketingCloud\Model\EmailDefinition $body JSON Parameters (required)
      *
      * @throws \InvalidArgumentException
      * @throws Exception\ClientUnauthorizedException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createEmailDefinitionRequest(\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest $body)
+    protected function createEmailDefinitionRequest(\SalesForce\MarketingCloud\Model\EmailDefinition $body)
     {
         if (isset($body) && !$body->valid()) {
             throw new InvalidRequestException($body, "The request data is invalid");
@@ -350,14 +350,14 @@ class TransactionalMessagingApi extends AbstractApi
      *
      * createSmsDefinition
      *
-     * @param  \SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest $body JSON Parameters (required)
+     * @param  \SalesForce\MarketingCloud\Model\SmsDefinition $body JSON Parameters (required)
      *
      * @throws \InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \SalesForce\MarketingCloud\ApiException on non-2xx response
-     * @return \SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest
+     * @return \SalesForce\MarketingCloud\Model\SmsDefinition
      */
-    public function createSmsDefinition(\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest $body)
+    public function createSmsDefinition(\SalesForce\MarketingCloud\Model\SmsDefinition $body)
     {
         list($response) = $this->createSmsDefinitionWithHttpInfo($body);
         return $response;
@@ -368,16 +368,16 @@ class TransactionalMessagingApi extends AbstractApi
      *
      * createSmsDefinition
      *
-     * @param  \SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest $body JSON Parameters (required)
+     * @param  \SalesForce\MarketingCloud\Model\SmsDefinition $body JSON Parameters (required)
      *
-     * @return array of \SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SalesForce\MarketingCloud\Model\SmsDefinition, HTTP status code, HTTP response headers (array of strings)
      * @throws \InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \SalesForce\MarketingCloud\ApiException on non-2xx response
      */
-    public function createSmsDefinitionWithHttpInfo(\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest $body)
+    public function createSmsDefinitionWithHttpInfo(\SalesForce\MarketingCloud\Model\SmsDefinition $body)
     {
-        $returnType = '\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest';
+        $returnType = '\SalesForce\MarketingCloud\Model\SmsDefinition';
         $request = $this->createSmsDefinitionRequest($body);
 
         try {
@@ -420,7 +420,7 @@ class TransactionalMessagingApi extends AbstractApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest',
+                        '\SalesForce\MarketingCloud\Model\SmsDefinition',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -467,13 +467,13 @@ class TransactionalMessagingApi extends AbstractApi
      *
      * createSmsDefinition
      *
-     * @param  \SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest $body JSON Parameters (required)
+     * @param  \SalesForce\MarketingCloud\Model\SmsDefinition $body JSON Parameters (required)
      *
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
      * @throws Exception\ClientUnauthorizedException
      */
-    public function createSmsDefinitionAsync(\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest $body)
+    public function createSmsDefinitionAsync(\SalesForce\MarketingCloud\Model\SmsDefinition $body)
     {
         return $this->createSmsDefinitionAsyncWithHttpInfo($body)
             ->then(
@@ -488,15 +488,15 @@ class TransactionalMessagingApi extends AbstractApi
      *
      * createSmsDefinition
      *
-     * @param  \SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest $body JSON Parameters (required)
+     * @param  \SalesForce\MarketingCloud\Model\SmsDefinition $body JSON Parameters (required)
      *
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws Exception\ClientUnauthorizedException
      * @throws \InvalidArgumentException
      */
-    public function createSmsDefinitionAsyncWithHttpInfo(\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest $body)
+    public function createSmsDefinitionAsyncWithHttpInfo(\SalesForce\MarketingCloud\Model\SmsDefinition $body)
     {
-        $returnType = '\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest';
+        $returnType = '\SalesForce\MarketingCloud\Model\SmsDefinition';
         $request = $this->createSmsDefinitionRequest($body);
 
         return $this->client
@@ -542,13 +542,13 @@ class TransactionalMessagingApi extends AbstractApi
     /**
      * Create request for operation 'createSmsDefinition'
      *
-     * @param  \SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest $body JSON Parameters (required)
+     * @param  \SalesForce\MarketingCloud\Model\SmsDefinition $body JSON Parameters (required)
      *
      * @throws \InvalidArgumentException
      * @throws Exception\ClientUnauthorizedException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createSmsDefinitionRequest(\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest $body)
+    protected function createSmsDefinitionRequest(\SalesForce\MarketingCloud\Model\SmsDefinition $body)
     {
         if (isset($body) && !$body->valid()) {
             throw new InvalidRequestException($body, "The request data is invalid");
@@ -1828,7 +1828,7 @@ class TransactionalMessagingApi extends AbstractApi
      * @throws \InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \SalesForce\MarketingCloud\ApiException on non-2xx response
-     * @return \SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest
+     * @return \SalesForce\MarketingCloud\Model\EmailDefinition
      */
     public function getEmailDefinition(string $definitionKey)
     {
@@ -1843,14 +1843,14 @@ class TransactionalMessagingApi extends AbstractApi
      *
      * @param  string $definitionKey Unique identifier of the definition to get (required)
      *
-     * @return array of \SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SalesForce\MarketingCloud\Model\EmailDefinition, HTTP status code, HTTP response headers (array of strings)
      * @throws \InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \SalesForce\MarketingCloud\ApiException on non-2xx response
      */
     public function getEmailDefinitionWithHttpInfo(string $definitionKey)
     {
-        $returnType = '\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest';
+        $returnType = '\SalesForce\MarketingCloud\Model\EmailDefinition';
         $request = $this->getEmailDefinitionRequest($definitionKey);
 
         try {
@@ -1893,7 +1893,7 @@ class TransactionalMessagingApi extends AbstractApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest',
+                        '\SalesForce\MarketingCloud\Model\EmailDefinition',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1969,7 +1969,7 @@ class TransactionalMessagingApi extends AbstractApi
      */
     public function getEmailDefinitionAsyncWithHttpInfo(string $definitionKey)
     {
-        $returnType = '\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest';
+        $returnType = '\SalesForce\MarketingCloud\Model\EmailDefinition';
         $request = $this->getEmailDefinitionRequest($definitionKey);
 
         return $this->client
@@ -3923,7 +3923,7 @@ class TransactionalMessagingApi extends AbstractApi
      * @throws \InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \SalesForce\MarketingCloud\ApiException on non-2xx response
-     * @return \SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest
+     * @return \SalesForce\MarketingCloud\Model\SmsDefinition
      */
     public function getSmsDefinition(string $definitionKey)
     {
@@ -3938,14 +3938,14 @@ class TransactionalMessagingApi extends AbstractApi
      *
      * @param  string $definitionKey Unique identifier of the definition to get (required)
      *
-     * @return array of \SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SalesForce\MarketingCloud\Model\SmsDefinition, HTTP status code, HTTP response headers (array of strings)
      * @throws \InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \SalesForce\MarketingCloud\ApiException on non-2xx response
      */
     public function getSmsDefinitionWithHttpInfo(string $definitionKey)
     {
-        $returnType = '\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest';
+        $returnType = '\SalesForce\MarketingCloud\Model\SmsDefinition';
         $request = $this->getSmsDefinitionRequest($definitionKey);
 
         try {
@@ -3988,7 +3988,7 @@ class TransactionalMessagingApi extends AbstractApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest',
+                        '\SalesForce\MarketingCloud\Model\SmsDefinition',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4064,7 +4064,7 @@ class TransactionalMessagingApi extends AbstractApi
      */
     public function getSmsDefinitionAsyncWithHttpInfo(string $definitionKey)
     {
-        $returnType = '\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest';
+        $returnType = '\SalesForce\MarketingCloud\Model\SmsDefinition';
         $request = $this->getSmsDefinitionRequest($definitionKey);
 
         return $this->client
@@ -4831,7 +4831,7 @@ class TransactionalMessagingApi extends AbstractApi
      * @throws \InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \SalesForce\MarketingCloud\ApiException on non-2xx response
-     * @return \SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest
+     * @return \SalesForce\MarketingCloud\Model\EmailDefinition
      */
     public function partiallyUpdateEmailDefinition(string $definitionKey, \SalesForce\MarketingCloud\Model\UpdateEmailDefinitionRequest $body)
     {
@@ -4847,14 +4847,14 @@ class TransactionalMessagingApi extends AbstractApi
      * @param  string $definitionKey Unique identifier of the definition. (required)
      * @param  \SalesForce\MarketingCloud\Model\UpdateEmailDefinitionRequest $body JSON Parameters (required)
      *
-     * @return array of \SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SalesForce\MarketingCloud\Model\EmailDefinition, HTTP status code, HTTP response headers (array of strings)
      * @throws \InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \SalesForce\MarketingCloud\ApiException on non-2xx response
      */
     public function partiallyUpdateEmailDefinitionWithHttpInfo(string $definitionKey, \SalesForce\MarketingCloud\Model\UpdateEmailDefinitionRequest $body)
     {
-        $returnType = '\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest';
+        $returnType = '\SalesForce\MarketingCloud\Model\EmailDefinition';
         $request = $this->partiallyUpdateEmailDefinitionRequest($definitionKey, $body);
 
         try {
@@ -4897,7 +4897,7 @@ class TransactionalMessagingApi extends AbstractApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest',
+                        '\SalesForce\MarketingCloud\Model\EmailDefinition',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4967,7 +4967,7 @@ class TransactionalMessagingApi extends AbstractApi
      */
     public function partiallyUpdateEmailDefinitionAsyncWithHttpInfo(string $definitionKey, \SalesForce\MarketingCloud\Model\UpdateEmailDefinitionRequest $body)
     {
-        $returnType = '\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest';
+        $returnType = '\SalesForce\MarketingCloud\Model\EmailDefinition';
         $request = $this->partiallyUpdateEmailDefinitionRequest($definitionKey, $body);
 
         return $this->client
@@ -5139,7 +5139,7 @@ class TransactionalMessagingApi extends AbstractApi
      * @throws \InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \SalesForce\MarketingCloud\ApiException on non-2xx response
-     * @return \SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest
+     * @return \SalesForce\MarketingCloud\Model\SmsDefinition
      */
     public function partiallyUpdateSmsDefinition(string $definitionKey, \SalesForce\MarketingCloud\Model\UpdateSmsDefinitionRequest $body)
     {
@@ -5155,14 +5155,14 @@ class TransactionalMessagingApi extends AbstractApi
      * @param  string $definitionKey Unique identifier of the definition. (required)
      * @param  \SalesForce\MarketingCloud\Model\UpdateSmsDefinitionRequest $body JSON Parameters (required)
      *
-     * @return array of \SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SalesForce\MarketingCloud\Model\SmsDefinition, HTTP status code, HTTP response headers (array of strings)
      * @throws \InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \SalesForce\MarketingCloud\ApiException on non-2xx response
      */
     public function partiallyUpdateSmsDefinitionWithHttpInfo(string $definitionKey, \SalesForce\MarketingCloud\Model\UpdateSmsDefinitionRequest $body)
     {
-        $returnType = '\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest';
+        $returnType = '\SalesForce\MarketingCloud\Model\SmsDefinition';
         $request = $this->partiallyUpdateSmsDefinitionRequest($definitionKey, $body);
 
         try {
@@ -5205,7 +5205,7 @@ class TransactionalMessagingApi extends AbstractApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest',
+                        '\SalesForce\MarketingCloud\Model\SmsDefinition',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5275,7 +5275,7 @@ class TransactionalMessagingApi extends AbstractApi
      */
     public function partiallyUpdateSmsDefinitionAsyncWithHttpInfo(string $definitionKey, \SalesForce\MarketingCloud\Model\UpdateSmsDefinitionRequest $body)
     {
-        $returnType = '\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest';
+        $returnType = '\SalesForce\MarketingCloud\Model\SmsDefinition';
         $request = $this->partiallyUpdateSmsDefinitionRequest($definitionKey, $body);
 
         return $this->client

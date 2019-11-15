@@ -1,6 +1,6 @@
 <?php
 /**
- * UpdateEmailDefinitionRequest
+ * EmailDefinition
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SalesForce\MarketingCloud\ObjectSerializer;
 
 /**
- * UpdateEmailDefinitionRequest Class Doc Comment
+ * EmailDefinition Class Doc Comment
  *
  * @category Class
  * @package  SalesForce\MarketingCloud
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
+class EmailDefinition implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'UpdateEmailDefinitionRequest';
+    protected static $swaggerModelName = 'EmailDefinition';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,11 +57,16 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'requestId' => 'string',
         'name' => 'string',
-        'content' => '\SalesForce\MarketingCloud\Model\EmailDefinitionContent',
-        'status' => 'string',
+        'definitionKey' => 'string',
+        'definitionId' => 'string',
         'description' => 'string',
         'classification' => 'string',
+        'status' => 'string',
+        'createdDate' => '\DateTime',
+        'modifiedDate' => '\DateTime',
+        'content' => '\SalesForce\MarketingCloud\Model\EmailDefinitionContent',
         'subscriptions' => '\SalesForce\MarketingCloud\Model\EmailDefinitionSubscriptions',
         'options' => '\SalesForce\MarketingCloud\Model\EmailDefinitionOptions'
     ];
@@ -72,11 +77,16 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'requestId' => null,
         'name' => null,
-        'content' => null,
-        'status' => null,
+        'definitionKey' => null,
+        'definitionId' => null,
         'description' => null,
         'classification' => null,
+        'status' => null,
+        'createdDate' => 'date-time',
+        'modifiedDate' => 'date-time',
+        'content' => null,
         'subscriptions' => null,
         'options' => null
     ];
@@ -108,11 +118,16 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'requestId' => 'requestId',
         'name' => 'name',
-        'content' => 'content',
-        'status' => 'status',
+        'definitionKey' => 'definitionKey',
+        'definitionId' => 'definitionId',
         'description' => 'description',
         'classification' => 'classification',
+        'status' => 'status',
+        'createdDate' => 'createdDate',
+        'modifiedDate' => 'modifiedDate',
+        'content' => 'content',
         'subscriptions' => 'subscriptions',
         'options' => 'options'
     ];
@@ -123,11 +138,16 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'requestId' => 'setRequestId',
         'name' => 'setName',
-        'content' => 'setContent',
-        'status' => 'setStatus',
+        'definitionKey' => 'setDefinitionKey',
+        'definitionId' => 'setDefinitionId',
         'description' => 'setDescription',
         'classification' => 'setClassification',
+        'status' => 'setStatus',
+        'createdDate' => 'setCreatedDate',
+        'modifiedDate' => 'setModifiedDate',
+        'content' => 'setContent',
         'subscriptions' => 'setSubscriptions',
         'options' => 'setOptions'
     ];
@@ -138,11 +158,16 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'requestId' => 'getRequestId',
         'name' => 'getName',
-        'content' => 'getContent',
-        'status' => 'getStatus',
+        'definitionKey' => 'getDefinitionKey',
+        'definitionId' => 'getDefinitionId',
         'description' => 'getDescription',
         'classification' => 'getClassification',
+        'status' => 'getStatus',
+        'createdDate' => 'getCreatedDate',
+        'modifiedDate' => 'getModifiedDate',
+        'content' => 'getContent',
         'subscriptions' => 'getSubscriptions',
         'options' => 'getOptions'
     ];
@@ -207,11 +232,16 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['requestId'] = isset($data['requestId']) ? $data['requestId'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['content'] = isset($data['content']) ? $data['content'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['definitionKey'] = isset($data['definitionKey']) ? $data['definitionKey'] : null;
+        $this->container['definitionId'] = isset($data['definitionId']) ? $data['definitionId'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['classification'] = isset($data['classification']) ? $data['classification'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['createdDate'] = isset($data['createdDate']) ? $data['createdDate'] : null;
+        $this->container['modifiedDate'] = isset($data['modifiedDate']) ? $data['modifiedDate'] : null;
+        $this->container['content'] = isset($data['content']) ? $data['content'] : null;
         $this->container['subscriptions'] = isset($data['subscriptions']) ? $data['subscriptions'] : null;
         $this->container['options'] = isset($data['options']) ? $data['options'] : null;
     }
@@ -225,6 +255,18 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
+        if ($this->container['definitionKey'] === null) {
+            $invalidProperties[] = "'definitionKey' can't be null";
+        }
+        if ($this->container['content'] === null) {
+            $invalidProperties[] = "'content' can't be null";
+        }
+        if ($this->container['subscriptions'] === null) {
+            $invalidProperties[] = "'subscriptions' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -239,6 +281,30 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets requestId
+     *
+     * @return string
+     */
+    public function getRequestId()
+    {
+        return $this->container['requestId'];
+    }
+
+    /**
+     * Sets requestId
+     *
+     * @param string $requestId The ID of the request
+     *
+     * @return $this
+     */
+    public function setRequestId($requestId)
+    {
+        $this->container['requestId'] = $requestId;
+
+        return $this;
+    }
 
     /**
      * Gets name
@@ -265,49 +331,49 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets content
+     * Gets definitionKey
      *
-     * @return \SalesForce\MarketingCloud\Model\EmailDefinitionContent
+     * @return string
      */
-    public function getContent()
+    public function getDefinitionKey()
     {
-        return $this->container['content'];
+        return $this->container['definitionKey'];
     }
 
     /**
-     * Sets content
+     * Sets definitionKey
      *
-     * @param \SalesForce\MarketingCloud\Model\EmailDefinitionContent $content content
+     * @param string $definitionKey Unique, user-generated key to access the definition object.
      *
      * @return $this
      */
-    public function setContent($content)
+    public function setDefinitionKey($definitionKey)
     {
-        $this->container['content'] = $content;
+        $this->container['definitionKey'] = $definitionKey;
 
         return $this;
     }
 
     /**
-     * Gets status
+     * Gets definitionId
      *
      * @return string
      */
-    public function getStatus()
+    public function getDefinitionId()
     {
-        return $this->container['status'];
+        return $this->container['definitionId'];
     }
 
     /**
-     * Sets status
+     * Sets definitionId
      *
-     * @param string $status Operational state of the definition: active, inactive, or deleted. A message sent to an active definition is processed and delivered. A message sent to an inactive definition isn’t processed or delivered. Instead, the message is queued for later processing for up to three days.
+     * @param string $definitionId Definition Id
      *
      * @return $this
      */
-    public function setStatus($status)
+    public function setDefinitionId($definitionId)
     {
-        $this->container['status'] = $status;
+        $this->container['definitionId'] = $definitionId;
 
         return $this;
     }
@@ -356,6 +422,102 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
     public function setClassification($classification)
     {
         $this->container['classification'] = $classification;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param string $status Operational state of the definition: active, inactive, or deleted. A message sent to an active definition is processed and delivered. A message sent to an inactive definition isn’t processed or delivered. Instead, the message is queued for later processing for up to three days.
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets createdDate
+     *
+     * @return \DateTime
+     */
+    public function getCreatedDate()
+    {
+        return $this->container['createdDate'];
+    }
+
+    /**
+     * Sets createdDate
+     *
+     * @param \DateTime $createdDate The date the object was created.
+     *
+     * @return $this
+     */
+    public function setCreatedDate($createdDate)
+    {
+        $this->container['createdDate'] = $createdDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets modifiedDate
+     *
+     * @return \DateTime
+     */
+    public function getModifiedDate()
+    {
+        return $this->container['modifiedDate'];
+    }
+
+    /**
+     * Sets modifiedDate
+     *
+     * @param \DateTime $modifiedDate The date the object was modified.
+     *
+     * @return $this
+     */
+    public function setModifiedDate($modifiedDate)
+    {
+        $this->container['modifiedDate'] = $modifiedDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets content
+     *
+     * @return \SalesForce\MarketingCloud\Model\EmailDefinitionContent
+     */
+    public function getContent()
+    {
+        return $this->container['content'];
+    }
+
+    /**
+     * Sets content
+     *
+     * @param \SalesForce\MarketingCloud\Model\EmailDefinitionContent $content content
+     *
+     * @return $this
+     */
+    public function setContent($content)
+    {
+        $this->container['content'] = $content;
 
         return $this;
     }
