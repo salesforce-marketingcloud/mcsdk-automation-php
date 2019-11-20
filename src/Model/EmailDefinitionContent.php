@@ -1,6 +1,6 @@
 <?php
 /**
- * UpdateEmailDefinitionRequest
+ * EmailDefinitionContent
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SalesForce\MarketingCloud\ObjectSerializer;
 
 /**
- * UpdateEmailDefinitionRequest Class Doc Comment
+ * EmailDefinitionContent Class Doc Comment
  *
  * @category Class
  * @package  SalesForce\MarketingCloud
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
+class EmailDefinitionContent implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'UpdateEmailDefinitionRequest';
+    protected static $swaggerModelName = 'EmailDefinitionContent';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,13 +57,7 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'name' => 'string',
-        'content' => '\SalesForce\MarketingCloud\Model\EmailDefinitionContent',
-        'status' => 'string',
-        'description' => 'string',
-        'classification' => 'string',
-        'subscriptions' => '\SalesForce\MarketingCloud\Model\EmailDefinitionSubscriptions',
-        'options' => '\SalesForce\MarketingCloud\Model\EmailDefinitionOptions'
+        'customerKey' => 'string'
     ];
 
     /**
@@ -72,13 +66,7 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'name' => null,
-        'content' => null,
-        'status' => null,
-        'description' => null,
-        'classification' => null,
-        'subscriptions' => null,
-        'options' => null
+        'customerKey' => null
     ];
 
     /**
@@ -108,13 +96,7 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'content' => 'content',
-        'status' => 'status',
-        'description' => 'description',
-        'classification' => 'classification',
-        'subscriptions' => 'subscriptions',
-        'options' => 'options'
+        'customerKey' => 'customerKey'
     ];
 
     /**
@@ -123,13 +105,7 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'content' => 'setContent',
-        'status' => 'setStatus',
-        'description' => 'setDescription',
-        'classification' => 'setClassification',
-        'subscriptions' => 'setSubscriptions',
-        'options' => 'setOptions'
+        'customerKey' => 'setCustomerKey'
     ];
 
     /**
@@ -138,13 +114,7 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'content' => 'getContent',
-        'status' => 'getStatus',
-        'description' => 'getDescription',
-        'classification' => 'getClassification',
-        'subscriptions' => 'getSubscriptions',
-        'options' => 'getOptions'
+        'customerKey' => 'getCustomerKey'
     ];
 
     /**
@@ -207,13 +177,7 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['content'] = isset($data['content']) ? $data['content'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['classification'] = isset($data['classification']) ? $data['classification'] : null;
-        $this->container['subscriptions'] = isset($data['subscriptions']) ? $data['subscriptions'] : null;
-        $this->container['options'] = isset($data['options']) ? $data['options'] : null;
+        $this->container['customerKey'] = isset($data['customerKey']) ? $data['customerKey'] : null;
     }
 
     /**
@@ -225,6 +189,9 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['customerKey'] === null) {
+            $invalidProperties[] = "'customerKey' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -241,169 +208,25 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets name
+     * Gets customerKey
      *
      * @return string
      */
-    public function getName()
+    public function getCustomerKey()
     {
-        return $this->container['name'];
+        return $this->container['customerKey'];
     }
 
     /**
-     * Sets name
+     * Sets customerKey
      *
-     * @param string $name Name of the definition. Must be unique.
+     * @param string $customerKey Unique identifier of the content asset.
      *
      * @return $this
      */
-    public function setName($name)
+    public function setCustomerKey($customerKey)
     {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets content
-     *
-     * @return \SalesForce\MarketingCloud\Model\EmailDefinitionContent
-     */
-    public function getContent()
-    {
-        return $this->container['content'];
-    }
-
-    /**
-     * Sets content
-     *
-     * @param \SalesForce\MarketingCloud\Model\EmailDefinitionContent $content content
-     *
-     * @return $this
-     */
-    public function setContent($content)
-    {
-        $this->container['content'] = $content;
-
-        return $this;
-    }
-
-    /**
-     * Gets status
-     *
-     * @return string
-     */
-    public function getStatus()
-    {
-        return $this->container['status'];
-    }
-
-    /**
-     * Sets status
-     *
-     * @param string $status Operational state of the definition: active, inactive, or deleted. A message sent to an active definition is processed and delivered. A message sent to an inactive definition isn’t processed or delivered. Instead, the message is queued for later processing for up to three days.
-     *
-     * @return $this
-     */
-    public function setStatus($status)
-    {
-        $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string $description User-provided description of the email definition.
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * Gets classification
-     *
-     * @return string
-     */
-    public function getClassification()
-    {
-        return $this->container['classification'];
-    }
-
-    /**
-     * Sets classification
-     *
-     * @param string $classification Marketing Cloud external key of a sending classification defined in Email Studio Administration. Only transactional classifications are permitted. Default is default transactional.
-     *
-     * @return $this
-     */
-    public function setClassification($classification)
-    {
-        $this->container['classification'] = $classification;
-
-        return $this;
-    }
-
-    /**
-     * Gets subscriptions
-     *
-     * @return \SalesForce\MarketingCloud\Model\EmailDefinitionSubscriptions
-     */
-    public function getSubscriptions()
-    {
-        return $this->container['subscriptions'];
-    }
-
-    /**
-     * Sets subscriptions
-     *
-     * @param \SalesForce\MarketingCloud\Model\EmailDefinitionSubscriptions $subscriptions subscriptions
-     *
-     * @return $this
-     */
-    public function setSubscriptions($subscriptions)
-    {
-        $this->container['subscriptions'] = $subscriptions;
-
-        return $this;
-    }
-
-    /**
-     * Gets options
-     *
-     * @return \SalesForce\MarketingCloud\Model\EmailDefinitionOptions
-     */
-    public function getOptions()
-    {
-        return $this->container['options'];
-    }
-
-    /**
-     * Sets options
-     *
-     * @param \SalesForce\MarketingCloud\Model\EmailDefinitionOptions $options options
-     *
-     * @return $this
-     */
-    public function setOptions($options)
-    {
-        $this->container['options'] = $options;
+        $this->container['customerKey'] = $customerKey;
 
         return $this;
     }

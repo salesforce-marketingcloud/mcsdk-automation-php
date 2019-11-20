@@ -1,6 +1,6 @@
 <?php
 /**
- * UpdateEmailDefinitionRequest
+ * SmsDefinitionSubscriptions
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SalesForce\MarketingCloud\ObjectSerializer;
 
 /**
- * UpdateEmailDefinitionRequest Class Doc Comment
+ * SmsDefinitionSubscriptions Class Doc Comment
  *
  * @category Class
  * @package  SalesForce\MarketingCloud
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
+class SmsDefinitionSubscriptions implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'UpdateEmailDefinitionRequest';
+    protected static $swaggerModelName = 'SmsDefinitionSubscriptions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,13 +57,10 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'name' => 'string',
-        'content' => '\SalesForce\MarketingCloud\Model\EmailDefinitionContent',
-        'status' => 'string',
-        'description' => 'string',
-        'classification' => 'string',
-        'subscriptions' => '\SalesForce\MarketingCloud\Model\EmailDefinitionSubscriptions',
-        'options' => '\SalesForce\MarketingCloud\Model\EmailDefinitionOptions'
+        'shortCode' => 'string',
+        'countryCode' => 'string',
+        'keyword' => 'string',
+        'autoAddSubscriber' => 'bool'
     ];
 
     /**
@@ -72,13 +69,10 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'name' => null,
-        'content' => null,
-        'status' => null,
-        'description' => null,
-        'classification' => null,
-        'subscriptions' => null,
-        'options' => null
+        'shortCode' => null,
+        'countryCode' => null,
+        'keyword' => null,
+        'autoAddSubscriber' => null
     ];
 
     /**
@@ -108,13 +102,10 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'content' => 'content',
-        'status' => 'status',
-        'description' => 'description',
-        'classification' => 'classification',
-        'subscriptions' => 'subscriptions',
-        'options' => 'options'
+        'shortCode' => 'shortCode',
+        'countryCode' => 'countryCode',
+        'keyword' => 'keyword',
+        'autoAddSubscriber' => 'autoAddSubscriber'
     ];
 
     /**
@@ -123,13 +114,10 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'content' => 'setContent',
-        'status' => 'setStatus',
-        'description' => 'setDescription',
-        'classification' => 'setClassification',
-        'subscriptions' => 'setSubscriptions',
-        'options' => 'setOptions'
+        'shortCode' => 'setShortCode',
+        'countryCode' => 'setCountryCode',
+        'keyword' => 'setKeyword',
+        'autoAddSubscriber' => 'setAutoAddSubscriber'
     ];
 
     /**
@@ -138,13 +126,10 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'content' => 'getContent',
-        'status' => 'getStatus',
-        'description' => 'getDescription',
-        'classification' => 'getClassification',
-        'subscriptions' => 'getSubscriptions',
-        'options' => 'getOptions'
+        'shortCode' => 'getShortCode',
+        'countryCode' => 'getCountryCode',
+        'keyword' => 'getKeyword',
+        'autoAddSubscriber' => 'getAutoAddSubscriber'
     ];
 
     /**
@@ -207,13 +192,10 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['content'] = isset($data['content']) ? $data['content'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['classification'] = isset($data['classification']) ? $data['classification'] : null;
-        $this->container['subscriptions'] = isset($data['subscriptions']) ? $data['subscriptions'] : null;
-        $this->container['options'] = isset($data['options']) ? $data['options'] : null;
+        $this->container['shortCode'] = isset($data['shortCode']) ? $data['shortCode'] : null;
+        $this->container['countryCode'] = isset($data['countryCode']) ? $data['countryCode'] : null;
+        $this->container['keyword'] = isset($data['keyword']) ? $data['keyword'] : null;
+        $this->container['autoAddSubscriber'] = isset($data['autoAddSubscriber']) ? $data['autoAddSubscriber'] : true;
     }
 
     /**
@@ -225,6 +207,12 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['shortCode'] === null) {
+            $invalidProperties[] = "'shortCode' can't be null";
+        }
+        if ($this->container['countryCode'] === null) {
+            $invalidProperties[] = "'countryCode' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -241,169 +229,97 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets name
+     * Gets shortCode
      *
      * @return string
      */
-    public function getName()
+    public function getShortCode()
     {
-        return $this->container['name'];
+        return $this->container['shortCode'];
     }
 
     /**
-     * Sets name
+     * Sets shortCode
      *
-     * @param string $name Name of the definition. Must be unique.
+     * @param string $shortCode The short code for the mobile transmissions for each message on this definition.
      *
      * @return $this
      */
-    public function setName($name)
+    public function setShortCode($shortCode)
     {
-        $this->container['name'] = $name;
+        $this->container['shortCode'] = $shortCode;
 
         return $this;
     }
 
     /**
-     * Gets content
-     *
-     * @return \SalesForce\MarketingCloud\Model\EmailDefinitionContent
-     */
-    public function getContent()
-    {
-        return $this->container['content'];
-    }
-
-    /**
-     * Sets content
-     *
-     * @param \SalesForce\MarketingCloud\Model\EmailDefinitionContent $content content
-     *
-     * @return $this
-     */
-    public function setContent($content)
-    {
-        $this->container['content'] = $content;
-
-        return $this;
-    }
-
-    /**
-     * Gets status
+     * Gets countryCode
      *
      * @return string
      */
-    public function getStatus()
+    public function getCountryCode()
     {
-        return $this->container['status'];
+        return $this->container['countryCode'];
     }
 
     /**
-     * Sets status
+     * Sets countryCode
      *
-     * @param string $status Operational state of the definition: active, inactive, or deleted. A message sent to an active definition is processed and delivered. A message sent to an inactive definition isn’t processed or delivered. Instead, the message is queued for later processing for up to three days.
+     * @param string $countryCode The country code associated with the shortCode for the mobile transmissions for each message on this definition.
      *
      * @return $this
      */
-    public function setStatus($status)
+    public function setCountryCode($countryCode)
     {
-        $this->container['status'] = $status;
+        $this->container['countryCode'] = $countryCode;
 
         return $this;
     }
 
     /**
-     * Gets description
+     * Gets keyword
      *
      * @return string
      */
-    public function getDescription()
+    public function getKeyword()
     {
-        return $this->container['description'];
+        return $this->container['keyword'];
     }
 
     /**
-     * Sets description
+     * Sets keyword
      *
-     * @param string $description User-provided description of the email definition.
+     * @param string $keyword The keyword used to track messages.
      *
      * @return $this
      */
-    public function setDescription($description)
+    public function setKeyword($keyword)
     {
-        $this->container['description'] = $description;
+        $this->container['keyword'] = $keyword;
 
         return $this;
     }
 
     /**
-     * Gets classification
+     * Gets autoAddSubscriber
      *
-     * @return string
+     * @return bool
      */
-    public function getClassification()
+    public function getAutoAddSubscriber()
     {
-        return $this->container['classification'];
+        return $this->container['autoAddSubscriber'];
     }
 
     /**
-     * Sets classification
+     * Sets autoAddSubscriber
      *
-     * @param string $classification Marketing Cloud external key of a sending classification defined in Email Studio Administration. Only transactional classifications are permitted. Default is default transactional.
+     * @param bool $autoAddSubscriber Permits adding a recipient as subscriber against the shortCode using contactKey. When false, the message is rejected if contactKey does not exist as a subscriber. Default is true.
      *
      * @return $this
      */
-    public function setClassification($classification)
+    public function setAutoAddSubscriber($autoAddSubscriber)
     {
-        $this->container['classification'] = $classification;
-
-        return $this;
-    }
-
-    /**
-     * Gets subscriptions
-     *
-     * @return \SalesForce\MarketingCloud\Model\EmailDefinitionSubscriptions
-     */
-    public function getSubscriptions()
-    {
-        return $this->container['subscriptions'];
-    }
-
-    /**
-     * Sets subscriptions
-     *
-     * @param \SalesForce\MarketingCloud\Model\EmailDefinitionSubscriptions $subscriptions subscriptions
-     *
-     * @return $this
-     */
-    public function setSubscriptions($subscriptions)
-    {
-        $this->container['subscriptions'] = $subscriptions;
-
-        return $this;
-    }
-
-    /**
-     * Gets options
-     *
-     * @return \SalesForce\MarketingCloud\Model\EmailDefinitionOptions
-     */
-    public function getOptions()
-    {
-        return $this->container['options'];
-    }
-
-    /**
-     * Sets options
-     *
-     * @param \SalesForce\MarketingCloud\Model\EmailDefinitionOptions $options options
-     *
-     * @return $this
-     */
-    public function setOptions($options)
-    {
-        $this->container['options'] = $options;
+        $this->container['autoAddSubscriber'] = $autoAddSubscriber;
 
         return $this;
     }
