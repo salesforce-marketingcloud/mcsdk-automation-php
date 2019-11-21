@@ -74,7 +74,7 @@ class TransactionalMessagingApiTest extends BaseApiTest
         $resourceCreator = $this->getResourceCreator();
         $resourceCreator->setModelClass(
             __FUNCTION__,
-            "\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest"
+            "\SalesForce\MarketingCloud\Model\EmailDefinition"
         );
 
         // SUT
@@ -103,7 +103,7 @@ class TransactionalMessagingApiTest extends BaseApiTest
         $resourceCreator = $this->getResourceCreator();
         $resourceCreator->setModelClass(
             __FUNCTION__,
-            "\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest"
+            "\SalesForce\MarketingCloud\Model\SmsDefinition"
         );
 
         // SUT
@@ -248,7 +248,7 @@ class TransactionalMessagingApiTest extends BaseApiTest
         $resourceCreator = $this->getResourceCreator();
         $resourceCreator->setModelClass(
             __FUNCTION__,
-            "\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest"
+            "\SalesForce\MarketingCloud\Model\EmailDefinition"
         );
 
         // SUT
@@ -264,7 +264,7 @@ class TransactionalMessagingApiTest extends BaseApiTest
      */
     public function testGetEmailDefinitions()
     {
-        $this->setHttpMethod("GET");
+        $this->setHttpMethod("GETALL");
 
         // Looking for a decorator first
         /** @var \SalesForce\MarketingCloud\TestHelper\Decorator\TransactionalMessagingApiDecorator $decorator */
@@ -451,7 +451,7 @@ class TransactionalMessagingApiTest extends BaseApiTest
         $resourceCreator = $this->getResourceCreator();
         $resourceCreator->setModelClass(
             __FUNCTION__,
-            "\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest"
+            "\SalesForce\MarketingCloud\Model\SmsDefinition"
         );
 
         // SUT
@@ -467,7 +467,7 @@ class TransactionalMessagingApiTest extends BaseApiTest
      */
     public function testGetSmsDefinitions()
     {
-        $this->setHttpMethod("GET");
+        $this->setHttpMethod("GETALL");
 
         // Looking for a decorator first
         /** @var \SalesForce\MarketingCloud\TestHelper\Decorator\TransactionalMessagingApiDecorator $decorator */
@@ -538,7 +538,7 @@ class TransactionalMessagingApiTest extends BaseApiTest
         $resourceCreator = $this->getResourceCreator();
         $resourceCreator->setModelClass(
             __FUNCTION__,
-            "\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest"
+            "\SalesForce\MarketingCloud\Model\EmailDefinition"
         );
 
         // SUT
@@ -567,7 +567,7 @@ class TransactionalMessagingApiTest extends BaseApiTest
         $resourceCreator = $this->getResourceCreator();
         $resourceCreator->setModelClass(
             __FUNCTION__,
-            "\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest"
+            "\SalesForce\MarketingCloud\Model\SmsDefinition"
         );
 
         // SUT
