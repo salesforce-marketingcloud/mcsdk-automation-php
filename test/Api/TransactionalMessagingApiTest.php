@@ -264,7 +264,7 @@ class TransactionalMessagingApiTest extends BaseApiTest
      */
     public function testGetEmailDefinitions()
     {
-        $this->setHttpMethod("GETALL");
+        $this->setHttpMethod("GET");
 
         // Looking for a decorator first
         /** @var \SalesForce\MarketingCloud\TestHelper\Decorator\TransactionalMessagingApiDecorator $decorator */
@@ -467,7 +467,7 @@ class TransactionalMessagingApiTest extends BaseApiTest
      */
     public function testGetSmsDefinitions()
     {
-        $this->setHttpMethod("GETALL");
+        $this->setHttpMethod("GET");
 
         // Looking for a decorator first
         /** @var \SalesForce\MarketingCloud\TestHelper\Decorator\TransactionalMessagingApiDecorator $decorator */

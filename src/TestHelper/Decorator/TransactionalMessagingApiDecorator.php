@@ -54,6 +54,42 @@ class TransactionalMessagingApiDecorator implements ContainerAwareInterface
         return $client;
     }
 
+    /**
+     * Test case for getSmsDefinitions
+     *
+     * getSmsDefinitions.
+     * @throws \Exception
+     */
+    public function testGetSmsDefinitions()
+    {
+        $client = $this->getClient();
+        $response = $client->getSmsDefinitions();
+
+        Assert::assertNotNull($response->getRequestId());
+        Assert::assertNotNull($response->getDefinitions());
+        Assert::assertNotNull($response->getCount());
+        Assert::assertNotNull($response->getPage());
+        Assert::assertNotNull($response->getPageSize());
+    }
+
+    /**
+     * Test case for getEmailDefinitions
+     *
+     * getEmailDefinitions.
+     * @throws \Exception
+     */
+    public function testGetEmailDefinitions()
+    {
+        $client = $this->getClient();
+        $response = $client->getEmailDefinitions();
+
+        Assert::assertNotNull($response->getRequestId());
+        Assert::assertNotNull($response->getDefinitions());
+        Assert::assertNotNull($response->getCount());
+        Assert::assertNotNull($response->getPage());
+        Assert::assertNotNull($response->getPageSize());
+    }
+
     #### Email or SMS not sent
     /**
      * Test case for getEmailsNotSentToRecipients

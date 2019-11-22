@@ -233,7 +233,6 @@ abstract class BaseApiTest extends TestCase
     {
         $methodMap = [
             "GET" => "doGetAction",
-            "GETALL" => "doGetAllAction",
             "POST" => "doCreateAction",
             "PATCH" => "doPatchAction",
             "DELETE" => "doDeleteAction",
@@ -293,20 +292,6 @@ abstract class BaseApiTest extends TestCase
     {
         /** @var ModelInterface $resource */
         $resource = call_user_func([$this->getClient(), $clientMethod], $this->getResourceId());
-
-        $this->assertInstanceOf($this->getResourceCreator()->getModelClass(), $resource);
-    }
-
-    /**
-     * Performs the retrieve action for the test
-     *
-     * @param string $clientMethod
-     * @throws \Exception
-     */
-    protected function doGetAllAction(string $clientMethod): void
-    {
-        /** @var ModelInterface $resource */
-        $resource = call_user_func([$this->getClient(), $clientMethod]);
 
         $this->assertInstanceOf($this->getResourceCreator()->getModelClass(), $resource);
     }
