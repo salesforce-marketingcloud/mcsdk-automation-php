@@ -32,7 +32,7 @@ class SmsDefinitionProvider extends AbstractModelProvider
 
 
         $object = new SmsDefinition([
-            "definitionKey" => md5((string)rand(0, 9999)),
+            "definitionKey" => static::generateUniqueId(),
             "definitionName" =>  md5((string)rand(0, 9999)),
             "content" => $content,
             "subscriptions" => $subscriptions,
