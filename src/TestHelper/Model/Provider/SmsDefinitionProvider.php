@@ -3,9 +3,9 @@
 namespace SalesForce\MarketingCloud\TestHelper\Model\Provider;
 
 use SalesForce\MarketingCloud\Env;
-use SalesForce\MarketingCloud\Model\CreateSmsDefinitionContent;
-use SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest;
-use SalesForce\MarketingCloud\Model\CreateSmsDefinitionSubscriptions;
+use SalesForce\MarketingCloud\Model\SmsDefinitionContent;
+use SalesForce\MarketingCloud\Model\SmsDefinition;
+use SalesForce\MarketingCloud\Model\SmsDefinitionSubscriptions;
 use SalesForce\MarketingCloud\Model\ModelInterface;
 use SalesForce\MarketingCloud\Model\UpdateSmsDefinitionRequest;
 
@@ -23,15 +23,15 @@ class SmsDefinitionProvider extends AbstractModelProvider
      */
     public static function getTestModel(): ?ModelInterface
     {
-        $content = new CreateSmsDefinitionContent(["message" => "Content message"]);
-        $subscriptions = new CreateSmsDefinitionSubscriptions([
+        $content = new SmsDefinitionContent(["message" => "Content message"]);
+        $subscriptions = new SmsDefinitionSubscriptions([
             "shortCode" => getenv(Env::SHORT_CODE),
             "keyword" => getenv(Env::KEYWORD),
             "countryCode" => getenv(Env::COUNTRY_CODE)
         ]);
 
 
-        $object = new CreateSmsDefinitionRequest([
+        $object = new SmsDefinition([
             "definitionKey" => md5((string)rand(0, 9999)),
             "definitionName" =>  md5((string)rand(0, 9999)),
             "content" => $content,
@@ -45,14 +45,14 @@ class SmsDefinitionProvider extends AbstractModelProvider
     /**
      * Updates some field of the test object
      *
-     * @param ModelInterface|CreateSmsDefinitionRequest $object
+     * @param ModelInterface|SmsDefinition $object
      * @return ModelInterface
      */
     public static function getPatchedModel(ModelInterface $object): ModelInterface
     {
         return new UpdateSmsDefinitionRequest([
             "name" => $object->getName(),
-            "content" => new CreateSmsDefinitionContent(["message" => "New Content message"])
+            "content" => new SmsDefinitionContent(["message" => "New Content message"])
         ]);
     }
 

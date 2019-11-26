@@ -2,7 +2,7 @@
 
 namespace SalesForce\MarketingCloud\TestHelper\Model\Provisioner;
 
-use SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest;
+use SalesForce\MarketingCloud\Model\EmailDefinition;
 use SalesForce\MarketingCloud\Model\ModelInterface;
 
 /**
@@ -10,12 +10,12 @@ use SalesForce\MarketingCloud\Model\ModelInterface;
  *
  * @package SalesForce\MarketingCloud\TestHelper\Model\Provisioner
  */
-class QueuedMessagesForEmailDefinition extends EmailDefinition
+class QueuedMessagesForEmailDefinition extends EmailDefinitionProvisioner
 {
     /**
      * Executes all the necessary provisioning
      *
-     * @param ModelInterface|CreateEmailDefinitionRequest $model
+     * @param ModelInterface|EmailDefinition $model
      * @return ModelInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \SalesForce\MarketingCloud\ApiException

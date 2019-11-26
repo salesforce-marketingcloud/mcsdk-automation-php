@@ -2,8 +2,8 @@
 
 namespace SalesForce\MarketingCloud\TestHelper\Model\Provisioner;
 
-use SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest;
-use SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest;
+use SalesForce\MarketingCloud\Model\EmailDefinition;
+use SalesForce\MarketingCloud\Model\SmsDefinition;
 use SalesForce\MarketingCloud\Model\DeleteQueuedMessagesForSendDefinitionResponse;
 use SalesForce\MarketingCloud\Model\DeleteSendDefinitionResponse;
 use SalesForce\MarketingCloud\Model\GetEmailDefinitionsResponse;
@@ -25,18 +25,18 @@ class ProvisionerResolver
     private static $aliases = [
         "email" => [
             // Email definition
-            CreateEmailDefinitionRequest::class => EmailDefinition::class,
-            GetEmailDefinitionsResponse::class => EmailDefinition::class,
-            GetQueueMetricsForSendDefinitionResponse::class => EmailDefinition::class,
-            DeleteSendDefinitionResponse::class => EmailDefinition::class,
+            EmailDefinition::class => EmailDefinitionProvisioner::class,
+            GetEmailDefinitionsResponse::class => EmailDefinitionProvisioner::class,
+            GetQueueMetricsForSendDefinitionResponse::class => EmailDefinitionProvisioner::class,
+            DeleteSendDefinitionResponse::class => EmailDefinitionProvisioner::class,
             DeleteQueuedMessagesForSendDefinitionResponse::class => QueuedMessagesForEmailDefinition::class,
         ],
         "sms" => [
             // SMS definition
-            CreateSmsDefinitionRequest::class => SmsDefinition::class,
-            GetSmsDefinitionsResponse::class => SmsDefinition::class,
-            GetQueueMetricsForSendDefinitionResponse::class => SmsDefinition::class,
-            DeleteSendDefinitionResponse::class => SmsDefinition::class,
+            SmsDefinition::class => SmsDefinitionProvisioner::class,
+            GetSmsDefinitionsResponse::class => SmsDefinitionProvisioner::class,
+            GetQueueMetricsForSendDefinitionResponse::class => SmsDefinitionProvisioner::class,
+            DeleteSendDefinitionResponse::class => SmsDefinitionProvisioner::class,
             DeleteQueuedMessagesForSendDefinitionResponse::class => QueuedMessagesForSmsDefinition::class,
         ],
         "other" => []

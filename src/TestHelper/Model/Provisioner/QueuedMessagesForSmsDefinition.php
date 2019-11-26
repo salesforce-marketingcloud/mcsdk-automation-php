@@ -2,7 +2,7 @@
 
 namespace SalesForce\MarketingCloud\TestHelper\Model\Provisioner;
 
-use SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest;
+use SalesForce\MarketingCloud\Model\SmsDefinition;
 use SalesForce\MarketingCloud\Model\ModelInterface;
 
 /**
@@ -10,12 +10,12 @@ use SalesForce\MarketingCloud\Model\ModelInterface;
  *
  * @package SalesForce\MarketingCloud\TestHelper\Model\Provisioner
  */
-class QueuedMessagesForSmsDefinition extends SmsDefinition
+class QueuedMessagesForSmsDefinition extends SmsDefinitionProvisioner
 {
     /**
      * Executes all the necessary provisioning
      *
-     * @param ModelInterface|CreateSmsDefinitionRequest $model
+     * @param ModelInterface|SmsDefinition $model
      * @return ModelInterface
      */
     public function provision(ModelInterface $model): ModelInterface
