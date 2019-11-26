@@ -206,6 +206,8 @@ class TransactionalMessagingApiDecorator implements ContainerAwareInterface
 
         // Construct the email request
         $recipient = RecipientProvider::getTestModel();
+        $messageKey = $recipient->getMessageKey();
+        $recipient->setMessageKey(null);
 
         $messageRequestBody = new SendEmailToSingleRecipientRequest([
             "definitionKey" => $definition->getDefinitionKey(),
@@ -213,10 +215,10 @@ class TransactionalMessagingApiDecorator implements ContainerAwareInterface
         ]);
 
         // SUT
-        $client->sendEmailToSingleRecipient($recipient->getMessageKey(), $messageRequestBody);
+        $client->sendEmailToSingleRecipient($messageKey, $messageRequestBody);
 
         // Effect check
-        $result = $client->getEmailSendStatusForRecipient($recipient->getMessageKey());
+        $result = $client->getEmailSendStatusForRecipient($messageKey);
 
         try {
             Assert::assertNotNull($result->getRequestId());
@@ -255,6 +257,8 @@ class TransactionalMessagingApiDecorator implements ContainerAwareInterface
 
         // Construct the email request
         $recipient = RecipientProvider::getTestModel();
+        $messageKey = $recipient->getMessageKey();
+        $recipient->setMessageKey(null);
 
         $body = new SendSmsToSingleRecipientRequest([
             "definitionKey" => $definition->getDefinitionKey(),
@@ -262,10 +266,10 @@ class TransactionalMessagingApiDecorator implements ContainerAwareInterface
         ]);
 
         // SUT
-        $client->sendSmsToSingleRecipient($recipient->getMessageKey(), $body);
+        $client->sendSmsToSingleRecipient($messageKey, $body);
 
         // Effect check
-        $result = $client->getSmsSendStatusForRecipient($recipient->getMessageKey());
+        $result = $client->getSmsSendStatusForRecipient($messageKey);
 
         try {
             Assert::assertNotNull($result->getRequestId());
@@ -378,6 +382,8 @@ class TransactionalMessagingApiDecorator implements ContainerAwareInterface
 
         // Construct the email request
         $recipient = RecipientProvider::getTestModel();
+        $messageKey = $recipient->getMessageKey();
+        $recipient->setMessageKey(null);
 
         $messageRequestBody = new SendEmailToSingleRecipientRequest([
             "definitionKey" => $definition->getDefinitionKey(),
@@ -385,7 +391,7 @@ class TransactionalMessagingApiDecorator implements ContainerAwareInterface
         ]);
 
         // SUT
-        $result = $client->sendEmailToSingleRecipient($recipient->getMessageKey(), $messageRequestBody);
+        $result = $client->sendEmailToSingleRecipient($messageKey, $messageRequestBody);
 
         try {
             Assert::assertNotNull($result->getRequestId());
@@ -414,6 +420,8 @@ class TransactionalMessagingApiDecorator implements ContainerAwareInterface
 
         // Construct the sms request
         $recipient = RecipientProvider::getTestModel();
+        $messageKey = $recipient->getMessageKey();
+        $recipient->setMessageKey(null);
 
         $body = new SendSmsToSingleRecipientRequest([
             "definitionKey" => $definition->getDefinitionKey(),
@@ -421,7 +429,7 @@ class TransactionalMessagingApiDecorator implements ContainerAwareInterface
         ]);
 
         // SUT
-        $result = $client->sendSmsToSingleRecipient($recipient->getMessageKey(), $body);
+        $result = $client->sendSmsToSingleRecipient($messageKey, $body);
 
         try {
             Assert::assertNotNull($result->getRequestId());
