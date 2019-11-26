@@ -21,13 +21,13 @@ class EmailDefinitionProvider extends AbstractModelProvider
      */
     public static function getTestModel(): ?ModelInterface
     {
-        $uniqueKey = (string)rand(0, 9999);
+        $uniqueKey = static::generateUniqueId();;
         $name = md5("Name {$uniqueKey}"); // Asset names within a category and asset type must be unique
 
         $object = new EmailDefinition([
             "name" => $name,
             "description" => "Random description",
-            "definitionKey" => md5($uniqueKey),
+            "definitionKey" => $uniqueKey,
             "subscriptions" => new EmailDefinitionSubscriptions(["list" => "All Subscribers"]),
         ]);
 

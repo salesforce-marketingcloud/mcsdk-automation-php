@@ -13,6 +13,7 @@ use SalesForce\MarketingCloud\Model\SendSmsToMultipleRecipientsRequest;
 use SalesForce\MarketingCloud\Model\SendSmsToSingleRecipientRequest;
 use SalesForce\MarketingCloud\TestHelper\Api\ResourceCreator;
 use SalesForce\MarketingCloud\TestHelper\Model\Provider\EmailDefinitionProvider;
+use SalesForce\MarketingCloud\TestHelper\Model\Provider\RecipientProvider;
 use SalesForce\MarketingCloud\TestHelper\Model\Provider\SmsDefinitionProvider;
 use SalesForce\MarketingCloud\TestHelper\Model\Provisioner\EmailDefinitionProvisioner;
 use SalesForce\MarketingCloud\TestHelper\Model\Provisioner\SmsDefinitionProvisioner;
@@ -204,10 +205,7 @@ class TransactionalMessagingApiDecorator implements ContainerAwareInterface
         $definition = $client->createEmailDefinition($definition);
 
         // Construct the email request
-        $messageKey = md5(rand(0, 9999));
-        $recipient = new Recipient([
-            "contactKey" => "johnDoe@gmail.com"
-        ]);
+        $recipient = RecipientProvider::getTestModel();
 
         $messageRequestBody = new SendEmailToSingleRecipientRequest([
             "definitionKey" => $definition->getDefinitionKey(),
@@ -215,10 +213,10 @@ class TransactionalMessagingApiDecorator implements ContainerAwareInterface
         ]);
 
         // SUT
-        $client->sendEmailToSingleRecipient($messageKey, $messageRequestBody);
+        $client->sendEmailToSingleRecipient($recipient->getMessageKey(), $messageRequestBody);
 
         // Effect check
-        $result = $client->getEmailSendStatusForRecipient($messageKey);
+        $result = $client->getEmailSendStatusForRecipient($recipient->getMessageKey());
 
         try {
             Assert::assertNotNull($result->getRequestId());
@@ -256,10 +254,7 @@ class TransactionalMessagingApiDecorator implements ContainerAwareInterface
         $definition = $client->createSmsDefinition($definition);
 
         // Construct the email request
-        $messageKey = md5(rand(0, 9999));
-        $recipient = new Recipient([
-            "contactKey" => "johnDoe@gmail.com"
-        ]);
+        $recipient = RecipientProvider::getTestModel();
 
         $body = new SendSmsToSingleRecipientRequest([
             "definitionKey" => $definition->getDefinitionKey(),
@@ -267,10 +262,10 @@ class TransactionalMessagingApiDecorator implements ContainerAwareInterface
         ]);
 
         // SUT
-        $client->sendSmsToSingleRecipient($messageKey, $body);
+        $client->sendSmsToSingleRecipient($recipient->getMessageKey(), $body);
 
         // Effect check
-        $result = $client->getSmsSendStatusForRecipient($messageKey);
+        $result = $client->getSmsSendStatusForRecipient($recipient->getMessageKey());
 
         try {
             Assert::assertNotNull($result->getRequestId());
@@ -382,10 +377,7 @@ class TransactionalMessagingApiDecorator implements ContainerAwareInterface
         $definition = $client->createEmailDefinition($definition);
 
         // Construct the email request
-        $messageKey = md5(rand(0, 9999));
-        $recipient = new Recipient([
-            "contactKey" => "johnDoe@gmail.com"
-        ]);
+        $recipient = RecipientProvider::getTestModel();
 
         $messageRequestBody = new SendEmailToSingleRecipientRequest([
             "definitionKey" => $definition->getDefinitionKey(),
@@ -393,7 +385,7 @@ class TransactionalMessagingApiDecorator implements ContainerAwareInterface
         ]);
 
         // SUT
-        $result = $client->sendEmailToSingleRecipient($messageKey, $messageRequestBody);
+        $result = $client->sendEmailToSingleRecipient($recipient->getMessageKey(), $messageRequestBody);
 
         try {
             Assert::assertNotNull($result->getRequestId());
@@ -420,11 +412,8 @@ class TransactionalMessagingApiDecorator implements ContainerAwareInterface
         $definition = $provisioner->provision(SmsDefinitionProvider::getTestModel());
         $definition = $client->createSmsDefinition($definition);
 
-        // Construct the email request
-        $messageKey = md5(rand(0, 9999));
-        $recipient = new Recipient([
-            "contactKey" => "johnDoe@gmail.com"
-        ]);
+        // Construct the sms request
+        $recipient = RecipientProvider::getTestModel();
 
         $body = new SendSmsToSingleRecipientRequest([
             "definitionKey" => $definition->getDefinitionKey(),
@@ -432,7 +421,7 @@ class TransactionalMessagingApiDecorator implements ContainerAwareInterface
         ]);
 
         // SUT
-        $result = $client->sendSmsToSingleRecipient($messageKey, $body);
+        $result = $client->sendSmsToSingleRecipient($recipient->getMessageKey(), $body);
 
         try {
             Assert::assertNotNull($result->getRequestId());
