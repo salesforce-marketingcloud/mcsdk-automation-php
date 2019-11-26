@@ -81,7 +81,7 @@ class TransactionalMessagingApi extends AbstractApi
     public function createEmailDefinitionWithHttpInfo(\SalesForce\MarketingCloud\Model\EmailDefinition $body)
     {
         $returnType = '\SalesForce\MarketingCloud\Model\EmailDefinition';
-        $request = $this->EmailDefinition($body);
+        $request = $this->createEmailDefinitionRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -200,7 +200,7 @@ class TransactionalMessagingApi extends AbstractApi
     public function createEmailDefinitionAsyncWithHttpInfo(\SalesForce\MarketingCloud\Model\EmailDefinition $body)
     {
         $returnType = '\SalesForce\MarketingCloud\Model\EmailDefinition';
-        $request = $this->EmailDefinition($body);
+        $request = $this->createEmailDefinitionRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -251,7 +251,7 @@ class TransactionalMessagingApi extends AbstractApi
      * @throws Exception\ClientUnauthorizedException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function EmailDefinition(\SalesForce\MarketingCloud\Model\EmailDefinition $body)
+    protected function createEmailDefinitionRequest(\SalesForce\MarketingCloud\Model\EmailDefinition $body)
     {
         if (isset($body) && !$body->valid()) {
             throw new InvalidRequestException($body, "The request data is invalid");
@@ -378,7 +378,7 @@ class TransactionalMessagingApi extends AbstractApi
     public function createSmsDefinitionWithHttpInfo(\SalesForce\MarketingCloud\Model\SmsDefinition $body)
     {
         $returnType = '\SalesForce\MarketingCloud\Model\SmsDefinition';
-        $request = $this->SmsDefinition($body);
+        $request = $this->createSmsDefinitionRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -497,7 +497,7 @@ class TransactionalMessagingApi extends AbstractApi
     public function createSmsDefinitionAsyncWithHttpInfo(\SalesForce\MarketingCloud\Model\SmsDefinition $body)
     {
         $returnType = '\SalesForce\MarketingCloud\Model\SmsDefinition';
-        $request = $this->SmsDefinition($body);
+        $request = $this->createSmsDefinitionRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -548,7 +548,7 @@ class TransactionalMessagingApi extends AbstractApi
      * @throws Exception\ClientUnauthorizedException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function SmsDefinition(\SalesForce\MarketingCloud\Model\SmsDefinition $body)
+    protected function createSmsDefinitionRequest(\SalesForce\MarketingCloud\Model\SmsDefinition $body)
     {
         if (isset($body) && !$body->valid()) {
             throw new InvalidRequestException($body, "The request data is invalid");
