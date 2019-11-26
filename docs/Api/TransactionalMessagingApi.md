@@ -29,7 +29,7 @@ Method | HTTP request | Description
 
 
 # **createEmailDefinition**
-> \SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest createEmailDefinition($body)
+> \SalesForce\MarketingCloud\Model\EmailDefinition createEmailDefinition($body)
 
 createEmailDefinition
 
@@ -45,7 +45,7 @@ $apiInstance = new SalesForce\MarketingCloud\Api\TransactionalMessagingApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest(); // \SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest | JSON Parameters
+$body = new \SalesForce\MarketingCloud\Model\EmailDefinition(); // \SalesForce\MarketingCloud\Model\EmailDefinition | JSON Parameters
 
 try {
     $result = $apiInstance->createEmailDefinition($body);
@@ -60,11 +60,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest**](../Model/CreateEmailDefinitionRequest.md)| JSON Parameters |
+ **body** | [**\SalesForce\MarketingCloud\Model\EmailDefinition**](../Model/EmailDefinition.md)| JSON Parameters |
 
 ### Return type
 
-[**\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest**](../Model/CreateEmailDefinitionRequest.md)
+[**\SalesForce\MarketingCloud\Model\EmailDefinition**](../Model/EmailDefinition.md)
 
 ### Authorization
 
@@ -78,7 +78,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createSmsDefinition**
-> \SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest createSmsDefinition($body)
+> \SalesForce\MarketingCloud\Model\SmsDefinition createSmsDefinition($body)
 
 createSmsDefinition
 
@@ -94,7 +94,7 @@ $apiInstance = new SalesForce\MarketingCloud\Api\TransactionalMessagingApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest(); // \SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest | JSON Parameters
+$body = new \SalesForce\MarketingCloud\Model\SmsDefinition(); // \SalesForce\MarketingCloud\Model\SmsDefinition | JSON Parameters
 
 try {
     $result = $apiInstance->createSmsDefinition($body);
@@ -109,11 +109,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest**](../Model/CreateSmsDefinitionRequest.md)| JSON Parameters |
+ **body** | [**\SalesForce\MarketingCloud\Model\SmsDefinition**](../Model/SmsDefinition.md)| JSON Parameters |
 
 ### Return type
 
-[**\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest**](../Model/CreateSmsDefinitionRequest.md)
+[**\SalesForce\MarketingCloud\Model\SmsDefinition**](../Model/SmsDefinition.md)
 
 ### Authorization
 
@@ -323,7 +323,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getEmailDefinition**
-> \SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest getEmailDefinition($definitionKey)
+> \SalesForce\MarketingCloud\Model\EmailDefinition getEmailDefinition($definitionKey)
 
 getEmailDefinition
 
@@ -358,7 +358,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest**](../Model/CreateEmailDefinitionRequest.md)
+[**\SalesForce\MarketingCloud\Model\EmailDefinition**](../Model/EmailDefinition.md)
 
 ### Authorization
 
@@ -372,7 +372,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getEmailDefinitions**
-> \SalesForce\MarketingCloud\Model\GetEmailDefinitionsResponse getEmailDefinitions($status, $pageSize, $page, $orderBy)
+> \SalesForce\MarketingCloud\Model\GetEmailDefinitionsResponse getEmailDefinitions($filter, $pageSize, $page, $orderBy)
 
 getEmailDefinitions
 
@@ -388,13 +388,13 @@ $apiInstance = new SalesForce\MarketingCloud\Api\TransactionalMessagingApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$status = "status_example"; // string | Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq.
+$filter = "filter_example"; // string | Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq.
 $pageSize = 8.14; // float | Number of definitions, which are array elements, to return per paged response.
 $page = 8.14; // float | Page number to return.
 $orderBy = "orderBy_example"; // string | Sort by a dimension. You can sort by only one dimension. Accepted values are definitionKey, name, createdDate, modifiedDate, and status.
 
 try {
-    $result = $apiInstance->getEmailDefinitions($status, $pageSize, $page, $orderBy);
+    $result = $apiInstance->getEmailDefinitions($filter, $pageSize, $page, $orderBy);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionalMessagingApi->getEmailDefinitions: ', $e->getMessage(), PHP_EOL;
@@ -406,7 +406,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **status** | **string**| Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq. | [optional]
+ **filter** | **string**| Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq. | [optional]
  **pageSize** | **float**| Number of definitions, which are array elements, to return per paged response. | [optional]
  **page** | **float**| Page number to return. | [optional]
  **orderBy** | **string**| Sort by a dimension. You can sort by only one dimension. Accepted values are definitionKey, name, createdDate, modifiedDate, and status. | [optional]
@@ -680,7 +680,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSmsDefinition**
-> \SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest getSmsDefinition($definitionKey)
+> \SalesForce\MarketingCloud\Model\SmsDefinition getSmsDefinition($definitionKey)
 
 getSmsDefinition
 
@@ -715,7 +715,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest**](../Model/CreateSmsDefinitionRequest.md)
+[**\SalesForce\MarketingCloud\Model\SmsDefinition**](../Model/SmsDefinition.md)
 
 ### Authorization
 
@@ -729,7 +729,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSmsDefinitions**
-> \SalesForce\MarketingCloud\Model\GetSmsDefinitionsResponse getSmsDefinitions($status, $pageSize, $page, $orderBy)
+> \SalesForce\MarketingCloud\Model\GetSmsDefinitionsResponse getSmsDefinitions($filter, $pageSize, $page, $orderBy)
 
 getSmsDefinitions
 
@@ -745,13 +745,13 @@ $apiInstance = new SalesForce\MarketingCloud\Api\TransactionalMessagingApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$status = "status_example"; // string | Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq.
+$filter = "filter_example"; // string | Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq.
 $pageSize = 8.14; // float | Number of definitions, which are array elements, to return per paged response.
 $page = 8.14; // float | Page number to return.
 $orderBy = "orderBy_example"; // string | Sort by a dimension. You can sort by only one dimension. Accepted values are definitionKey, name, createdDate, modifiedDate, and status.
 
 try {
-    $result = $apiInstance->getSmsDefinitions($status, $pageSize, $page, $orderBy);
+    $result = $apiInstance->getSmsDefinitions($filter, $pageSize, $page, $orderBy);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionalMessagingApi->getSmsDefinitions: ', $e->getMessage(), PHP_EOL;
@@ -763,7 +763,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **status** | **string**| Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq. | [optional]
+ **filter** | **string**| Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq. | [optional]
  **pageSize** | **float**| Number of definitions, which are array elements, to return per paged response. | [optional]
  **page** | **float**| Page number to return. | [optional]
  **orderBy** | **string**| Sort by a dimension. You can sort by only one dimension. Accepted values are definitionKey, name, createdDate, modifiedDate, and status. | [optional]
@@ -833,7 +833,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **partiallyUpdateEmailDefinition**
-> \SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest partiallyUpdateEmailDefinition($definitionKey, $body)
+> \SalesForce\MarketingCloud\Model\EmailDefinition partiallyUpdateEmailDefinition($definitionKey, $body)
 
 partiallyUpdateEmailDefinition
 
@@ -870,7 +870,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest**](../Model/CreateEmailDefinitionRequest.md)
+[**\SalesForce\MarketingCloud\Model\EmailDefinition**](../Model/EmailDefinition.md)
 
 ### Authorization
 
@@ -884,7 +884,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **partiallyUpdateSmsDefinition**
-> \SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest partiallyUpdateSmsDefinition($definitionKey, $body)
+> \SalesForce\MarketingCloud\Model\SmsDefinition partiallyUpdateSmsDefinition($definitionKey, $body)
 
 partiallyUpdateSmsDefinition
 
@@ -921,7 +921,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest**](../Model/CreateSmsDefinitionRequest.md)
+[**\SalesForce\MarketingCloud\Model\SmsDefinition**](../Model/SmsDefinition.md)
 
 ### Authorization
 

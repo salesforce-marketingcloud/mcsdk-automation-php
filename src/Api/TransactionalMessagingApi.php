@@ -53,14 +53,14 @@ class TransactionalMessagingApi extends AbstractApi
      *
      * createEmailDefinition
      *
-     * @param  \SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest $body JSON Parameters (required)
+     * @param  \SalesForce\MarketingCloud\Model\EmailDefinition $body JSON Parameters (required)
      *
      * @throws \InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \SalesForce\MarketingCloud\ApiException on non-2xx response
-     * @return \SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest
+     * @return \SalesForce\MarketingCloud\Model\EmailDefinition
      */
-    public function createEmailDefinition(\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest $body)
+    public function createEmailDefinition(\SalesForce\MarketingCloud\Model\EmailDefinition $body)
     {
         list($response) = $this->createEmailDefinitionWithHttpInfo($body);
         return $response;
@@ -71,16 +71,16 @@ class TransactionalMessagingApi extends AbstractApi
      *
      * createEmailDefinition
      *
-     * @param  \SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest $body JSON Parameters (required)
+     * @param  \SalesForce\MarketingCloud\Model\EmailDefinition $body JSON Parameters (required)
      *
-     * @return array of \SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SalesForce\MarketingCloud\Model\EmailDefinition, HTTP status code, HTTP response headers (array of strings)
      * @throws \InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \SalesForce\MarketingCloud\ApiException on non-2xx response
      */
-    public function createEmailDefinitionWithHttpInfo(\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest $body)
+    public function createEmailDefinitionWithHttpInfo(\SalesForce\MarketingCloud\Model\EmailDefinition $body)
     {
-        $returnType = '\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest';
+        $returnType = '\SalesForce\MarketingCloud\Model\EmailDefinition';
         $request = $this->createEmailDefinitionRequest($body);
 
         try {
@@ -123,7 +123,7 @@ class TransactionalMessagingApi extends AbstractApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest',
+                        '\SalesForce\MarketingCloud\Model\EmailDefinition',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -170,13 +170,13 @@ class TransactionalMessagingApi extends AbstractApi
      *
      * createEmailDefinition
      *
-     * @param  \SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest $body JSON Parameters (required)
+     * @param  \SalesForce\MarketingCloud\Model\EmailDefinition $body JSON Parameters (required)
      *
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
      * @throws Exception\ClientUnauthorizedException
      */
-    public function createEmailDefinitionAsync(\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest $body)
+    public function createEmailDefinitionAsync(\SalesForce\MarketingCloud\Model\EmailDefinition $body)
     {
         return $this->createEmailDefinitionAsyncWithHttpInfo($body)
             ->then(
@@ -191,15 +191,15 @@ class TransactionalMessagingApi extends AbstractApi
      *
      * createEmailDefinition
      *
-     * @param  \SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest $body JSON Parameters (required)
+     * @param  \SalesForce\MarketingCloud\Model\EmailDefinition $body JSON Parameters (required)
      *
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws Exception\ClientUnauthorizedException
      * @throws \InvalidArgumentException
      */
-    public function createEmailDefinitionAsyncWithHttpInfo(\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest $body)
+    public function createEmailDefinitionAsyncWithHttpInfo(\SalesForce\MarketingCloud\Model\EmailDefinition $body)
     {
-        $returnType = '\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest';
+        $returnType = '\SalesForce\MarketingCloud\Model\EmailDefinition';
         $request = $this->createEmailDefinitionRequest($body);
 
         return $this->client
@@ -245,13 +245,13 @@ class TransactionalMessagingApi extends AbstractApi
     /**
      * Create request for operation 'createEmailDefinition'
      *
-     * @param  \SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest $body JSON Parameters (required)
+     * @param  \SalesForce\MarketingCloud\Model\EmailDefinition $body JSON Parameters (required)
      *
      * @throws \InvalidArgumentException
      * @throws Exception\ClientUnauthorizedException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createEmailDefinitionRequest(\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest $body)
+    protected function createEmailDefinitionRequest(\SalesForce\MarketingCloud\Model\EmailDefinition $body)
     {
         if (isset($body) && !$body->valid()) {
             throw new InvalidRequestException($body, "The request data is invalid");
@@ -350,14 +350,14 @@ class TransactionalMessagingApi extends AbstractApi
      *
      * createSmsDefinition
      *
-     * @param  \SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest $body JSON Parameters (required)
+     * @param  \SalesForce\MarketingCloud\Model\SmsDefinition $body JSON Parameters (required)
      *
      * @throws \InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \SalesForce\MarketingCloud\ApiException on non-2xx response
-     * @return \SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest
+     * @return \SalesForce\MarketingCloud\Model\SmsDefinition
      */
-    public function createSmsDefinition(\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest $body)
+    public function createSmsDefinition(\SalesForce\MarketingCloud\Model\SmsDefinition $body)
     {
         list($response) = $this->createSmsDefinitionWithHttpInfo($body);
         return $response;
@@ -368,16 +368,16 @@ class TransactionalMessagingApi extends AbstractApi
      *
      * createSmsDefinition
      *
-     * @param  \SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest $body JSON Parameters (required)
+     * @param  \SalesForce\MarketingCloud\Model\SmsDefinition $body JSON Parameters (required)
      *
-     * @return array of \SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SalesForce\MarketingCloud\Model\SmsDefinition, HTTP status code, HTTP response headers (array of strings)
      * @throws \InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \SalesForce\MarketingCloud\ApiException on non-2xx response
      */
-    public function createSmsDefinitionWithHttpInfo(\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest $body)
+    public function createSmsDefinitionWithHttpInfo(\SalesForce\MarketingCloud\Model\SmsDefinition $body)
     {
-        $returnType = '\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest';
+        $returnType = '\SalesForce\MarketingCloud\Model\SmsDefinition';
         $request = $this->createSmsDefinitionRequest($body);
 
         try {
@@ -420,7 +420,7 @@ class TransactionalMessagingApi extends AbstractApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest',
+                        '\SalesForce\MarketingCloud\Model\SmsDefinition',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -467,13 +467,13 @@ class TransactionalMessagingApi extends AbstractApi
      *
      * createSmsDefinition
      *
-     * @param  \SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest $body JSON Parameters (required)
+     * @param  \SalesForce\MarketingCloud\Model\SmsDefinition $body JSON Parameters (required)
      *
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws \InvalidArgumentException
      * @throws Exception\ClientUnauthorizedException
      */
-    public function createSmsDefinitionAsync(\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest $body)
+    public function createSmsDefinitionAsync(\SalesForce\MarketingCloud\Model\SmsDefinition $body)
     {
         return $this->createSmsDefinitionAsyncWithHttpInfo($body)
             ->then(
@@ -488,15 +488,15 @@ class TransactionalMessagingApi extends AbstractApi
      *
      * createSmsDefinition
      *
-     * @param  \SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest $body JSON Parameters (required)
+     * @param  \SalesForce\MarketingCloud\Model\SmsDefinition $body JSON Parameters (required)
      *
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @throws Exception\ClientUnauthorizedException
      * @throws \InvalidArgumentException
      */
-    public function createSmsDefinitionAsyncWithHttpInfo(\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest $body)
+    public function createSmsDefinitionAsyncWithHttpInfo(\SalesForce\MarketingCloud\Model\SmsDefinition $body)
     {
-        $returnType = '\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest';
+        $returnType = '\SalesForce\MarketingCloud\Model\SmsDefinition';
         $request = $this->createSmsDefinitionRequest($body);
 
         return $this->client
@@ -542,13 +542,13 @@ class TransactionalMessagingApi extends AbstractApi
     /**
      * Create request for operation 'createSmsDefinition'
      *
-     * @param  \SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest $body JSON Parameters (required)
+     * @param  \SalesForce\MarketingCloud\Model\SmsDefinition $body JSON Parameters (required)
      *
      * @throws \InvalidArgumentException
      * @throws Exception\ClientUnauthorizedException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createSmsDefinitionRequest(\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest $body)
+    protected function createSmsDefinitionRequest(\SalesForce\MarketingCloud\Model\SmsDefinition $body)
     {
         if (isset($body) && !$body->valid()) {
             throw new InvalidRequestException($body, "The request data is invalid");
@@ -1828,7 +1828,7 @@ class TransactionalMessagingApi extends AbstractApi
      * @throws \InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \SalesForce\MarketingCloud\ApiException on non-2xx response
-     * @return \SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest
+     * @return \SalesForce\MarketingCloud\Model\EmailDefinition
      */
     public function getEmailDefinition(string $definitionKey)
     {
@@ -1843,14 +1843,14 @@ class TransactionalMessagingApi extends AbstractApi
      *
      * @param  string $definitionKey Unique identifier of the definition to get (required)
      *
-     * @return array of \SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SalesForce\MarketingCloud\Model\EmailDefinition, HTTP status code, HTTP response headers (array of strings)
      * @throws \InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \SalesForce\MarketingCloud\ApiException on non-2xx response
      */
     public function getEmailDefinitionWithHttpInfo(string $definitionKey)
     {
-        $returnType = '\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest';
+        $returnType = '\SalesForce\MarketingCloud\Model\EmailDefinition';
         $request = $this->getEmailDefinitionRequest($definitionKey);
 
         try {
@@ -1893,7 +1893,7 @@ class TransactionalMessagingApi extends AbstractApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest',
+                        '\SalesForce\MarketingCloud\Model\EmailDefinition',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1969,7 +1969,7 @@ class TransactionalMessagingApi extends AbstractApi
      */
     public function getEmailDefinitionAsyncWithHttpInfo(string $definitionKey)
     {
-        $returnType = '\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest';
+        $returnType = '\SalesForce\MarketingCloud\Model\EmailDefinition';
         $request = $this->getEmailDefinitionRequest($definitionKey);
 
         return $this->client
@@ -2125,7 +2125,7 @@ class TransactionalMessagingApi extends AbstractApi
      *
      * getEmailDefinitions
      *
-     * @param  string $status Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq. (optional)
+     * @param  string $filter Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq. (optional)
      * @param  float $pageSize Number of definitions, which are array elements, to return per paged response. (optional)
      * @param  float $page Page number to return. (optional)
      * @param  string $orderBy Sort by a dimension. You can sort by only one dimension. Accepted values are definitionKey, name, createdDate, modifiedDate, and status. (optional)
@@ -2135,9 +2135,9 @@ class TransactionalMessagingApi extends AbstractApi
      * @throws \SalesForce\MarketingCloud\ApiException on non-2xx response
      * @return \SalesForce\MarketingCloud\Model\GetEmailDefinitionsResponse
      */
-    public function getEmailDefinitions(string $status = null, float $pageSize = null, float $page = null, string $orderBy = null)
+    public function getEmailDefinitions(string $filter = null, float $pageSize = null, float $page = null, string $orderBy = null)
     {
-        list($response) = $this->getEmailDefinitionsWithHttpInfo($status, $pageSize, $page, $orderBy);
+        list($response) = $this->getEmailDefinitionsWithHttpInfo($filter, $pageSize, $page, $orderBy);
         return $response;
     }
 
@@ -2146,7 +2146,7 @@ class TransactionalMessagingApi extends AbstractApi
      *
      * getEmailDefinitions
      *
-     * @param  string $status Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq. (optional)
+     * @param  string $filter Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq. (optional)
      * @param  float $pageSize Number of definitions, which are array elements, to return per paged response. (optional)
      * @param  float $page Page number to return. (optional)
      * @param  string $orderBy Sort by a dimension. You can sort by only one dimension. Accepted values are definitionKey, name, createdDate, modifiedDate, and status. (optional)
@@ -2156,10 +2156,10 @@ class TransactionalMessagingApi extends AbstractApi
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \SalesForce\MarketingCloud\ApiException on non-2xx response
      */
-    public function getEmailDefinitionsWithHttpInfo(string $status = null, float $pageSize = null, float $page = null, string $orderBy = null)
+    public function getEmailDefinitionsWithHttpInfo(string $filter = null, float $pageSize = null, float $page = null, string $orderBy = null)
     {
         $returnType = '\SalesForce\MarketingCloud\Model\GetEmailDefinitionsResponse';
-        $request = $this->getEmailDefinitionsRequest($status, $pageSize, $page, $orderBy);
+        $request = $this->getEmailDefinitionsRequest($filter, $pageSize, $page, $orderBy);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2240,7 +2240,7 @@ class TransactionalMessagingApi extends AbstractApi
      *
      * getEmailDefinitions
      *
-     * @param  string $status Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq. (optional)
+     * @param  string $filter Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq. (optional)
      * @param  float $pageSize Number of definitions, which are array elements, to return per paged response. (optional)
      * @param  float $page Page number to return. (optional)
      * @param  string $orderBy Sort by a dimension. You can sort by only one dimension. Accepted values are definitionKey, name, createdDate, modifiedDate, and status. (optional)
@@ -2249,9 +2249,9 @@ class TransactionalMessagingApi extends AbstractApi
      * @throws \InvalidArgumentException
      * @throws Exception\ClientUnauthorizedException
      */
-    public function getEmailDefinitionsAsync(string $status = null, float $pageSize = null, float $page = null, string $orderBy = null)
+    public function getEmailDefinitionsAsync(string $filter = null, float $pageSize = null, float $page = null, string $orderBy = null)
     {
-        return $this->getEmailDefinitionsAsyncWithHttpInfo($status, $pageSize, $page, $orderBy)
+        return $this->getEmailDefinitionsAsyncWithHttpInfo($filter, $pageSize, $page, $orderBy)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2264,7 +2264,7 @@ class TransactionalMessagingApi extends AbstractApi
      *
      * getEmailDefinitions
      *
-     * @param  string $status Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq. (optional)
+     * @param  string $filter Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq. (optional)
      * @param  float $pageSize Number of definitions, which are array elements, to return per paged response. (optional)
      * @param  float $page Page number to return. (optional)
      * @param  string $orderBy Sort by a dimension. You can sort by only one dimension. Accepted values are definitionKey, name, createdDate, modifiedDate, and status. (optional)
@@ -2273,10 +2273,10 @@ class TransactionalMessagingApi extends AbstractApi
      * @throws Exception\ClientUnauthorizedException
      * @throws \InvalidArgumentException
      */
-    public function getEmailDefinitionsAsyncWithHttpInfo(string $status = null, float $pageSize = null, float $page = null, string $orderBy = null)
+    public function getEmailDefinitionsAsyncWithHttpInfo(string $filter = null, float $pageSize = null, float $page = null, string $orderBy = null)
     {
         $returnType = '\SalesForce\MarketingCloud\Model\GetEmailDefinitionsResponse';
-        $request = $this->getEmailDefinitionsRequest($status, $pageSize, $page, $orderBy);
+        $request = $this->getEmailDefinitionsRequest($filter, $pageSize, $page, $orderBy);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2321,7 +2321,7 @@ class TransactionalMessagingApi extends AbstractApi
     /**
      * Create request for operation 'getEmailDefinitions'
      *
-     * @param  string $status Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq. (optional)
+     * @param  string $filter Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq. (optional)
      * @param  float $pageSize Number of definitions, which are array elements, to return per paged response. (optional)
      * @param  float $page Page number to return. (optional)
      * @param  string $orderBy Sort by a dimension. You can sort by only one dimension. Accepted values are definitionKey, name, createdDate, modifiedDate, and status. (optional)
@@ -2330,7 +2330,7 @@ class TransactionalMessagingApi extends AbstractApi
      * @throws Exception\ClientUnauthorizedException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getEmailDefinitionsRequest(string $status = null, float $pageSize = null, float $page = null, string $orderBy = null)
+    protected function getEmailDefinitionsRequest(string $filter = null, float $pageSize = null, float $page = null, string $orderBy = null)
     {
         if (isset($body) && !$body->valid()) {
             throw new InvalidRequestException($body, "The request data is invalid");
@@ -2347,20 +2347,20 @@ class TransactionalMessagingApi extends AbstractApi
         $multipart = false;
 
         // query params
-        if ($status !== null) {
-            $queryParams['status'] = ObjectSerializer::toQueryValue($status);
+        if ($filter !== null) {
+            $queryParams['$filter'] = ObjectSerializer::toQueryValue($filter);
         }
         // query params
         if ($pageSize !== null) {
-            $queryParams['pageSize'] = ObjectSerializer::toQueryValue($pageSize);
+            $queryParams['$pageSize'] = ObjectSerializer::toQueryValue($pageSize);
         }
         // query params
         if ($page !== null) {
-            $queryParams['page'] = ObjectSerializer::toQueryValue($page);
+            $queryParams['$page'] = ObjectSerializer::toQueryValue($page);
         }
         // query params
         if ($orderBy !== null) {
-            $queryParams['orderBy'] = ObjectSerializer::toQueryValue($orderBy);
+            $queryParams['$orderBy'] = ObjectSerializer::toQueryValue($orderBy);
         }
 
 
@@ -3923,7 +3923,7 @@ class TransactionalMessagingApi extends AbstractApi
      * @throws \InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \SalesForce\MarketingCloud\ApiException on non-2xx response
-     * @return \SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest
+     * @return \SalesForce\MarketingCloud\Model\SmsDefinition
      */
     public function getSmsDefinition(string $definitionKey)
     {
@@ -3938,14 +3938,14 @@ class TransactionalMessagingApi extends AbstractApi
      *
      * @param  string $definitionKey Unique identifier of the definition to get (required)
      *
-     * @return array of \SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SalesForce\MarketingCloud\Model\SmsDefinition, HTTP status code, HTTP response headers (array of strings)
      * @throws \InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \SalesForce\MarketingCloud\ApiException on non-2xx response
      */
     public function getSmsDefinitionWithHttpInfo(string $definitionKey)
     {
-        $returnType = '\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest';
+        $returnType = '\SalesForce\MarketingCloud\Model\SmsDefinition';
         $request = $this->getSmsDefinitionRequest($definitionKey);
 
         try {
@@ -3988,7 +3988,7 @@ class TransactionalMessagingApi extends AbstractApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest',
+                        '\SalesForce\MarketingCloud\Model\SmsDefinition',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4064,7 +4064,7 @@ class TransactionalMessagingApi extends AbstractApi
      */
     public function getSmsDefinitionAsyncWithHttpInfo(string $definitionKey)
     {
-        $returnType = '\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest';
+        $returnType = '\SalesForce\MarketingCloud\Model\SmsDefinition';
         $request = $this->getSmsDefinitionRequest($definitionKey);
 
         return $this->client
@@ -4220,7 +4220,7 @@ class TransactionalMessagingApi extends AbstractApi
      *
      * getSmsDefinitions
      *
-     * @param  string $status Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq. (optional)
+     * @param  string $filter Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq. (optional)
      * @param  float $pageSize Number of definitions, which are array elements, to return per paged response. (optional)
      * @param  float $page Page number to return. (optional)
      * @param  string $orderBy Sort by a dimension. You can sort by only one dimension. Accepted values are definitionKey, name, createdDate, modifiedDate, and status. (optional)
@@ -4230,9 +4230,9 @@ class TransactionalMessagingApi extends AbstractApi
      * @throws \SalesForce\MarketingCloud\ApiException on non-2xx response
      * @return \SalesForce\MarketingCloud\Model\GetSmsDefinitionsResponse
      */
-    public function getSmsDefinitions(string $status = null, float $pageSize = null, float $page = null, string $orderBy = null)
+    public function getSmsDefinitions(string $filter = null, float $pageSize = null, float $page = null, string $orderBy = null)
     {
-        list($response) = $this->getSmsDefinitionsWithHttpInfo($status, $pageSize, $page, $orderBy);
+        list($response) = $this->getSmsDefinitionsWithHttpInfo($filter, $pageSize, $page, $orderBy);
         return $response;
     }
 
@@ -4241,7 +4241,7 @@ class TransactionalMessagingApi extends AbstractApi
      *
      * getSmsDefinitions
      *
-     * @param  string $status Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq. (optional)
+     * @param  string $filter Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq. (optional)
      * @param  float $pageSize Number of definitions, which are array elements, to return per paged response. (optional)
      * @param  float $page Page number to return. (optional)
      * @param  string $orderBy Sort by a dimension. You can sort by only one dimension. Accepted values are definitionKey, name, createdDate, modifiedDate, and status. (optional)
@@ -4251,10 +4251,10 @@ class TransactionalMessagingApi extends AbstractApi
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \SalesForce\MarketingCloud\ApiException on non-2xx response
      */
-    public function getSmsDefinitionsWithHttpInfo(string $status = null, float $pageSize = null, float $page = null, string $orderBy = null)
+    public function getSmsDefinitionsWithHttpInfo(string $filter = null, float $pageSize = null, float $page = null, string $orderBy = null)
     {
         $returnType = '\SalesForce\MarketingCloud\Model\GetSmsDefinitionsResponse';
-        $request = $this->getSmsDefinitionsRequest($status, $pageSize, $page, $orderBy);
+        $request = $this->getSmsDefinitionsRequest($filter, $pageSize, $page, $orderBy);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4335,7 +4335,7 @@ class TransactionalMessagingApi extends AbstractApi
      *
      * getSmsDefinitions
      *
-     * @param  string $status Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq. (optional)
+     * @param  string $filter Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq. (optional)
      * @param  float $pageSize Number of definitions, which are array elements, to return per paged response. (optional)
      * @param  float $page Page number to return. (optional)
      * @param  string $orderBy Sort by a dimension. You can sort by only one dimension. Accepted values are definitionKey, name, createdDate, modifiedDate, and status. (optional)
@@ -4344,9 +4344,9 @@ class TransactionalMessagingApi extends AbstractApi
      * @throws \InvalidArgumentException
      * @throws Exception\ClientUnauthorizedException
      */
-    public function getSmsDefinitionsAsync(string $status = null, float $pageSize = null, float $page = null, string $orderBy = null)
+    public function getSmsDefinitionsAsync(string $filter = null, float $pageSize = null, float $page = null, string $orderBy = null)
     {
-        return $this->getSmsDefinitionsAsyncWithHttpInfo($status, $pageSize, $page, $orderBy)
+        return $this->getSmsDefinitionsAsyncWithHttpInfo($filter, $pageSize, $page, $orderBy)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4359,7 +4359,7 @@ class TransactionalMessagingApi extends AbstractApi
      *
      * getSmsDefinitions
      *
-     * @param  string $status Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq. (optional)
+     * @param  string $filter Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq. (optional)
      * @param  float $pageSize Number of definitions, which are array elements, to return per paged response. (optional)
      * @param  float $page Page number to return. (optional)
      * @param  string $orderBy Sort by a dimension. You can sort by only one dimension. Accepted values are definitionKey, name, createdDate, modifiedDate, and status. (optional)
@@ -4368,10 +4368,10 @@ class TransactionalMessagingApi extends AbstractApi
      * @throws Exception\ClientUnauthorizedException
      * @throws \InvalidArgumentException
      */
-    public function getSmsDefinitionsAsyncWithHttpInfo(string $status = null, float $pageSize = null, float $page = null, string $orderBy = null)
+    public function getSmsDefinitionsAsyncWithHttpInfo(string $filter = null, float $pageSize = null, float $page = null, string $orderBy = null)
     {
         $returnType = '\SalesForce\MarketingCloud\Model\GetSmsDefinitionsResponse';
-        $request = $this->getSmsDefinitionsRequest($status, $pageSize, $page, $orderBy);
+        $request = $this->getSmsDefinitionsRequest($filter, $pageSize, $page, $orderBy);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4416,7 +4416,7 @@ class TransactionalMessagingApi extends AbstractApi
     /**
      * Create request for operation 'getSmsDefinitions'
      *
-     * @param  string $status Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq. (optional)
+     * @param  string $filter Filter by status type. Accepted values are active, inactive, or deleted. Valid operations are eq and neq. (optional)
      * @param  float $pageSize Number of definitions, which are array elements, to return per paged response. (optional)
      * @param  float $page Page number to return. (optional)
      * @param  string $orderBy Sort by a dimension. You can sort by only one dimension. Accepted values are definitionKey, name, createdDate, modifiedDate, and status. (optional)
@@ -4425,7 +4425,7 @@ class TransactionalMessagingApi extends AbstractApi
      * @throws Exception\ClientUnauthorizedException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getSmsDefinitionsRequest(string $status = null, float $pageSize = null, float $page = null, string $orderBy = null)
+    protected function getSmsDefinitionsRequest(string $filter = null, float $pageSize = null, float $page = null, string $orderBy = null)
     {
         if (isset($body) && !$body->valid()) {
             throw new InvalidRequestException($body, "The request data is invalid");
@@ -4442,20 +4442,20 @@ class TransactionalMessagingApi extends AbstractApi
         $multipart = false;
 
         // query params
-        if ($status !== null) {
-            $queryParams['status'] = ObjectSerializer::toQueryValue($status);
+        if ($filter !== null) {
+            $queryParams['$filter'] = ObjectSerializer::toQueryValue($filter);
         }
         // query params
         if ($pageSize !== null) {
-            $queryParams['pageSize'] = ObjectSerializer::toQueryValue($pageSize);
+            $queryParams['$pageSize'] = ObjectSerializer::toQueryValue($pageSize);
         }
         // query params
         if ($page !== null) {
-            $queryParams['page'] = ObjectSerializer::toQueryValue($page);
+            $queryParams['$page'] = ObjectSerializer::toQueryValue($page);
         }
         // query params
         if ($orderBy !== null) {
-            $queryParams['orderBy'] = ObjectSerializer::toQueryValue($orderBy);
+            $queryParams['$orderBy'] = ObjectSerializer::toQueryValue($orderBy);
         }
 
 
@@ -4831,7 +4831,7 @@ class TransactionalMessagingApi extends AbstractApi
      * @throws \InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \SalesForce\MarketingCloud\ApiException on non-2xx response
-     * @return \SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest
+     * @return \SalesForce\MarketingCloud\Model\EmailDefinition
      */
     public function partiallyUpdateEmailDefinition(string $definitionKey, \SalesForce\MarketingCloud\Model\UpdateEmailDefinitionRequest $body)
     {
@@ -4847,14 +4847,14 @@ class TransactionalMessagingApi extends AbstractApi
      * @param  string $definitionKey Unique identifier of the definition. (required)
      * @param  \SalesForce\MarketingCloud\Model\UpdateEmailDefinitionRequest $body JSON Parameters (required)
      *
-     * @return array of \SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SalesForce\MarketingCloud\Model\EmailDefinition, HTTP status code, HTTP response headers (array of strings)
      * @throws \InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \SalesForce\MarketingCloud\ApiException on non-2xx response
      */
     public function partiallyUpdateEmailDefinitionWithHttpInfo(string $definitionKey, \SalesForce\MarketingCloud\Model\UpdateEmailDefinitionRequest $body)
     {
-        $returnType = '\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest';
+        $returnType = '\SalesForce\MarketingCloud\Model\EmailDefinition';
         $request = $this->partiallyUpdateEmailDefinitionRequest($definitionKey, $body);
 
         try {
@@ -4897,7 +4897,7 @@ class TransactionalMessagingApi extends AbstractApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest',
+                        '\SalesForce\MarketingCloud\Model\EmailDefinition',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4967,7 +4967,7 @@ class TransactionalMessagingApi extends AbstractApi
      */
     public function partiallyUpdateEmailDefinitionAsyncWithHttpInfo(string $definitionKey, \SalesForce\MarketingCloud\Model\UpdateEmailDefinitionRequest $body)
     {
-        $returnType = '\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest';
+        $returnType = '\SalesForce\MarketingCloud\Model\EmailDefinition';
         $request = $this->partiallyUpdateEmailDefinitionRequest($definitionKey, $body);
 
         return $this->client
@@ -5139,7 +5139,7 @@ class TransactionalMessagingApi extends AbstractApi
      * @throws \InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \SalesForce\MarketingCloud\ApiException on non-2xx response
-     * @return \SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest
+     * @return \SalesForce\MarketingCloud\Model\SmsDefinition
      */
     public function partiallyUpdateSmsDefinition(string $definitionKey, \SalesForce\MarketingCloud\Model\UpdateSmsDefinitionRequest $body)
     {
@@ -5155,14 +5155,14 @@ class TransactionalMessagingApi extends AbstractApi
      * @param  string $definitionKey Unique identifier of the definition. (required)
      * @param  \SalesForce\MarketingCloud\Model\UpdateSmsDefinitionRequest $body JSON Parameters (required)
      *
-     * @return array of \SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SalesForce\MarketingCloud\Model\SmsDefinition, HTTP status code, HTTP response headers (array of strings)
      * @throws \InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \SalesForce\MarketingCloud\ApiException on non-2xx response
      */
     public function partiallyUpdateSmsDefinitionWithHttpInfo(string $definitionKey, \SalesForce\MarketingCloud\Model\UpdateSmsDefinitionRequest $body)
     {
-        $returnType = '\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest';
+        $returnType = '\SalesForce\MarketingCloud\Model\SmsDefinition';
         $request = $this->partiallyUpdateSmsDefinitionRequest($definitionKey, $body);
 
         try {
@@ -5205,7 +5205,7 @@ class TransactionalMessagingApi extends AbstractApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest',
+                        '\SalesForce\MarketingCloud\Model\SmsDefinition',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5275,7 +5275,7 @@ class TransactionalMessagingApi extends AbstractApi
      */
     public function partiallyUpdateSmsDefinitionAsyncWithHttpInfo(string $definitionKey, \SalesForce\MarketingCloud\Model\UpdateSmsDefinitionRequest $body)
     {
-        $returnType = '\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest';
+        $returnType = '\SalesForce\MarketingCloud\Model\SmsDefinition';
         $request = $this->partiallyUpdateSmsDefinitionRequest($definitionKey, $body);
 
         return $this->client

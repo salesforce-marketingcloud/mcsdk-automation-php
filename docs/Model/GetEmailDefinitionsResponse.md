@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **requestId** | **string** | The ID of the request | [optional] 
-**definitions** | [**\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest[]**](CreateEmailDefinitionRequest.md) |  | [optional] 
+**definitions** | [**\SalesForce\MarketingCloud\Model\EmailDefinition[]**](EmailDefinition.md) |  | [optional] 
 **count** | **int** | Number of pages | [optional] 
 **page** | **int** | Page number to return. | [optional] 
 **pageSize** | **int** | Number of definitions, which are array elements, to return per paged response. | [optional] 

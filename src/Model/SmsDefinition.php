@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateSmsDefinitionRequest
+ * SmsDefinition
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SalesForce\MarketingCloud\ObjectSerializer;
 
 /**
- * CreateSmsDefinitionRequest Class Doc Comment
+ * SmsDefinition Class Doc Comment
  *
  * @category Class
  * @package  SalesForce\MarketingCloud
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CreateSmsDefinitionRequest implements ModelInterface, ArrayAccess
+class SmsDefinition implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CreateSmsDefinitionRequest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CreateSmsDefinitionRequest';
+    protected static $swaggerModelName = 'SmsDefinition';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,12 +59,12 @@ class CreateSmsDefinitionRequest implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'definitionKey' => 'string',
         'name' => 'string',
-        'content' => '\SalesForce\MarketingCloud\Model\CreateSmsDefinitionContent',
+        'content' => '\SalesForce\MarketingCloud\Model\SmsDefinitionContent',
         'status' => 'string',
         'createdDate' => '\DateTime',
         'modifiedDate' => '\DateTime',
         'description' => 'string',
-        'subscriptions' => '\SalesForce\MarketingCloud\Model\CreateSmsDefinitionSubscriptions',
+        'subscriptions' => '\SalesForce\MarketingCloud\Model\SmsDefinitionSubscriptions',
         'requestId' => 'string'
     ];
 
@@ -315,7 +315,7 @@ class CreateSmsDefinitionRequest implements ModelInterface, ArrayAccess
     /**
      * Gets content
      *
-     * @return \SalesForce\MarketingCloud\Model\CreateSmsDefinitionContent
+     * @return \SalesForce\MarketingCloud\Model\SmsDefinitionContent
      */
     public function getContent()
     {
@@ -325,7 +325,7 @@ class CreateSmsDefinitionRequest implements ModelInterface, ArrayAccess
     /**
      * Sets content
      *
-     * @param \SalesForce\MarketingCloud\Model\CreateSmsDefinitionContent $content content
+     * @param \SalesForce\MarketingCloud\Model\SmsDefinitionContent $content content
      *
      * @return $this
      */
@@ -435,7 +435,7 @@ class CreateSmsDefinitionRequest implements ModelInterface, ArrayAccess
     /**
      * Gets subscriptions
      *
-     * @return \SalesForce\MarketingCloud\Model\CreateSmsDefinitionSubscriptions
+     * @return \SalesForce\MarketingCloud\Model\SmsDefinitionSubscriptions
      */
     public function getSubscriptions()
     {
@@ -445,7 +445,7 @@ class CreateSmsDefinitionRequest implements ModelInterface, ArrayAccess
     /**
      * Sets subscriptions
      *
-     * @param \SalesForce\MarketingCloud\Model\CreateSmsDefinitionSubscriptions $subscriptions subscriptions
+     * @param \SalesForce\MarketingCloud\Model\SmsDefinitionSubscriptions $subscriptions subscriptions
      *
      * @return $this
      */

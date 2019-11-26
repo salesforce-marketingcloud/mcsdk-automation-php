@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateEmailDefinitionRequest
+ * EmailDefinition
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SalesForce\MarketingCloud\ObjectSerializer;
 
 /**
- * CreateEmailDefinitionRequest Class Doc Comment
+ * EmailDefinition Class Doc Comment
  *
  * @category Class
  * @package  SalesForce\MarketingCloud
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CreateEmailDefinitionRequest implements ModelInterface, ArrayAccess
+class EmailDefinition implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CreateEmailDefinitionRequest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CreateEmailDefinitionRequest';
+    protected static $swaggerModelName = 'EmailDefinition';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -66,9 +66,9 @@ class CreateEmailDefinitionRequest implements ModelInterface, ArrayAccess
         'status' => 'string',
         'createdDate' => '\DateTime',
         'modifiedDate' => '\DateTime',
-        'content' => '\SalesForce\MarketingCloud\Model\CreateEmailDefinitionContent',
-        'subscriptions' => '\SalesForce\MarketingCloud\Model\CreateEmailDefinitionSubscriptions',
-        'options' => '\SalesForce\MarketingCloud\Model\CreateEmailDefinitionOptionsRequest'
+        'content' => '\SalesForce\MarketingCloud\Model\EmailDefinitionContent',
+        'subscriptions' => '\SalesForce\MarketingCloud\Model\EmailDefinitionSubscriptions',
+        'options' => '\SalesForce\MarketingCloud\Model\EmailDefinitionOptions'
     ];
 
     /**
@@ -501,7 +501,7 @@ class CreateEmailDefinitionRequest implements ModelInterface, ArrayAccess
     /**
      * Gets content
      *
-     * @return \SalesForce\MarketingCloud\Model\CreateEmailDefinitionContent
+     * @return \SalesForce\MarketingCloud\Model\EmailDefinitionContent
      */
     public function getContent()
     {
@@ -511,7 +511,7 @@ class CreateEmailDefinitionRequest implements ModelInterface, ArrayAccess
     /**
      * Sets content
      *
-     * @param \SalesForce\MarketingCloud\Model\CreateEmailDefinitionContent $content content
+     * @param \SalesForce\MarketingCloud\Model\EmailDefinitionContent $content content
      *
      * @return $this
      */
@@ -525,7 +525,7 @@ class CreateEmailDefinitionRequest implements ModelInterface, ArrayAccess
     /**
      * Gets subscriptions
      *
-     * @return \SalesForce\MarketingCloud\Model\CreateEmailDefinitionSubscriptions
+     * @return \SalesForce\MarketingCloud\Model\EmailDefinitionSubscriptions
      */
     public function getSubscriptions()
     {
@@ -535,7 +535,7 @@ class CreateEmailDefinitionRequest implements ModelInterface, ArrayAccess
     /**
      * Sets subscriptions
      *
-     * @param \SalesForce\MarketingCloud\Model\CreateEmailDefinitionSubscriptions $subscriptions subscriptions
+     * @param \SalesForce\MarketingCloud\Model\EmailDefinitionSubscriptions $subscriptions subscriptions
      *
      * @return $this
      */
@@ -549,7 +549,7 @@ class CreateEmailDefinitionRequest implements ModelInterface, ArrayAccess
     /**
      * Gets options
      *
-     * @return \SalesForce\MarketingCloud\Model\CreateEmailDefinitionOptionsRequest
+     * @return \SalesForce\MarketingCloud\Model\EmailDefinitionOptions
      */
     public function getOptions()
     {
@@ -559,7 +559,7 @@ class CreateEmailDefinitionRequest implements ModelInterface, ArrayAccess
     /**
      * Sets options
      *
-     * @param \SalesForce\MarketingCloud\Model\CreateEmailDefinitionOptionsRequest $options options
+     * @param \SalesForce\MarketingCloud\Model\EmailDefinitionOptions $options options
      *
      * @return $this
      */

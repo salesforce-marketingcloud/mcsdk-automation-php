@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateSmsDefinitionRequestTest
+ * EmailDefinitionTest
  *
  * PHP version 5
  *
@@ -32,27 +32,27 @@ namespace SalesForce\MarketingCloud\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * CreateSmsDefinitionRequestTest Class Doc Comment
+ * EmailDefinitionTest Class Doc Comment
  *
  * @category    Class
- * @description CreateSmsDefinitionRequest
+ * @description EmailDefinition
  * @package     SalesForce\MarketingCloud
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CreateSmsDefinitionRequestTest extends TestCase
+class EmailDefinitionTest extends TestCase
 {
     /**
-     * Test "CreateSmsDefinitionRequest"
+     * Test "EmailDefinition"
      */
-    public function testCreateSmsDefinitionRequest()
+    public function testEmailDefinition()
     {
     }
 
     /**
-     * Test attribute "definitionKey"
+     * Test attribute "requestId"
      */
-    public function testPropertyDefinitionKey()
+    public function testPropertyRequestId()
     {
     }
 
@@ -64,9 +64,30 @@ class CreateSmsDefinitionRequestTest extends TestCase
     }
 
     /**
-     * Test attribute "content"
+     * Test attribute "definitionKey"
      */
-    public function testPropertyContent()
+    public function testPropertyDefinitionKey()
+    {
+    }
+
+    /**
+     * Test attribute "definitionId"
+     */
+    public function testPropertyDefinitionId()
+    {
+    }
+
+    /**
+     * Test attribute "description"
+     */
+    public function testPropertyDescription()
+    {
+    }
+
+    /**
+     * Test attribute "classification"
+     */
+    public function testPropertyClassification()
     {
     }
 
@@ -92,9 +113,9 @@ class CreateSmsDefinitionRequestTest extends TestCase
     }
 
     /**
-     * Test attribute "description"
+     * Test attribute "content"
      */
-    public function testPropertyDescription()
+    public function testPropertyContent()
     {
     }
 
@@ -106,9 +127,9 @@ class CreateSmsDefinitionRequestTest extends TestCase
     }
 
     /**
-     * Test attribute "requestId"
+     * Test attribute "options"
      */
-    public function testPropertyRequestId()
+    public function testPropertyOptions()
     {
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateSmsDefinitionContentTest
+ * SmsDefinitionContentTest
  *
  * PHP version 5
  *
@@ -32,20 +32,20 @@ namespace SalesForce\MarketingCloud\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * CreateSmsDefinitionContentTest Class Doc Comment
+ * SmsDefinitionContentTest Class Doc Comment
  *
  * @category    Class
- * @description CreateSmsDefinitionContent
+ * @description SmsDefinitionContent
  * @package     SalesForce\MarketingCloud
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CreateSmsDefinitionContentTest extends TestCase
+class SmsDefinitionContentTest extends TestCase
 {
     /**
-     * Test "CreateSmsDefinitionContent"
+     * Test "SmsDefinitionContent"
      */
-    public function testCreateSmsDefinitionContent()
+    public function testSmsDefinitionContent()
     {
     }
 

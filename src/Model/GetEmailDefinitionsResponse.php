@@ -58,7 +58,7 @@ class GetEmailDefinitionsResponse implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'requestId' => 'string',
-        'definitions' => '\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest[]',
+        'definitions' => '\SalesForce\MarketingCloud\Model\EmailDefinition[]',
         'count' => 'int',
         'page' => 'int',
         'pageSize' => 'int'
@@ -255,7 +255,7 @@ class GetEmailDefinitionsResponse implements ModelInterface, ArrayAccess
     /**
      * Gets definitions
      *
-     * @return \SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest[]
+     * @return \SalesForce\MarketingCloud\Model\EmailDefinition[]
      */
     public function getDefinitions()
     {
@@ -265,7 +265,7 @@ class GetEmailDefinitionsResponse implements ModelInterface, ArrayAccess
     /**
      * Sets definitions
      *
-     * @param \SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest[] $definitions definitions
+     * @param \SalesForce\MarketingCloud\Model\EmailDefinition[] $definitions definitions
      *
      * @return $this
      */

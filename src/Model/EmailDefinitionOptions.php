@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateSmsDefinitionContent
+ * EmailDefinitionOptions
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SalesForce\MarketingCloud\ObjectSerializer;
 
 /**
- * CreateSmsDefinitionContent Class Doc Comment
+ * EmailDefinitionOptions Class Doc Comment
  *
  * @category Class
  * @package  SalesForce\MarketingCloud
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CreateSmsDefinitionContent implements ModelInterface, ArrayAccess
+class EmailDefinitionOptions implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CreateSmsDefinitionContent implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CreateSmsDefinitionContent';
+    protected static $swaggerModelName = 'EmailDefinitionOptions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,7 @@ class CreateSmsDefinitionContent implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'message' => 'string'
+        'trackLinks' => 'bool'
     ];
 
     /**
@@ -66,7 +66,7 @@ class CreateSmsDefinitionContent implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'message' => null
+        'trackLinks' => null
     ];
 
     /**
@@ -96,7 +96,7 @@ class CreateSmsDefinitionContent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'message' => 'message'
+        'trackLinks' => 'trackLinks'
     ];
 
     /**
@@ -105,7 +105,7 @@ class CreateSmsDefinitionContent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'message' => 'setMessage'
+        'trackLinks' => 'setTrackLinks'
     ];
 
     /**
@@ -114,7 +114,7 @@ class CreateSmsDefinitionContent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'message' => 'getMessage'
+        'trackLinks' => 'getTrackLinks'
     ];
 
     /**
@@ -177,7 +177,7 @@ class CreateSmsDefinitionContent implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['trackLinks'] = isset($data['trackLinks']) ? $data['trackLinks'] : null;
     }
 
     /**
@@ -189,9 +189,6 @@ class CreateSmsDefinitionContent implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['message'] === null) {
-            $invalidProperties[] = "'message' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -208,25 +205,25 @@ class CreateSmsDefinitionContent implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets message
+     * Gets trackLinks
      *
-     * @return string
+     * @return bool
      */
-    public function getMessage()
+    public function getTrackLinks()
     {
-        return $this->container['message'];
+        return $this->container['trackLinks'];
     }
 
     /**
-     * Sets message
+     * Sets trackLinks
      *
-     * @param string $message The message content that you want sent with each message. Use substitution strings and AMPscript to personalize the message.
+     * @param bool $trackLinks Wraps links for tracking and reporting. Default is true.
      *
      * @return $this
      */
-    public function setMessage($message)
+    public function setTrackLinks($trackLinks)
     {
-        $this->container['message'] = $message;
+        $this->container['trackLinks'] = $trackLinks;
 
         return $this;
     }

@@ -58,10 +58,10 @@ class UpdateSmsDefinitionRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'name' => 'string',
-        'content' => '\SalesForce\MarketingCloud\Model\CreateSmsDefinitionContent',
+        'content' => '\SalesForce\MarketingCloud\Model\SmsDefinitionContent',
         'status' => 'string',
         'description' => 'string',
-        'subscriptions' => '\SalesForce\MarketingCloud\Model\CreateSmsDefinitionSubscriptions'
+        'subscriptions' => '\SalesForce\MarketingCloud\Model\SmsDefinitionSubscriptions'
     ];
 
     /**
@@ -255,7 +255,7 @@ class UpdateSmsDefinitionRequest implements ModelInterface, ArrayAccess
     /**
      * Gets content
      *
-     * @return \SalesForce\MarketingCloud\Model\CreateSmsDefinitionContent
+     * @return \SalesForce\MarketingCloud\Model\SmsDefinitionContent
      */
     public function getContent()
     {
@@ -265,7 +265,7 @@ class UpdateSmsDefinitionRequest implements ModelInterface, ArrayAccess
     /**
      * Sets content
      *
-     * @param \SalesForce\MarketingCloud\Model\CreateSmsDefinitionContent $content content
+     * @param \SalesForce\MarketingCloud\Model\SmsDefinitionContent $content content
      *
      * @return $this
      */
@@ -327,7 +327,7 @@ class UpdateSmsDefinitionRequest implements ModelInterface, ArrayAccess
     /**
      * Gets subscriptions
      *
-     * @return \SalesForce\MarketingCloud\Model\CreateSmsDefinitionSubscriptions
+     * @return \SalesForce\MarketingCloud\Model\SmsDefinitionSubscriptions
      */
     public function getSubscriptions()
     {
@@ -337,7 +337,7 @@ class UpdateSmsDefinitionRequest implements ModelInterface, ArrayAccess
     /**
      * Sets subscriptions
      *
-     * @param \SalesForce\MarketingCloud\Model\CreateSmsDefinitionSubscriptions $subscriptions subscriptions
+     * @param \SalesForce\MarketingCloud\Model\SmsDefinitionSubscriptions $subscriptions subscriptions
      *
      * @return $this
      */
