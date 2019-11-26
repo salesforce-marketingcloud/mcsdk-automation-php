@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateEmailDefinitionSubscriptions
+ * SmsDefinitionContent
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SalesForce\MarketingCloud\ObjectSerializer;
 
 /**
- * CreateEmailDefinitionSubscriptions Class Doc Comment
+ * SmsDefinitionContent Class Doc Comment
  *
  * @category Class
  * @package  SalesForce\MarketingCloud
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CreateEmailDefinitionSubscriptions implements ModelInterface, ArrayAccess
+class SmsDefinitionContent implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CreateEmailDefinitionSubscriptions implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CreateEmailDefinitionSubscriptions';
+    protected static $swaggerModelName = 'SmsDefinitionContent';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,10 +57,7 @@ class CreateEmailDefinitionSubscriptions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'list' => 'string',
-        'dataExtension' => 'string',
-        'autoAddSubscriber' => 'bool',
-        'updateSubscriber' => 'bool'
+        'message' => 'string'
     ];
 
     /**
@@ -69,10 +66,7 @@ class CreateEmailDefinitionSubscriptions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'list' => null,
-        'dataExtension' => null,
-        'autoAddSubscriber' => null,
-        'updateSubscriber' => null
+        'message' => null
     ];
 
     /**
@@ -102,10 +96,7 @@ class CreateEmailDefinitionSubscriptions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'list' => 'list',
-        'dataExtension' => 'dataExtension',
-        'autoAddSubscriber' => 'autoAddSubscriber',
-        'updateSubscriber' => 'updateSubscriber'
+        'message' => 'message'
     ];
 
     /**
@@ -114,10 +105,7 @@ class CreateEmailDefinitionSubscriptions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'list' => 'setList',
-        'dataExtension' => 'setDataExtension',
-        'autoAddSubscriber' => 'setAutoAddSubscriber',
-        'updateSubscriber' => 'setUpdateSubscriber'
+        'message' => 'setMessage'
     ];
 
     /**
@@ -126,10 +114,7 @@ class CreateEmailDefinitionSubscriptions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'list' => 'getList',
-        'dataExtension' => 'getDataExtension',
-        'autoAddSubscriber' => 'getAutoAddSubscriber',
-        'updateSubscriber' => 'getUpdateSubscriber'
+        'message' => 'getMessage'
     ];
 
     /**
@@ -192,10 +177,7 @@ class CreateEmailDefinitionSubscriptions implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['list'] = isset($data['list']) ? $data['list'] : null;
-        $this->container['dataExtension'] = isset($data['dataExtension']) ? $data['dataExtension'] : null;
-        $this->container['autoAddSubscriber'] = isset($data['autoAddSubscriber']) ? $data['autoAddSubscriber'] : true;
-        $this->container['updateSubscriber'] = isset($data['updateSubscriber']) ? $data['updateSubscriber'] : null;
+        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
     }
 
     /**
@@ -207,8 +189,8 @@ class CreateEmailDefinitionSubscriptions implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['list'] === null) {
-            $invalidProperties[] = "'list' can't be null";
+        if ($this->container['message'] === null) {
+            $invalidProperties[] = "'message' can't be null";
         }
         return $invalidProperties;
     }
@@ -226,97 +208,25 @@ class CreateEmailDefinitionSubscriptions implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets list
+     * Gets message
      *
      * @return string
      */
-    public function getList()
+    public function getMessage()
     {
-        return $this->container['list'];
+        return $this->container['message'];
     }
 
     /**
-     * Sets list
+     * Sets message
      *
-     * @param string $list Marketing Cloud external key of the list or all subscribers. Contains the subscriber keys and profile attributes.
+     * @param string $message The message content that you want sent with each message. Use substitution strings and AMPscript to personalize the message.
      *
      * @return $this
      */
-    public function setList($list)
+    public function setMessage($message)
     {
-        $this->container['list'] = $list;
-
-        return $this;
-    }
-
-    /**
-     * Gets dataExtension
-     *
-     * @return string
-     */
-    public function getDataExtension()
-    {
-        return $this->container['dataExtension'];
-    }
-
-    /**
-     * Sets dataExtension
-     *
-     * @param string $dataExtension Marketing Cloud external key of the triggered send data extension. Each request inserts as a new row in the data extension.
-     *
-     * @return $this
-     */
-    public function setDataExtension($dataExtension)
-    {
-        $this->container['dataExtension'] = $dataExtension;
-
-        return $this;
-    }
-
-    /**
-     * Gets autoAddSubscriber
-     *
-     * @return bool
-     */
-    public function getAutoAddSubscriber()
-    {
-        return $this->container['autoAddSubscriber'];
-    }
-
-    /**
-     * Sets autoAddSubscriber
-     *
-     * @param bool $autoAddSubscriber Adds the recipient’s email address and contact key as a subscriber key to subscriptions.list. Default is true.
-     *
-     * @return $this
-     */
-    public function setAutoAddSubscriber($autoAddSubscriber)
-    {
-        $this->container['autoAddSubscriber'] = $autoAddSubscriber;
-
-        return $this;
-    }
-
-    /**
-     * Gets updateSubscriber
-     *
-     * @return bool
-     */
-    public function getUpdateSubscriber()
-    {
-        return $this->container['updateSubscriber'];
-    }
-
-    /**
-     * Sets updateSubscriber
-     *
-     * @param bool $updateSubscriber Updates the recipient’s contact key as a subscriber key with the provided email address and profile attributes to subscriptions.list. Default is true.
-     *
-     * @return $this
-     */
-    public function setUpdateSubscriber($updateSubscriber)
-    {
-        $this->container['updateSubscriber'] = $updateSubscriber;
+        $this->container['message'] = $message;
 
         return $this;
     }

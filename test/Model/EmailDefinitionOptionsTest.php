@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateEmailDefinitionOptionsRequestTest
+ * EmailDefinitionOptionsTest
  *
  * PHP version 5
  *
@@ -32,20 +32,20 @@ namespace SalesForce\MarketingCloud\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * CreateEmailDefinitionOptionsRequestTest Class Doc Comment
+ * EmailDefinitionOptionsTest Class Doc Comment
  *
  * @category    Class
- * @description CreateEmailDefinitionOptionsRequest
+ * @description EmailDefinitionOptions
  * @package     SalesForce\MarketingCloud
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CreateEmailDefinitionOptionsRequestTest extends TestCase
+class EmailDefinitionOptionsTest extends TestCase
 {
     /**
-     * Test "CreateEmailDefinitionOptionsRequest"
+     * Test "EmailDefinitionOptions"
      */
-    public function testCreateEmailDefinitionOptionsRequest()
+    public function testEmailDefinitionOptions()
     {
     }
 

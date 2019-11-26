@@ -22,11 +22,11 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
   "repositories": [
     {
       "type": "git",
-      "url": "https://github.com/sfadincescu/mcsdk-automation-php.git"
+      "url": "https://github.com/salesforce-marketingcloud/mcsdk-automation-php.git"
     }
   ],
   "require": {
-    "sfadincescu/mcsdk-automation-php": 1.0.0"
+    "salesforce-marketingcloud/mcsdk-automation-php": "1.0.0"
   }
 }
 ```
@@ -132,15 +132,12 @@ Class | Method | HTTP request | Description
  - [AssetType](docs/Model/AssetType.md)
  - [Attributes](docs/Model/Attributes.md)
  - [Campaign](docs/Model/Campaign.md)
- - [CreateEmailDefinitionContent](docs/Model/CreateEmailDefinitionContent.md)
- - [CreateEmailDefinitionOptionsRequest](docs/Model/CreateEmailDefinitionOptionsRequest.md)
- - [CreateEmailDefinitionRequest](docs/Model/CreateEmailDefinitionRequest.md)
- - [CreateEmailDefinitionSubscriptions](docs/Model/CreateEmailDefinitionSubscriptions.md)
- - [CreateSmsDefinitionContent](docs/Model/CreateSmsDefinitionContent.md)
- - [CreateSmsDefinitionRequest](docs/Model/CreateSmsDefinitionRequest.md)
- - [CreateSmsDefinitionSubscriptions](docs/Model/CreateSmsDefinitionSubscriptions.md)
  - [DeleteQueuedMessagesForSendDefinitionResponse](docs/Model/DeleteQueuedMessagesForSendDefinitionResponse.md)
  - [DeleteSendDefinitionResponse](docs/Model/DeleteSendDefinitionResponse.md)
+ - [EmailDefinition](docs/Model/EmailDefinition.md)
+ - [EmailDefinitionContent](docs/Model/EmailDefinitionContent.md)
+ - [EmailDefinitionOptions](docs/Model/EmailDefinitionOptions.md)
+ - [EmailDefinitionSubscriptions](docs/Model/EmailDefinitionSubscriptions.md)
  - [GetDefinitionSendStatusForRecipientResponse](docs/Model/GetDefinitionSendStatusForRecipientResponse.md)
  - [GetDefinitionSendStatusForRecipientResponseInfo](docs/Model/GetDefinitionSendStatusForRecipientResponseInfo.md)
  - [GetDefinitionsNotSentToRecipientsMessage](docs/Model/GetDefinitionsNotSentToRecipientsMessage.md)
@@ -160,6 +157,9 @@ Class | Method | HTTP request | Description
  - [SendSmsToMultipleRecipientsSubscriptionsRequest](docs/Model/SendSmsToMultipleRecipientsSubscriptionsRequest.md)
  - [SendSmsToSingleRecipientRequest](docs/Model/SendSmsToSingleRecipientRequest.md)
  - [SharingProperties](docs/Model/SharingProperties.md)
+ - [SmsDefinition](docs/Model/SmsDefinition.md)
+ - [SmsDefinitionContent](docs/Model/SmsDefinitionContent.md)
+ - [SmsDefinitionSubscriptions](docs/Model/SmsDefinitionSubscriptions.md)
  - [UpdateEmailDefinitionRequest](docs/Model/UpdateEmailDefinitionRequest.md)
  - [UpdateSmsDefinitionRequest](docs/Model/UpdateSmsDefinitionRequest.md)
 

@@ -58,12 +58,12 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'name' => 'string',
-        'content' => '\SalesForce\MarketingCloud\Model\CreateEmailDefinitionContent',
+        'content' => '\SalesForce\MarketingCloud\Model\EmailDefinitionContent',
         'status' => 'string',
         'description' => 'string',
         'classification' => 'string',
-        'subscriptions' => '\SalesForce\MarketingCloud\Model\CreateEmailDefinitionSubscriptions',
-        'options' => '\SalesForce\MarketingCloud\Model\CreateEmailDefinitionOptionsRequest'
+        'subscriptions' => '\SalesForce\MarketingCloud\Model\EmailDefinitionSubscriptions',
+        'options' => '\SalesForce\MarketingCloud\Model\EmailDefinitionOptions'
     ];
 
     /**
@@ -267,7 +267,7 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
     /**
      * Gets content
      *
-     * @return \SalesForce\MarketingCloud\Model\CreateEmailDefinitionContent
+     * @return \SalesForce\MarketingCloud\Model\EmailDefinitionContent
      */
     public function getContent()
     {
@@ -277,7 +277,7 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
     /**
      * Sets content
      *
-     * @param \SalesForce\MarketingCloud\Model\CreateEmailDefinitionContent $content content
+     * @param \SalesForce\MarketingCloud\Model\EmailDefinitionContent $content content
      *
      * @return $this
      */
@@ -363,7 +363,7 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
     /**
      * Gets subscriptions
      *
-     * @return \SalesForce\MarketingCloud\Model\CreateEmailDefinitionSubscriptions
+     * @return \SalesForce\MarketingCloud\Model\EmailDefinitionSubscriptions
      */
     public function getSubscriptions()
     {
@@ -373,7 +373,7 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
     /**
      * Sets subscriptions
      *
-     * @param \SalesForce\MarketingCloud\Model\CreateEmailDefinitionSubscriptions $subscriptions subscriptions
+     * @param \SalesForce\MarketingCloud\Model\EmailDefinitionSubscriptions $subscriptions subscriptions
      *
      * @return $this
      */
@@ -387,7 +387,7 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
     /**
      * Gets options
      *
-     * @return \SalesForce\MarketingCloud\Model\CreateEmailDefinitionOptionsRequest
+     * @return \SalesForce\MarketingCloud\Model\EmailDefinitionOptions
      */
     public function getOptions()
     {
@@ -397,7 +397,7 @@ class UpdateEmailDefinitionRequest implements ModelInterface, ArrayAccess
     /**
      * Sets options
      *
-     * @param \SalesForce\MarketingCloud\Model\CreateEmailDefinitionOptionsRequest $options options
+     * @param \SalesForce\MarketingCloud\Model\EmailDefinitionOptions $options options
      *
      * @return $this
      */

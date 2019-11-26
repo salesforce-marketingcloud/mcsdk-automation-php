@@ -6,8 +6,8 @@ use SalesForce\MarketingCloud\Api\AssetApi;
 use SalesForce\MarketingCloud\Api\TransactionalMessagingApi;
 use SalesForce\MarketingCloud\Model\Asset;
 use SalesForce\MarketingCloud\Model\AssetType;
-use SalesForce\MarketingCloud\Model\CreateEmailDefinitionContent;
-use SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest;
+use SalesForce\MarketingCloud\Model\EmailDefinition;
+use SalesForce\MarketingCloud\Model\EmailDefinitionContent;
 use SalesForce\MarketingCloud\Model\ModelInterface;
 use SalesForce\MarketingCloud\TestHelper\Model\Provider\AssetProvider;
 
@@ -16,7 +16,7 @@ use SalesForce\MarketingCloud\TestHelper\Model\Provider\AssetProvider;
  *
  * @package SalesForce\MarketingCloud\TestHelper\Model\Provisioner
  */
-class EmailDefinition extends AbstractModelProvisioner
+class EmailDefinitionProvisioner extends AbstractModelProvisioner
 {
     /**
      * @var Asset
@@ -45,7 +45,7 @@ class EmailDefinition extends AbstractModelProvisioner
     /**
      * Executes all the necessary provisioning
      *
-     * @param ModelInterface|CreateEmailDefinitionRequest $model
+     * @param ModelInterface|EmailDefinition $model
      * @return ModelInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \SalesForce\MarketingCloud\ApiException
@@ -53,14 +53,14 @@ class EmailDefinition extends AbstractModelProvisioner
     public function provision(ModelInterface $model): ModelInterface
     {
         // Input check
-        if (!$model instanceof CreateEmailDefinitionRequest) {
+        if (!$model instanceof EmailDefinition) {
             throw new \InvalidArgumentException(
-                "Parameter 0 is not of type " . CreateEmailDefinitionRequest::class
+                "Parameter 0 is not of type " . EmailDefinition::class
             );
         }
 
         $this->asset = $this->createAsset();
-        $model->setContent(new CreateEmailDefinitionContent(["customerKey" => $this->asset->getCustomerKey()]));
+        $model->setContent(new EmailDefinitionContent(["customerKey" => $this->asset->getCustomerKey()]));
 
         return $model;
     }
@@ -68,7 +68,7 @@ class EmailDefinition extends AbstractModelProvisioner
     /**
      * Executes all the necessary provisioning
      *
-     * @param ModelInterface|CreateEmailDefinitionRequest $model
+     * @param ModelInterface|EmailDefinition $model
      * @return ModelInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \SalesForce\MarketingCloud\ApiException

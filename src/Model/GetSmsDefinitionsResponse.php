@@ -58,7 +58,7 @@ class GetSmsDefinitionsResponse implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'requestId' => 'string',
-        'definitions' => '\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest[]',
+        'definitions' => '\SalesForce\MarketingCloud\Model\SmsDefinition[]',
         'count' => 'int',
         'page' => 'int',
         'pageSize' => 'int'
@@ -255,7 +255,7 @@ class GetSmsDefinitionsResponse implements ModelInterface, ArrayAccess
     /**
      * Gets definitions
      *
-     * @return \SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest[]
+     * @return \SalesForce\MarketingCloud\Model\SmsDefinition[]
      */
     public function getDefinitions()
     {
@@ -265,7 +265,7 @@ class GetSmsDefinitionsResponse implements ModelInterface, ArrayAccess
     /**
      * Sets definitions
      *
-     * @param \SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest[] $definitions definitions
+     * @param \SalesForce\MarketingCloud\Model\SmsDefinition[] $definitions definitions
      *
      * @return $this
      */

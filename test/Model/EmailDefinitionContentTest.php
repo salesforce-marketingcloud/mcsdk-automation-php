@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateEmailDefinitionSubscriptionsTest
+ * EmailDefinitionContentTest
  *
  * PHP version 5
  *
@@ -32,48 +32,27 @@ namespace SalesForce\MarketingCloud\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * CreateEmailDefinitionSubscriptionsTest Class Doc Comment
+ * EmailDefinitionContentTest Class Doc Comment
  *
  * @category    Class
- * @description CreateEmailDefinitionSubscriptions
+ * @description EmailDefinitionContent
  * @package     SalesForce\MarketingCloud
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CreateEmailDefinitionSubscriptionsTest extends TestCase
+class EmailDefinitionContentTest extends TestCase
 {
     /**
-     * Test "CreateEmailDefinitionSubscriptions"
+     * Test "EmailDefinitionContent"
      */
-    public function testCreateEmailDefinitionSubscriptions()
+    public function testEmailDefinitionContent()
     {
     }
 
     /**
-     * Test attribute "list"
+     * Test attribute "customerKey"
      */
-    public function testPropertyList()
-    {
-    }
-
-    /**
-     * Test attribute "dataExtension"
-     */
-    public function testPropertyDataExtension()
-    {
-    }
-
-    /**
-     * Test attribute "autoAddSubscriber"
-     */
-    public function testPropertyAutoAddSubscriber()
-    {
-    }
-
-    /**
-     * Test attribute "updateSubscriber"
-     */
-    public function testPropertyUpdateSubscriber()
+    public function testPropertyCustomerKey()
     {
     }
 }

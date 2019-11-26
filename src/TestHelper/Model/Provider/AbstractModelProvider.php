@@ -11,6 +11,8 @@ use SalesForce\MarketingCloud\Model\ModelInterface;
  */
 abstract class AbstractModelProvider
 {
+    protected static $uniqueIdCache = [];
+
     /**
      * Creates a test object
      *
@@ -64,5 +66,24 @@ abstract class AbstractModelProvider
     public static function getModelIdMethod(): string
     {
         throw new \RuntimeException(__METHOD__ . " is not implemented");
+    }
+
+    /**
+     * Generates a unique identifier
+     *
+     * @return string
+     */
+    protected static function generateUniqueId(): string
+    {
+        do {
+            $pieces = [];
+            for ($i = 0; $i < 3; $i++) {
+                $pieces[] = str_pad((string)rand(0, 9999), 4, '0');
+            }
+
+            $id = uniqid(implode('-', $pieces));
+        } while (in_array($id, static::$uniqueIdCache));
+
+        return $id;
     }
 }

@@ -74,7 +74,7 @@ class TransactionalMessagingApiTest extends BaseApiTest
         $resourceCreator = $this->getResourceCreator();
         $resourceCreator->setModelClass(
             __FUNCTION__,
-            "\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest"
+            "\SalesForce\MarketingCloud\Model\EmailDefinition"
         );
 
         // SUT
@@ -103,7 +103,7 @@ class TransactionalMessagingApiTest extends BaseApiTest
         $resourceCreator = $this->getResourceCreator();
         $resourceCreator->setModelClass(
             __FUNCTION__,
-            "\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest"
+            "\SalesForce\MarketingCloud\Model\SmsDefinition"
         );
 
         // SUT
@@ -248,7 +248,7 @@ class TransactionalMessagingApiTest extends BaseApiTest
         $resourceCreator = $this->getResourceCreator();
         $resourceCreator->setModelClass(
             __FUNCTION__,
-            "\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest"
+            "\SalesForce\MarketingCloud\Model\EmailDefinition"
         );
 
         // SUT
@@ -451,7 +451,7 @@ class TransactionalMessagingApiTest extends BaseApiTest
         $resourceCreator = $this->getResourceCreator();
         $resourceCreator->setModelClass(
             __FUNCTION__,
-            "\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest"
+            "\SalesForce\MarketingCloud\Model\SmsDefinition"
         );
 
         // SUT
@@ -538,7 +538,7 @@ class TransactionalMessagingApiTest extends BaseApiTest
         $resourceCreator = $this->getResourceCreator();
         $resourceCreator->setModelClass(
             __FUNCTION__,
-            "\SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest"
+            "\SalesForce\MarketingCloud\Model\EmailDefinition"
         );
 
         // SUT
@@ -567,7 +567,7 @@ class TransactionalMessagingApiTest extends BaseApiTest
         $resourceCreator = $this->getResourceCreator();
         $resourceCreator->setModelClass(
             __FUNCTION__,
-            "\SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest"
+            "\SalesForce\MarketingCloud\Model\SmsDefinition"
         );
 
         // SUT

@@ -62,7 +62,7 @@ class CampaignApiDecorator implements ContainerAwareInterface
         /** @var Campaign $resource */
         $resource = $resourceCreator->create();
 
-        /** @var \SalesForce\MarketingCloud\Api\CampaignApi $client */
+        /** @var CampaignApi $client */
         $client = $this->getClient();
 
         $client->deleteCampaignById($resource->getId());

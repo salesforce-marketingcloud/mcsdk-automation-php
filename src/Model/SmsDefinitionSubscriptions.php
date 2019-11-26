@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateSmsDefinitionSubscriptions
+ * SmsDefinitionSubscriptions
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SalesForce\MarketingCloud\ObjectSerializer;
 
 /**
- * CreateSmsDefinitionSubscriptions Class Doc Comment
+ * SmsDefinitionSubscriptions Class Doc Comment
  *
  * @category Class
  * @package  SalesForce\MarketingCloud
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CreateSmsDefinitionSubscriptions implements ModelInterface, ArrayAccess
+class SmsDefinitionSubscriptions implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CreateSmsDefinitionSubscriptions implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CreateSmsDefinitionSubscriptions';
+    protected static $swaggerModelName = 'SmsDefinitionSubscriptions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

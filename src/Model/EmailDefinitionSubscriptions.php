@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateEmailDefinitionOptionsRequest
+ * EmailDefinitionSubscriptions
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SalesForce\MarketingCloud\ObjectSerializer;
 
 /**
- * CreateEmailDefinitionOptionsRequest Class Doc Comment
+ * EmailDefinitionSubscriptions Class Doc Comment
  *
  * @category Class
  * @package  SalesForce\MarketingCloud
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CreateEmailDefinitionOptionsRequest implements ModelInterface, ArrayAccess
+class EmailDefinitionSubscriptions implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CreateEmailDefinitionOptionsRequest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CreateEmailDefinitionOptionsRequest';
+    protected static $swaggerModelName = 'EmailDefinitionSubscriptions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,10 @@ class CreateEmailDefinitionOptionsRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'trackLinks' => 'bool'
+        'list' => 'string',
+        'dataExtension' => 'string',
+        'autoAddSubscriber' => 'bool',
+        'updateSubscriber' => 'bool'
     ];
 
     /**
@@ -66,7 +69,10 @@ class CreateEmailDefinitionOptionsRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'trackLinks' => null
+        'list' => null,
+        'dataExtension' => null,
+        'autoAddSubscriber' => null,
+        'updateSubscriber' => null
     ];
 
     /**
@@ -96,7 +102,10 @@ class CreateEmailDefinitionOptionsRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'trackLinks' => 'trackLinks'
+        'list' => 'list',
+        'dataExtension' => 'dataExtension',
+        'autoAddSubscriber' => 'autoAddSubscriber',
+        'updateSubscriber' => 'updateSubscriber'
     ];
 
     /**
@@ -105,7 +114,10 @@ class CreateEmailDefinitionOptionsRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'trackLinks' => 'setTrackLinks'
+        'list' => 'setList',
+        'dataExtension' => 'setDataExtension',
+        'autoAddSubscriber' => 'setAutoAddSubscriber',
+        'updateSubscriber' => 'setUpdateSubscriber'
     ];
 
     /**
@@ -114,7 +126,10 @@ class CreateEmailDefinitionOptionsRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'trackLinks' => 'getTrackLinks'
+        'list' => 'getList',
+        'dataExtension' => 'getDataExtension',
+        'autoAddSubscriber' => 'getAutoAddSubscriber',
+        'updateSubscriber' => 'getUpdateSubscriber'
     ];
 
     /**
@@ -177,7 +192,10 @@ class CreateEmailDefinitionOptionsRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['trackLinks'] = isset($data['trackLinks']) ? $data['trackLinks'] : null;
+        $this->container['list'] = isset($data['list']) ? $data['list'] : null;
+        $this->container['dataExtension'] = isset($data['dataExtension']) ? $data['dataExtension'] : null;
+        $this->container['autoAddSubscriber'] = isset($data['autoAddSubscriber']) ? $data['autoAddSubscriber'] : true;
+        $this->container['updateSubscriber'] = isset($data['updateSubscriber']) ? $data['updateSubscriber'] : null;
     }
 
     /**
@@ -189,6 +207,9 @@ class CreateEmailDefinitionOptionsRequest implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['list'] === null) {
+            $invalidProperties[] = "'list' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -205,25 +226,97 @@ class CreateEmailDefinitionOptionsRequest implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets trackLinks
+     * Gets list
      *
-     * @return bool
+     * @return string
      */
-    public function getTrackLinks()
+    public function getList()
     {
-        return $this->container['trackLinks'];
+        return $this->container['list'];
     }
 
     /**
-     * Sets trackLinks
+     * Sets list
      *
-     * @param bool $trackLinks Wraps links for tracking and reporting. Default is true.
+     * @param string $list Marketing Cloud external key of the list or all subscribers. Contains the subscriber keys and profile attributes.
      *
      * @return $this
      */
-    public function setTrackLinks($trackLinks)
+    public function setList($list)
     {
-        $this->container['trackLinks'] = $trackLinks;
+        $this->container['list'] = $list;
+
+        return $this;
+    }
+
+    /**
+     * Gets dataExtension
+     *
+     * @return string
+     */
+    public function getDataExtension()
+    {
+        return $this->container['dataExtension'];
+    }
+
+    /**
+     * Sets dataExtension
+     *
+     * @param string $dataExtension Marketing Cloud external key of the triggered send data extension. Each request inserts as a new row in the data extension.
+     *
+     * @return $this
+     */
+    public function setDataExtension($dataExtension)
+    {
+        $this->container['dataExtension'] = $dataExtension;
+
+        return $this;
+    }
+
+    /**
+     * Gets autoAddSubscriber
+     *
+     * @return bool
+     */
+    public function getAutoAddSubscriber()
+    {
+        return $this->container['autoAddSubscriber'];
+    }
+
+    /**
+     * Sets autoAddSubscriber
+     *
+     * @param bool $autoAddSubscriber Adds the recipient’s email address and contact key as a subscriber key to subscriptions.list. Default is true.
+     *
+     * @return $this
+     */
+    public function setAutoAddSubscriber($autoAddSubscriber)
+    {
+        $this->container['autoAddSubscriber'] = $autoAddSubscriber;
+
+        return $this;
+    }
+
+    /**
+     * Gets updateSubscriber
+     *
+     * @return bool
+     */
+    public function getUpdateSubscriber()
+    {
+        return $this->container['updateSubscriber'];
+    }
+
+    /**
+     * Sets updateSubscriber
+     *
+     * @param bool $updateSubscriber Updates the recipient’s contact key as a subscriber key with the provided email address and profile attributes to subscriptions.list. Default is true.
+     *
+     * @return $this
+     */
+    public function setUpdateSubscriber($updateSubscriber)
+    {
+        $this->container['updateSubscriber'] = $updateSubscriber;
 
         return $this;
     }

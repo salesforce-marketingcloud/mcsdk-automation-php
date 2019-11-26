@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateEmailDefinitionContent
+ * EmailDefinitionContent
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SalesForce\MarketingCloud\ObjectSerializer;
 
 /**
- * CreateEmailDefinitionContent Class Doc Comment
+ * EmailDefinitionContent Class Doc Comment
  *
  * @category Class
  * @package  SalesForce\MarketingCloud
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CreateEmailDefinitionContent implements ModelInterface, ArrayAccess
+class EmailDefinitionContent implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CreateEmailDefinitionContent implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CreateEmailDefinitionContent';
+    protected static $swaggerModelName = 'EmailDefinitionContent';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

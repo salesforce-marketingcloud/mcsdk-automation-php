@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateSmsDefinitionSubscriptionsTest
+ * SmsDefinitionTest
  *
  * PHP version 5
  *
@@ -32,48 +32,83 @@ namespace SalesForce\MarketingCloud\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * CreateSmsDefinitionSubscriptionsTest Class Doc Comment
+ * SmsDefinitionTest Class Doc Comment
  *
  * @category    Class
- * @description CreateSmsDefinitionSubscriptions
+ * @description SmsDefinition
  * @package     SalesForce\MarketingCloud
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CreateSmsDefinitionSubscriptionsTest extends TestCase
+class SmsDefinitionTest extends TestCase
 {
     /**
-     * Test "CreateSmsDefinitionSubscriptions"
+     * Test "SmsDefinition"
      */
-    public function testCreateSmsDefinitionSubscriptions()
+    public function testSmsDefinition()
     {
     }
 
     /**
-     * Test attribute "shortCode"
+     * Test attribute "definitionKey"
      */
-    public function testPropertyShortCode()
+    public function testPropertyDefinitionKey()
     {
     }
 
     /**
-     * Test attribute "countryCode"
+     * Test attribute "name"
      */
-    public function testPropertyCountryCode()
+    public function testPropertyName()
     {
     }
 
     /**
-     * Test attribute "keyword"
+     * Test attribute "content"
      */
-    public function testPropertyKeyword()
+    public function testPropertyContent()
     {
     }
 
     /**
-     * Test attribute "autoAddSubscriber"
+     * Test attribute "status"
      */
-    public function testPropertyAutoAddSubscriber()
+    public function testPropertyStatus()
+    {
+    }
+
+    /**
+     * Test attribute "createdDate"
+     */
+    public function testPropertyCreatedDate()
+    {
+    }
+
+    /**
+     * Test attribute "modifiedDate"
+     */
+    public function testPropertyModifiedDate()
+    {
+    }
+
+    /**
+     * Test attribute "description"
+     */
+    public function testPropertyDescription()
+    {
+    }
+
+    /**
+     * Test attribute "subscriptions"
+     */
+    public function testPropertySubscriptions()
+    {
+    }
+
+    /**
+     * Test attribute "requestId"
+     */
+    public function testPropertyRequestId()
     {
     }
 }
