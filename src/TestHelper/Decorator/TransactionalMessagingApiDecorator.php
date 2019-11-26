@@ -5,7 +5,6 @@ namespace SalesForce\MarketingCloud\TestHelper\Decorator;
 use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\ExpectationFailedException;
 use SalesForce\MarketingCloud\Api\TransactionalMessagingApi;
-use SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest;
 use SalesForce\MarketingCloud\Model\DeleteQueuedMessagesForSendDefinitionResponse;
 use SalesForce\MarketingCloud\Model\Recipient;
 use SalesForce\MarketingCloud\Model\SendEmailToMultipleRecipientsRequest;
@@ -16,8 +15,8 @@ use SalesForce\MarketingCloud\TestHelper\Api\ResourceCreator;
 use SalesForce\MarketingCloud\TestHelper\Model\Provider\EmailDefinitionProvider;
 use SalesForce\MarketingCloud\TestHelper\Model\Provider\RecipientProvider;
 use SalesForce\MarketingCloud\TestHelper\Model\Provider\SmsDefinitionProvider;
-use SalesForce\MarketingCloud\TestHelper\Model\Provisioner\EmailDefinition;
-use SalesForce\MarketingCloud\TestHelper\Model\Provisioner\SmsDefinition;
+use SalesForce\MarketingCloud\TestHelper\Model\Provisioner\EmailDefinitionProvisioner;
+use SalesForce\MarketingCloud\TestHelper\Model\Provisioner\SmsDefinitionProvisioner;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -54,6 +53,42 @@ class TransactionalMessagingApiDecorator implements ContainerAwareInterface
         $client = $this->container->get(TransactionalMessagingApi::class);
 
         return $client;
+    }
+
+    /**
+     * Test case for getSmsDefinitions
+     *
+     * getSmsDefinitions.
+     * @throws \Exception
+     */
+    public function testGetSmsDefinitions()
+    {
+        $client = $this->getClient();
+        $response = $client->getSmsDefinitions();
+
+        Assert::assertNotNull($response->getRequestId());
+        Assert::assertNotNull($response->getDefinitions());
+        Assert::assertNotNull($response->getCount());
+        Assert::assertNotNull($response->getPage());
+        Assert::assertNotNull($response->getPageSize());
+    }
+
+    /**
+     * Test case for getEmailDefinitions
+     *
+     * getEmailDefinitions.
+     * @throws \Exception
+     */
+    public function testGetEmailDefinitions()
+    {
+        $client = $this->getClient();
+        $response = $client->getEmailDefinitions();
+
+        Assert::assertNotNull($response->getRequestId());
+        Assert::assertNotNull($response->getDefinitions());
+        Assert::assertNotNull($response->getCount());
+        Assert::assertNotNull($response->getPage());
+        Assert::assertNotNull($response->getPageSize());
     }
 
     #### Email or SMS not sent
@@ -163,7 +198,7 @@ class TransactionalMessagingApiDecorator implements ContainerAwareInterface
         $client = $this->getClient();
 
         // Create the email definition
-        $provisioner = new EmailDefinition();
+        $provisioner = new EmailDefinitionProvisioner();
         $provisioner->setContainer($this->container);
 
         $definition = $provisioner->provision(EmailDefinitionProvider::getTestModel());
@@ -212,7 +247,7 @@ class TransactionalMessagingApiDecorator implements ContainerAwareInterface
         $client = $this->getClient();
 
         // Create the email definition
-        $provisioner = new SmsDefinition();
+        $provisioner = new SmsDefinitionProvisioner();
         $provisioner->setContainer($this->container);
 
         $definition = $provisioner->provision(SmsDefinitionProvider::getTestModel());
@@ -256,7 +291,7 @@ class TransactionalMessagingApiDecorator implements ContainerAwareInterface
         $client = $this->getClient();
 
         // Create the email definition
-        $provisioner = new EmailDefinition();
+        $provisioner = new EmailDefinitionProvisioner();
         $provisioner->setContainer($this->container);
 
         $definition = $provisioner->provision(EmailDefinitionProvider::getTestModel());
@@ -295,7 +330,7 @@ class TransactionalMessagingApiDecorator implements ContainerAwareInterface
         $client = $this->getClient();
 
         // Create the email definition
-        $provisioner = new SmsDefinition();
+        $provisioner = new SmsDefinitionProvisioner();
         $provisioner->setContainer($this->container);
 
         $definition = $provisioner->provision(SmsDefinitionProvider::getTestModel());
@@ -335,7 +370,7 @@ class TransactionalMessagingApiDecorator implements ContainerAwareInterface
         $client = $this->getClient();
 
         // Create the email definition
-        $provisioner = new EmailDefinition();
+        $provisioner = new EmailDefinitionProvisioner();
         $provisioner->setContainer($this->container);
 
         $definition = $provisioner->provision(EmailDefinitionProvider::getTestModel());
@@ -371,7 +406,7 @@ class TransactionalMessagingApiDecorator implements ContainerAwareInterface
         $client = $this->getClient();
 
         // Create the email definition
-        $provisioner = new SmsDefinition();
+        $provisioner = new SmsDefinitionProvisioner();
         $provisioner->setContainer($this->container);
 
         $definition = $provisioner->provision(SmsDefinitionProvider::getTestModel());

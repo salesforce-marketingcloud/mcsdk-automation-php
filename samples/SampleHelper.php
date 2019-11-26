@@ -4,9 +4,9 @@ use SalesForce\MarketingCloud\Model\AssetType;
 use SalesForce\MarketingCloud\Model\Asset;
 use SalesForce\MarketingCloud\Api\AssetApi;
 use SalesForce\MarketingCloud\ApiException;
-use SalesForce\MarketingCloud\Model\CreateEmailDefinitionContent;
-use SalesForce\MarketingCloud\Model\CreateEmailDefinitionSubscriptions;
-use SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest;
+use SalesForce\MarketingCloud\Model\EmailDefinitionContent;
+use SalesForce\MarketingCloud\Model\EmailDefinitionSubscriptions;
+use SalesForce\MarketingCloud\Model\EmailDefinition;
 use GuzzleHttp\Exception\GuzzleException;
 
 class SampleHelper
@@ -28,14 +28,14 @@ class SampleHelper
             $customerKey = $createAssetResponse->getCustomerKey();
             $emailDefinitionName = md5(rand(0, 9999));                  // it has be unique
             $emailDefinitionKey = md5(rand(0, 9999));                   // it has be unique
-            $emailDefinitionContent = new CreateEmailDefinitionContent([
+            $emailDefinitionContent = new EmailDefinitionContent([
                 "customerKey" => $customerKey
             ]);
-            $emailDefinitionSubscriptions = new CreateEmailDefinitionSubscriptions([
+            $emailDefinitionSubscriptions = new EmailDefinitionSubscriptions([
                 "list" => SampleHelper::SUBSCRIBERS_LIST_KEY
             ]);
 
-            return new CreateEmailDefinitionRequest([
+            return new EmailDefinition([
                 'name' => $emailDefinitionName,
                 'definitionKey' => $emailDefinitionKey,
                 'content' => $emailDefinitionContent,

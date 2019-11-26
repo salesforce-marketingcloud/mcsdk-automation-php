@@ -10,7 +10,7 @@ use SalesForce\MarketingCloud\Model\ModelInterface;
  *
  * @package SalesForce\MarketingCloud\TestHelper\Model\Provisioner
  */
-class SmsDefinition extends AbstractModelProvisioner
+class SmsDefinitionProvisioner extends AbstractModelProvisioner
 {
     /**
      * Executes all the necessary provisioning
