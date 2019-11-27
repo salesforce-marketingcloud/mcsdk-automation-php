@@ -26,6 +26,10 @@
  * Do not edit the class manually.
  */
 
+ /*
+ test
+ */
+
 namespace SalesForce\MarketingCloud\Api;
 
 use GuzzleHttp\Exception\RequestException;
