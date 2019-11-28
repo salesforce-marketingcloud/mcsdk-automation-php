@@ -17,7 +17,7 @@ The Salesforce Marketing Cloud PHP SDK enables developers to easily access the S
 
 ## Download
 
-To consume this SDK, add the [Salesforce Marketing Cloud SDK](https://packagist.org/packages/salesforce-marketingcloud/mcsdk-automation-php) to your project using the following command:
+To consume this SDK, add the [Salesforce Marketing Cloud SDK](https://packagist.org/packages/salesforce/marketing-cloud-sdk) to your project using the following command:
 
 ```composer require salesforce/marketing-cloud-sdk```
 
