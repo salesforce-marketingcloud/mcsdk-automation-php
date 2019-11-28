@@ -2,13 +2,13 @@
 
 namespace SalesForce\MarketingCloud\TestHelper\Model\Provider;
 
-use SalesForce\MarketingCloud\Model\CreateEmailDefinitionRequest;
-use SalesForce\MarketingCloud\Model\CreateSmsDefinitionRequest;
 use SalesForce\MarketingCloud\Model\DeleteQueuedMessagesForSendDefinitionResponse;
 use SalesForce\MarketingCloud\Model\DeleteSendDefinitionResponse;
+use SalesForce\MarketingCloud\Model\EmailDefinition;
 use SalesForce\MarketingCloud\Model\GetEmailDefinitionsResponse;
 use SalesForce\MarketingCloud\Model\GetQueueMetricsForSendDefinitionResponse;
 use SalesForce\MarketingCloud\Model\GetSmsDefinitionsResponse;
+use SalesForce\MarketingCloud\Model\SmsDefinition;
 
 /**
  * Class ModelProviderResolver
@@ -25,7 +25,7 @@ class ModelProviderResolver
     private static $aliases = [
         "email" => [
             // Email definition
-            CreateEmailDefinitionRequest::class => EmailDefinitionProvider::class,
+            EmailDefinition::class => EmailDefinitionProvider::class,
             GetEmailDefinitionsResponse::class => EmailDefinitionProvider::class,
             GetQueueMetricsForSendDefinitionResponse::class => EmailDefinitionProvider::class,
             DeleteSendDefinitionResponse::class => EmailDefinitionProvider::class,
@@ -33,7 +33,7 @@ class ModelProviderResolver
         ],
         "sms" => [
             // SMS definition
-            CreateSmsDefinitionRequest::class => SmsDefinitionProvider::class,
+            SmsDefinition::class => SmsDefinitionProvider::class,
             GetSmsDefinitionsResponse::class => SmsDefinitionProvider::class,
             GetQueueMetricsForSendDefinitionResponse::class => SmsDefinitionProvider::class,
             DeleteSendDefinitionResponse::class => SmsDefinitionProvider::class,
