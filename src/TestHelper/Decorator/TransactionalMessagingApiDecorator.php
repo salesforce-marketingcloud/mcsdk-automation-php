@@ -6,6 +6,7 @@ use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\ExpectationFailedException;
 use SalesForce\MarketingCloud\Api\TransactionalMessagingApi;
 use SalesForce\MarketingCloud\Model\DeleteQueuedMessagesForSendDefinitionResponse;
+use SalesForce\MarketingCloud\Model\EmailDefinition;
 use SalesForce\MarketingCloud\Model\Recipient;
 use SalesForce\MarketingCloud\Model\SendEmailToMultipleRecipientsRequest;
 use SalesForce\MarketingCloud\Model\SendEmailToSingleRecipientRequest;
@@ -143,7 +144,7 @@ class TransactionalMessagingApiDecorator implements ContainerAwareInterface
         $resourceCreator->setModelClass(__FUNCTION__, DeleteQueuedMessagesForSendDefinitionResponse::class);
         $resourceCreator->setClient($this->getClient());
 
-        /** @var CreateEmailDefinitionRequest $resource */
+        /** @var EmailDefinition $resource */
         $resource = $resourceCreator->create();
 
         // The actual test
@@ -168,7 +169,7 @@ class TransactionalMessagingApiDecorator implements ContainerAwareInterface
         $resourceCreator->setModelClass(__FUNCTION__, DeleteQueuedMessagesForSendDefinitionResponse::class);
         $resourceCreator->setClient($this->getClient());
 
-        /** @var CreateEmailDefinitionRequest $resource */
+        /** @var EmailDefinition $resource */
         $resource = $resourceCreator->create();
 
         // The actual test
