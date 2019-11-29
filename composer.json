@@ -1,5 +1,5 @@
 {
-    "name": "salesforce/marketing-cloud-sdk",
+    "name": "salesforce-mc/marketing-cloud-sdk",
     "version": "1.0.0",
     "description": "The Salesforce Marketing Cloud PHP SDK",
     "keywords": [
