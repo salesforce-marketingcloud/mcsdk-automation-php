@@ -1,6 +1,6 @@
 <?php
 /**
- * GetDefinitionSendStatusForRecipientResponse
+ * GetAllCampaignsResponse
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SalesForce\MarketingCloud\ObjectSerializer;
 
 /**
- * GetDefinitionSendStatusForRecipientResponse Class Doc Comment
+ * GetAllCampaignsResponse Class Doc Comment
  *
  * @category Class
  * @package  SalesForce\MarketingCloud
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetDefinitionSendStatusForRecipientResponse implements ModelInterface, ArrayAccess
+class GetAllCampaignsResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class GetDefinitionSendStatusForRecipientResponse implements ModelInterface, Arr
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetDefinitionSendStatusForRecipientResponse';
+    protected static $swaggerModelName = 'GetAllCampaignsResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,11 +57,10 @@ class GetDefinitionSendStatusForRecipientResponse implements ModelInterface, Arr
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'requestId' => 'string',
-        'eventCategoryType' => 'string',
-        'timestamp' => '\DateTime',
-        'compositeId' => 'string',
-        'info' => '\SalesForce\MarketingCloud\Model\GetDefinitionSendStatusForRecipientResponseInfo'
+        'items' => '\SalesForce\MarketingCloud\Model\Campaign[]',
+        'count' => 'int',
+        'page' => 'int',
+        'pageSize' => 'int'
     ];
 
     /**
@@ -70,11 +69,10 @@ class GetDefinitionSendStatusForRecipientResponse implements ModelInterface, Arr
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'requestId' => null,
-        'eventCategoryType' => null,
-        'timestamp' => 'date-time',
-        'compositeId' => null,
-        'info' => null
+        'items' => null,
+        'count' => null,
+        'page' => null,
+        'pageSize' => null
     ];
 
     /**
@@ -104,11 +102,10 @@ class GetDefinitionSendStatusForRecipientResponse implements ModelInterface, Arr
      * @var string[]
      */
     protected static $attributeMap = [
-        'requestId' => 'requestId',
-        'eventCategoryType' => 'eventCategoryType',
-        'timestamp' => 'timestamp',
-        'compositeId' => 'compositeId',
-        'info' => 'info'
+        'items' => 'items',
+        'count' => 'count',
+        'page' => 'page',
+        'pageSize' => 'pageSize'
     ];
 
     /**
@@ -117,11 +114,10 @@ class GetDefinitionSendStatusForRecipientResponse implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
-        'requestId' => 'setRequestId',
-        'eventCategoryType' => 'setEventCategoryType',
-        'timestamp' => 'setTimestamp',
-        'compositeId' => 'setCompositeId',
-        'info' => 'setInfo'
+        'items' => 'setItems',
+        'count' => 'setCount',
+        'page' => 'setPage',
+        'pageSize' => 'setPageSize'
     ];
 
     /**
@@ -130,11 +126,10 @@ class GetDefinitionSendStatusForRecipientResponse implements ModelInterface, Arr
      * @var string[]
      */
     protected static $getters = [
-        'requestId' => 'getRequestId',
-        'eventCategoryType' => 'getEventCategoryType',
-        'timestamp' => 'getTimestamp',
-        'compositeId' => 'getCompositeId',
-        'info' => 'getInfo'
+        'items' => 'getItems',
+        'count' => 'getCount',
+        'page' => 'getPage',
+        'pageSize' => 'getPageSize'
     ];
 
     /**
@@ -197,11 +192,10 @@ class GetDefinitionSendStatusForRecipientResponse implements ModelInterface, Arr
      */
     public function __construct(array $data = null)
     {
-        $this->container['requestId'] = isset($data['requestId']) ? $data['requestId'] : null;
-        $this->container['eventCategoryType'] = isset($data['eventCategoryType']) ? $data['eventCategoryType'] : null;
-        $this->container['timestamp'] = isset($data['timestamp']) ? $data['timestamp'] : null;
-        $this->container['compositeId'] = isset($data['compositeId']) ? $data['compositeId'] : null;
-        $this->container['info'] = isset($data['info']) ? $data['info'] : null;
+        $this->container['items'] = isset($data['items']) ? $data['items'] : null;
+        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
+        $this->container['page'] = isset($data['page']) ? $data['page'] : null;
+        $this->container['pageSize'] = isset($data['pageSize']) ? $data['pageSize'] : null;
     }
 
     /**
@@ -229,121 +223,97 @@ class GetDefinitionSendStatusForRecipientResponse implements ModelInterface, Arr
 
 
     /**
-     * Gets requestId
+     * Gets items
      *
-     * @return string
+     * @return \SalesForce\MarketingCloud\Model\Campaign[]
      */
-    public function getRequestId()
+    public function getItems()
     {
-        return $this->container['requestId'];
+        return $this->container['items'];
     }
 
     /**
-     * Sets requestId
+     * Sets items
      *
-     * @param string $requestId The ID of the request
+     * @param \SalesForce\MarketingCloud\Model\Campaign[] $items items
      *
      * @return $this
      */
-    public function setRequestId($requestId)
+    public function setItems($items)
     {
-        $this->container['requestId'] = $requestId;
+        $this->container['items'] = $items;
 
         return $this;
     }
 
     /**
-     * Gets eventCategoryType
+     * Gets count
      *
-     * @return string
+     * @return int
      */
-    public function getEventCategoryType()
+    public function getCount()
     {
-        return $this->container['eventCategoryType'];
+        return $this->container['count'];
     }
 
     /**
-     * Sets eventCategoryType
+     * Sets count
      *
-     * @param string $eventCategoryType The status of the message
+     * @param int $count Number of pages
      *
      * @return $this
      */
-    public function setEventCategoryType($eventCategoryType)
+    public function setCount($count)
     {
-        $this->container['eventCategoryType'] = $eventCategoryType;
+        $this->container['count'] = $count;
 
         return $this;
     }
 
     /**
-     * Gets timestamp
+     * Gets page
      *
-     * @return \DateTime
+     * @return int
      */
-    public function getTimestamp()
+    public function getPage()
     {
-        return $this->container['timestamp'];
+        return $this->container['page'];
     }
 
     /**
-     * Sets timestamp
+     * Sets page
      *
-     * @param \DateTime $timestamp The date the ...
+     * @param int $page Page number to return.
      *
      * @return $this
      */
-    public function setTimestamp($timestamp)
+    public function setPage($page)
     {
-        $this->container['timestamp'] = $timestamp;
+        $this->container['page'] = $page;
 
         return $this;
     }
 
     /**
-     * Gets compositeId
+     * Gets pageSize
      *
-     * @return string
+     * @return int
      */
-    public function getCompositeId()
+    public function getPageSize()
     {
-        return $this->container['compositeId'];
+        return $this->container['pageSize'];
     }
 
     /**
-     * Sets compositeId
+     * Sets pageSize
      *
-     * @param string $compositeId The Id of ...
+     * @param int $pageSize Number of campaigns, which are array elements, to return per paged response.
      *
      * @return $this
      */
-    public function setCompositeId($compositeId)
+    public function setPageSize($pageSize)
     {
-        $this->container['compositeId'] = $compositeId;
-
-        return $this;
-    }
-
-    /**
-     * Gets info
-     *
-     * @return \SalesForce\MarketingCloud\Model\GetDefinitionSendStatusForRecipientResponseInfo
-     */
-    public function getInfo()
-    {
-        return $this->container['info'];
-    }
-
-    /**
-     * Sets info
-     *
-     * @param \SalesForce\MarketingCloud\Model\GetDefinitionSendStatusForRecipientResponseInfo $info info
-     *
-     * @return $this
-     */
-    public function setInfo($info)
-    {
-        $this->container['info'] = $info;
+        $this->container['pageSize'] = $pageSize;
 
         return $this;
     }

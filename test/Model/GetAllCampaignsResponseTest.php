@@ -1,6 +1,6 @@
 <?php
 /**
- * DeleteSendDefinitionResponseTest
+ * GetAllCampaignsResponseTest
  *
  * PHP version 5
  *
@@ -32,41 +32,48 @@ namespace SalesForce\MarketingCloud\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * DeleteSendDefinitionResponseTest Class Doc Comment
+ * GetAllCampaignsResponseTest Class Doc Comment
  *
  * @category    Class
- * @description DeleteSendDefinitionResponse
+ * @description GetAllCampaignsResponse
  * @package     SalesForce\MarketingCloud
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class DeleteSendDefinitionResponseTest extends TestCase
+class GetAllCampaignsResponseTest extends TestCase
 {
     /**
-     * Test "DeleteSendDefinitionResponse"
+     * Test "GetAllCampaignsResponse"
      */
-    public function testDeleteSendDefinitionResponse()
+    public function testGetAllCampaignsResponse()
     {
     }
 
     /**
-     * Test attribute "message"
+     * Test attribute "items"
      */
-    public function testPropertyMessage()
+    public function testPropertyItems()
     {
     }
 
     /**
-     * Test attribute "requestId"
+     * Test attribute "count"
      */
-    public function testPropertyRequestId()
+    public function testPropertyCount()
     {
     }
 
     /**
-     * Test attribute "deletedDefinitionKey"
+     * Test attribute "page"
      */
-    public function testPropertyDeletedDefinitionKey()
+    public function testPropertyPage()
+    {
+    }
+
+    /**
+     * Test attribute "pageSize"
+     */
+    public function testPropertyPageSize()
     {
     }
 }

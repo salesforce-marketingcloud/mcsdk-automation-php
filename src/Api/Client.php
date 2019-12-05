@@ -24,7 +24,7 @@ use SalesForce\MarketingCloud\Event\Subscriber\AuthEventSub;
  */
 class Client
 {
-    const API_VERSION = "1.0.0";
+    const API_VERSION = "1.1.0";
 
     # List of available clients
     const CLIENT_ASSET_API = \SalesForce\MarketingCloud\Api\AssetApi::class;
