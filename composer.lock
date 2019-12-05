@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "92447a4349bdaf415108518e0a01698c",
+    "content-hash": "467a4ae619a2436c9e9a0295cf62a65c",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -1028,16 +1028,16 @@
         },
         {
             "name": "symfony/var-exporter",
-            "version": "v4.4.0",
+            "version": "v4.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-exporter.git",
-                "reference": "72feb69a33def8f761e612360588e40bac98caad"
+                "reference": "e566070effe60b8d16b99e958cdbd92aa2e470cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-exporter/zipball/72feb69a33def8f761e612360588e40bac98caad",
-                "reference": "72feb69a33def8f761e612360588e40bac98caad",
+                "url": "https://api.github.com/repos/symfony/var-exporter/zipball/e566070effe60b8d16b99e958cdbd92aa2e470cb",
+                "reference": "e566070effe60b8d16b99e958cdbd92aa2e470cb",
                 "shasum": ""
             },
             "require": {
@@ -1084,7 +1084,7 @@
                 "instantiate",
                 "serialize"
             ],
-            "time": "2019-11-13T07:39:40+00:00"
+            "time": "2019-12-01T08:39:58+00:00"
         }
     ],
     "packages-dev": [
@@ -2459,7 +2459,7 @@
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.13.0",
+            "version": "v1.13.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
